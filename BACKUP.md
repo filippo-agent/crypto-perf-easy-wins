@@ -1,16 +1,57 @@
 # Before deleting the VM
 
-**Do not rely on Git fetch/clone alone.** At the September 27, 2026 inventory,
+**Git preserves the production changes, but not all research artifacts.**
+At the September 27, 2026 inventory,
 this audit had 1,114 untracked files and 406 ignored files. The Go source
-worktrees had another 84 untracked files, including benchmark/test fixtures.
+worktrees had another 84 untracked entries: 82 source fixtures and two symlinks.
 Fetching source commits or cloning this report repository does not preserve
-those files. In particular, retain the saved binaries used with the profiles
-and disassembly, not just the final production patches.
+those files. Keeping every compiled binary is optional, not a prerequisite
+for landing the source changes.
+
+## What is actually valuable?
+
+* **Landing the SHA-256 change or reporting the round-4 compiler findings:**
+  the production commit, selected raw benchmark results, validation results,
+  issue drafts, small reproducers, assembly, and compact carry-chain SSA proof
+  are already tracked. The full VM backup is not required for those.
+* **Landing earlier prototypes or extending the research:** preserve the extra
+  correctness/property tests, benchmark harnesses, raw samples and controls,
+  experimental patches, and preparation scripts. An exact-content comparison
+  found 60 of the 82 source fixtures have no identical copy among this audit
+  repository's tracked files. Examples include CTR streaming tests, ML-KEM
+  arithmetic/encoding tests, and P-384/wNAF/bigmod experiments.
+* **Exact historical binary inspection:** the saved executables are useful
+  for re-symbolizing profiles or examining the original build. They account
+  for most of the full archive's size. Omitting them loses that convenience,
+  not the source patches or already saved disassembly. Rebuilding an
+  identical executable is not guaranteed merely by retaining the source.
+* **Downloaded pages/search caches and redundant logs:** lower priority.
+  They are cheap enough to retain in the compact archive, but are not
+  prerequisites for submitting the patches.
+
+### Recommended compact supplement
+
+`/home/exedev/vm-backup/research-sources.tar.gz` contains the audit files
+(including untracked and ignored research material), all 82 untracked source
+fixtures under `worktree-fixtures/`, and audit metadata/scratch inputs.
+It omits Git metadata, compiled ELF executables, Python bytecode caches, and
+Shelley history. **Keep the fetched Go source branches and cloned audit
+repository as well:** the compact archive is a supplement, not their replacement.
+
+```sh
+scp 'lark-zen.exe.xyz:/home/exedev/vm-backup/research-sources.tar.gz*' .
+shasum -a 256 -c research-sources.tar.gz.sha256
+```
+
+The fixtures cover different historical experiments; do not copy every
+fixture into one checkout indiscriminately. Match the associated report,
+baseline, and candidate first. Exploratory files are not additional selected
+patches or evidence that a rejected candidate should be landed.
 
 ## Prepared backups
 
-The backup directory on this VM is `/home/exedev/vm-backup`. Copy it to your
-own machine **before** deleting the VM:
+For a full snapshot instead, the backup directory on this VM is
+`/home/exedev/vm-backup`. Copy it to your own machine **before** deleting the VM:
 
 ```sh
 scp -r lark-zen.exe.xyz:/home/exedev/vm-backup .
@@ -40,6 +81,8 @@ report `OK`. Check that their contents can be listed or extracted locally.
 These are project backups, not a VM image. They intentionally omit general
 package/download caches, Node dependencies, credentials, and unrelated VM
 configuration. The saved Go and benchmark executables target Linux/amd64.
+The separate Shelley backup is unnecessary if the desired conversation
+history and source changes have already been saved elsewhere.
 
 ## Restoring the audit
 
