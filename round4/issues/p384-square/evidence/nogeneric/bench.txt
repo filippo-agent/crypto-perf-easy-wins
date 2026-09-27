@@ -1,0 +1,35 @@
+goos: linux
+goarch: amd64
+pkg: example.com/p384issue
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRaw/Square  	 1477046	       124.3 ns/op
+BenchmarkRaw/Square  	 1423551	       126.4 ns/op
+BenchmarkRaw/Square  	 1437343	       138.1 ns/op
+BenchmarkRaw/Square  	 1454311	       122.7 ns/op
+BenchmarkRaw/Square  	 1376631	       130.8 ns/op
+BenchmarkRaw/Mul     	 3279416	        54.52 ns/op
+BenchmarkRaw/Mul     	 3137584	        59.81 ns/op
+BenchmarkRaw/Mul     	 2117868	        75.75 ns/op
+BenchmarkRaw/Mul     	 3248066	        60.33 ns/op
+BenchmarkRaw/Mul     	 3167688	        56.21 ns/op
+BenchmarkFull/Square 	 1418758	       126.0 ns/op
+BenchmarkFull/Square 	 1535252	       117.7 ns/op
+BenchmarkFull/Square 	 1468668	       136.4 ns/op
+BenchmarkFull/Square 	 1550407	       116.1 ns/op
+BenchmarkFull/Square 	 1326430	       147.1 ns/op
+BenchmarkFull/Mul    	 3005472	        58.63 ns/op
+BenchmarkFull/Mul    	 2923272	        58.71 ns/op
+BenchmarkFull/Mul    	 3140401	        56.99 ns/op
+BenchmarkFull/Mul    	 2980406	        59.42 ns/op
+BenchmarkFull/Mul    	 3170559	        58.01 ns/op
+BenchmarkIndependent/Square         	 1413974	       127.6 ns/op
+BenchmarkIndependent/Square         	 1569733	       124.2 ns/op
+BenchmarkIndependent/Square         	 1480496	       119.5 ns/op
+BenchmarkIndependent/Square         	 1384280	       127.2 ns/op
+BenchmarkIndependent/Square         	 1475212	       124.6 ns/op
+BenchmarkIndependent/Mul            	 2993731	        60.04 ns/op
+BenchmarkIndependent/Mul            	 3300337	        55.34 ns/op
+BenchmarkIndependent/Mul            	 3280004	        57.47 ns/op
+BenchmarkIndependent/Mul            	 2941462	        60.38 ns/op
+BenchmarkIndependent/Mul            	 2964805	        61.00 ns/op
+PASS

@@ -1,0 +1,26 @@
+File: hmac-warm.test
+Build ID: 5964ededdf8d48d795e74c2693ce2f4a3a16247e
+Type: cpu
+Time: 2026-09-27 17:20:27 UTC
+Duration: 9.79s, Total samples = 9.74s (99.53%)
+Showing nodes accounting for 9.66s, 99.18% of 9.74s total
+Dropped 4 nodes (cum <= 0.05s)
+      flat  flat%   sum%        cum   cum%
+     0.08s  0.82%  0.82%      9.74s   100%  crypto/hmac_test.BenchmarkRound2PublicHMAC.func2
+         0     0%  0.82%      9.74s   100%  testing.(*B).run1.func1
+         0     0%  0.82%      9.74s   100%  testing.(*B).runN
+     0.23s  2.36%  3.18%      9.21s 94.56%  crypto/internal/fips140/hmac.(*HMAC).Sum
+     1.57s 16.12% 19.30%      8.65s 88.81%  crypto/internal/fips140/sha256.(*Digest).Sum
+     0.83s  8.52% 27.82%      6.69s 68.69%  crypto/internal/fips140/sha256.(*Digest).checkSum
+     0.49s  5.03% 32.85%      5.91s 60.68%  crypto/internal/fips140/sha256.(*Digest).Write
+     0.13s  1.33% 34.19%      4.52s 46.41%  crypto/internal/fips140/sha256.block
+     4.39s 45.07% 79.26%      4.39s 45.07%  crypto/internal/fips140/sha256.blockSHANI
+     1.38s 14.17% 93.43%      1.38s 14.17%  runtime.memmove
+     0.14s  1.44% 94.87%      0.44s  4.52%  crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary
+     0.06s  0.62% 95.48%      0.30s  3.08%  crypto/internal/fips140/hmac.(*HMAC).Reset
+     0.13s  1.33% 96.82%      0.20s  2.05%  crypto/internal/fips140deps/byteorder.BEPutUint32 (inline)
+     0.07s  0.72% 97.54%      0.15s  1.54%  crypto/internal/fips140/sha256.consumeUint32 (inline)
+     0.01s   0.1% 97.64%      0.13s  1.33%  crypto/internal/fips140/hmac.(*HMAC).Write
+         0     0% 97.64%      0.08s  0.82%  crypto/internal/fips140deps/byteorder.BEUint32 (inline)
+     0.08s  0.82% 98.46%      0.08s  0.82%  internal/byteorder.BEUint32 (inline)
+     0.07s  0.72% 99.18%      0.07s  0.72%  internal/byteorder.BEPutUint32 (inline)

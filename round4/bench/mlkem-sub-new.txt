@@ -1,0 +1,132 @@
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    5619	     35844 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5785	     46902 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    4622	     51308 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    6141	     43082 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    3937	     62527 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    3460	     68011 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    6902	     30336 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    6013	     41009 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    5420	     46593 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    6118	     41093 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    3895	     63091 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    3688	     68977 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    8035	     33750 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5868	     46186 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    4194	     51268 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    5734	     45109 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    4330	     64141 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    3672	     69593 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    7256	     31324 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5874	     44196 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    4838	     48189 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    5463	     43025 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    4245	     67785 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    3537	     68340 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    7854	     32719 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5678	     48786 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    4611	     47194 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    5782	     44685 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    3764	     60412 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    4041	     58922 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    6937	     34299 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5215	     49161 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    4466	     53415 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    5407	     52068 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    2791	     76039 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    4077	     68443 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    7696	     38738 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5100	     54584 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    5025	     52266 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    4786	     46658 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    3577	     64200 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    3996	     62407 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    7816	     33865 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5953	     46095 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    4881	     47778 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    6051	     40457 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    4470	     56618 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    4092	     62116 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    7101	     33224 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5576	     43648 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    5408	     52863 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    5948	     44715 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    4120	     57989 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    3614	     64715 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    8073	     32629 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5361	     45352 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    5298	     47976 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    6121	     52655 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    4294	     58409 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    3667	     61938 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    7134	     30178 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5850	     42226 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    5394	     48391 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    5944	     42900 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    4339	     57814 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    4071	     58656 ns/op	      64 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	    6962	     31064 ns/op	    1216 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/768/ParseEncapsCold    	    5550	     46414 ns/op	    7752 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/768/DecapsWarm         	    5386	     48706 ns/op	      64 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/EncapsWarm        	    5646	     42969 ns/op	    1856 B/op	       2 allocs/op
+BenchmarkRound2MLKEM/1024/ParseEncapsCold   	    4137	     59964 ns/op	   12744 B/op	       4 allocs/op
+BenchmarkRound2MLKEM/1024/DecapsWarm        	    3840	     63959 ns/op	      64 B/op	       2 allocs/op
+PASS

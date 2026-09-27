@@ -1,0 +1,187 @@
+ReorderedAB func(*[15]uint64, *[14]uint64, *[14]uint64)
+  b1:
+    (64) v7 = ArgIntReg <*[15]uint64> {out+0} [0] : AX (out[*[15]uint64])
+    (64) v8 = ArgIntReg <*[14]uint64> {a+0} [1] : BX (a[*[14]uint64])
+    (64) v9 = ArgIntReg <*[14]uint64> {b+0} [2] : CX (b[*[14]uint64])
+    (64) v203 = StoreReg <*[15]uint64> v7 : out[*[15]uint64]
+    (?) v2 = SP <uintptr> : SP
+    (?) v1 = InitMem <mem>
+    (+49) v14 = MOVQload <uint64> [56] v8 v1 : DX
+    (49) v17 = MOVQload <uint64> [56] v9 v1 : SI
+    (49) v268 = StoreReg <uint64> v17 : .autotmp_78[uint64]
+    (+50) v25 = MOVQload <uint64> [64] v8 v1 : DI
+    (+50) v275 = StoreReg <uint64> v25 : .autotmp_79[uint64]
+    (50) v28 = MOVQload <uint64> [64] v9 v1 : R8
+    (50) v272 = StoreReg <uint64> v28 : .autotmp_80[uint64]
+    (+51) v35 = MOVQload <uint64> [72] v8 v1 : R9
+    (+51) v281 = StoreReg <uint64> v35 : .autotmp_81[uint64]
+    (51) v38 = MOVQload <uint64> [72] v9 v1 : R10
+    (51) v279 = StoreReg <uint64> v38 : .autotmp_82[uint64]
+    (+52) v45 = MOVQload <uint64> [80] v8 v1 : R11
+    (+52) v288 = StoreReg <uint64> v45 : .autotmp_83[uint64]
+    (52) v48 = MOVQload <uint64> [80] v9 v1 : R12
+    (52) v284 = StoreReg <uint64> v48 : .autotmp_84[uint64]
+    (+53) v55 = MOVQload <uint64> [88] v8 v1 : R13
+    (+53) v175 = StoreReg <uint64> v55 : .autotmp_85[uint64]
+    (53) v58 = MOVQload <uint64> [88] v9 v1 : R15
+    (53) v163 = StoreReg <uint64> v58 : .autotmp_86[uint64]
+    (+54) v65 = MOVQload <uint64> [96] v8 v1 : AX
+    (+54) v224 = StoreReg <uint64> v65 : .autotmp_87[uint64]
+    (54) v68 = MOVQload <uint64> [96] v9 v1 : AX
+    (54) v219 = StoreReg <uint64> v68 : .autotmp_88[uint64]
+    (+55) v75 = MOVQload <uint64> [104] v8 v1 : AX
+    (+55) v231 = StoreReg <uint64> v75 : .autotmp_89[uint64]
+    (55) v78 = MOVQload <uint64> [104] v9 v1 : AX
+    (55) v227 = StoreReg <uint64> v78 : .autotmp_90[uint64]
+    (+56) v85 = MOVQload <uint64> v8 v1 : AX
+    (+56) v236 = StoreReg <uint64> v85 : .autotmp_91[uint64]
+    (56) v88 = MOVQload <uint64> v9 v1 : AX
+    (56) v233 = StoreReg <uint64> v88 : .autotmp_92[uint64]
+    (+57) v95 = MOVQload <uint64> [8] v8 v1 : AX
+    (+57) v243 = StoreReg <uint64> v95 : .autotmp_93[uint64]
+    (57) v98 = MOVQload <uint64> [8] v9 v1 : AX
+    (57) v240 = StoreReg <uint64> v98 : .autotmp_94[uint64]
+    (+58) v105 = MOVQload <uint64> [16] v8 v1 : AX
+    (+58) v249 = StoreReg <uint64> v105 : .autotmp_95[uint64]
+    (58) v108 = MOVQload <uint64> [16] v9 v1 : AX
+    (58) v247 = StoreReg <uint64> v108 : .autotmp_96[uint64]
+    (+59) v115 = MOVQload <uint64> [24] v8 v1 : AX
+    (+59) v256 = StoreReg <uint64> v115 : .autotmp_97[uint64]
+    (59) v118 = MOVQload <uint64> [24] v9 v1 : AX
+    (59) v252 = StoreReg <uint64> v118 : .autotmp_98[uint64]
+    (+60) v125 = MOVQload <uint64> [32] v8 v1 : AX
+    (+60) v263 = StoreReg <uint64> v125 : .autotmp_99[uint64]
+    (60) v128 = MOVQload <uint64> [32] v9 v1 : AX
+    (60) v259 = StoreReg <uint64> v128 : .autotmp_100[uint64]
+    (+61) v135 = MOVQload <uint64> [40] v8 v1 : AX
+    (+61) v265 = StoreReg <uint64> v135 : .autotmp_101[uint64]
+    (61) v138 = MOVQload <uint64> [40] v9 v1 : AX
+    (+62) v145 = MOVQload <uint64> [48] v8 v1 : BX
+    (62) v148 = MOVQload <uint64> [48] v9 v1 : CX
+    (-63) v153 = VarDef <mem> {.autotmp_77} v1
+    (49) v122 = ADDQcarry <uint64,flags> v17 v14 : <SI,nil>
+    (49) v20 = Select0 <uint64> v122 : SI (y0[uint64])
+    (49) v126 = Select1 <flags> v122
+    (50) v106 = ADCQ <uint64,flags> v28 v25 v126 : <R8,nil>
+    (50) v30 = Select0 <uint64> v106 : R8 (y1[uint64])
+    (50) v86 = Select1 <flags> v106
+    (51) v42 = ADCQ <uint64,flags> v38 v35 v86 : <R10,nil>
+    (51) v40 = Select0 <uint64> v42 : R10 (y2[uint64])
+    (51) v46 = Select1 <flags> v42
+    (52) v26 = ADCQ <uint64,flags> v48 v45 v46 : <R12,nil>
+    (52) v50 = Select0 <uint64> v26 : R12 (y3[uint64])
+    (52) v196 = Select1 <flags> v26
+    (53) v169 = ADCQ <uint64,flags> v58 v55 v196 : <R15,nil>
+    (53) v60 = Select0 <uint64> v169 : R15 (y4[uint64])
+    (53) v172 = Select1 <flags> v169
+    (-54) v220 = LoadReg <uint64> v219 : R13
+    (-54) v225 = LoadReg <uint64> v224 : R11
+    (54) v160 = ADCQ <uint64,flags> v220 v225 v172 : <R13,nil>
+    (54) v70 = Select0 <uint64> v160 : R13 (y5[uint64])
+    (54) v286 = Select1 <flags> v160
+    (-55) v228 = LoadReg <uint64> v227 : R11
+    (-55) v232 = LoadReg <uint64> v231 : R9
+    (55) v277 = ADCQ <uint64,flags> v228 v232 v286 : <R11,nil>
+    (55) v80 = Select0 <uint64> v277 : R11 (y6[uint64])
+    (55) v278 = Select1 <flags> v277
+    (-56) v235 = LoadReg <uint64> v233 : R9
+    (-56) v239 = LoadReg <uint64> v236 : DI
+    (56) v269 = ADDQcarry <uint64,flags> v235 v239 : <R9,nil>
+    (56) v90 = Select0 <uint64> v269 : R9 (x0[uint64])
+    (56) v270 = Select1 <flags> v269
+    (+63) v159 = MOVQstore <mem> {.autotmp_77} v2 v90 v153
+    (-57) v241 = LoadReg <uint64> v240 : DI
+    (-57) v244 = LoadReg <uint64> v243 : R9
+    (57) v266 = ADCQ <uint64,flags> v241 v244 v270 : <DI,nil>
+    (57) v100 = Select0 <uint64> v266 : DI (x1[uint64])
+    (57) v262 = Select1 <flags> v266
+    (63) v162 = MOVQstore <mem> {.autotmp_77} [8] v2 v100 v159
+    (-58) v248 = LoadReg <uint64> v247 : DI
+    (-58) v251 = LoadReg <uint64> v249 : R9
+    (58) v258 = ADCQ <uint64,flags> v248 v251 v262 : <DI,nil>
+    (58) v110 = Select0 <uint64> v258 : DI (x2[uint64])
+    (58) v254 = Select1 <flags> v258
+    (63) v165 = MOVQstore <mem> {.autotmp_77} [16] v2 v110 v162
+    (-59) v255 = LoadReg <uint64> v252 : DI
+    (-59) v257 = LoadReg <uint64> v256 : R9
+    (59) v250 = ADCQ <uint64,flags> v255 v257 v254 : <DI,nil>
+    (59) v120 = Select0 <uint64> v250 : DI (x3[uint64])
+    (59) v246 = Select1 <flags> v250
+    (63) v168 = MOVQstore <mem> {.autotmp_77} [24] v2 v120 v165
+    (-60) v260 = LoadReg <uint64> v259 : DI
+    (-60) v264 = LoadReg <uint64> v263 : R9
+    (60) v237 = ADCQ <uint64,flags> v260 v264 v246 : <DI,nil>
+    (60) v130 = Select0 <uint64> v237 : DI (x4[uint64])
+    (60) v238 = Select1 <flags> v237
+    (63) v171 = MOVQstore <mem> {.autotmp_77} [32] v2 v130 v168
+    (-61) v267 = LoadReg <uint64> v265 : DI
+    (61) v234 = ADCQ <uint64,flags> v138 v267 v238 : <AX,nil>
+    (61) v140 = Select0 <uint64> v234 : AX (x5[uint64])
+    (61) v230 = Select1 <flags> v234
+    (63) v174 = MOVQstore <mem> {.autotmp_77} [40] v2 v140 v171
+    (62) v226 = ADCQ <uint64,flags> v148 v145 v230 : <CX,nil>
+    (62) v150 = Select0 <uint64> v226 : CX (x6[uint64])
+    (62) v222 = Select1 <flags> v226
+    (63) v177 = MOVQstore <mem> {.autotmp_77} [48] v2 v150 v174
+    (63) v180 = MOVQstore <mem> {.autotmp_77} [56] v2 v20 v177
+    (63) v183 = MOVQstore <mem> {.autotmp_77} [64] v2 v30 v180
+    (63) v186 = MOVQstore <mem> {.autotmp_77} [72] v2 v40 v183
+    (63) v189 = MOVQstore <mem> {.autotmp_77} [80] v2 v50 v186
+    (63) v192 = MOVQstore <mem> {.autotmp_77} [88] v2 v60 v189
+    (63) v195 = MOVQstore <mem> {.autotmp_77} [96] v2 v70 v192
+    (63) v198 = MOVQstore <mem> {.autotmp_77} [104] v2 v80 v195
+    (62) v223 = SETB <uint8> v222 : AX
+    (62) v151 = MOVBQZX <uint64> v223 : AX (ca[uint64])
+    (-49) v271 = LoadReg <uint64> v268 : CX
+    (-49) v221 = ADDQcarry <uint64,flags> v271 v14 : <CX,nil>
+    (-49) v229 = Select1 <flags> v221
+    (-50) v273 = LoadReg <uint64> v272 : CX
+    (-50) v276 = LoadReg <uint64> v275 : DX
+    (-50) v242 = ADCQ <uint64,flags> v273 v276 v229 : <CX,nil>
+    (-50) v245 = Select1 <flags> v242
+    (-51) v280 = LoadReg <uint64> v279 : CX
+    (-51) v283 = LoadReg <uint64> v281 : DX
+    (-51) v253 = ADCQ <uint64,flags> v280 v283 v245 : <CX,nil>
+    (-51) v261 = Select1 <flags> v253
+    (-52) v287 = LoadReg <uint64> v284 : CX
+    (-52) v156 = LoadReg <uint64> v288 : DX
+    (-52) v274 = ADCQ <uint64,flags> v287 v156 v261 : <CX,nil>
+    (-52) v282 = Select1 <flags> v274
+    (-53) v166 = LoadReg <uint64> v163 : CX
+    (-53) v178 = LoadReg <uint64> v175 : DX
+    (-53) v285 = ADCQ <uint64,flags> v166 v178 v282 : <CX,nil>
+    (-53) v184 = Select1 <flags> v285
+    (-54) v181 = LoadReg <uint64> v219 : CX
+    (-54) v187 = LoadReg <uint64> v224 : DX
+    (-54) v193 = ADCQ <uint64,flags> v181 v187 v184 : <CX,nil>
+    (-54) v66 = Select1 <flags> v193
+    (-55) v190 = LoadReg <uint64> v227 : CX
+    (-55) v200 = LoadReg <uint64> v231 : DX
+    (-55) v82 = ADCQ <uint64,flags> v190 v200 v66 : <CX,nil>
+    (-55) v136 = Select1 <flags> v82
+    (63) v218 = ADCQconst <uint64,flags> [0] v151 v136 : <AX,nil>
+    (63) v199 = Select0 <uint64> v218 : AX
+    (63) v202 = MOVQstore <mem> {.autotmp_77} [112] v2 v199 v198
+    (-63) v22 = LoadReg <*[15]uint64> v203 : AX
+    (-63) v32 = LEAQ <*[15]uint64> {.autotmp_77} v2 : CX
+    (63) v205 = LoweredMove <mem> [120] v22 v32 v202
+    (+64) v206 = MakeResult <mem> v205
+    Ret v206
+name out[*[15]uint64]: [v7]
+name a[*[14]uint64]: [v8]
+name b[*[14]uint64]: [v9]
+name y0[uint64]: [v20]
+name y1[uint64]: [v30]
+name y2[uint64]: [v40]
+name y3[uint64]: [v50]
+name y4[uint64]: [v60]
+name y5[uint64]: [v70]
+name y6[uint64]: [v80]
+name x0[uint64]: [v90]
+name ca[uint64]: [v151]
+name x1[uint64]: [v100]
+name x2[uint64]: [v110]
+name x3[uint64]: [v120]
+name x4[uint64]: [v130]
+name x5[uint64]: [v140]
+name x6[uint64]: [v150]

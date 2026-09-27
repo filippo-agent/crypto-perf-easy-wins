@@ -1,0 +1,188 @@
+DependentBA func(*[15]uint64, *[14]uint64, *[14]uint64)
+  b1:
+    (?) v1 = InitMem <mem>
+    (?) v2 = SP <uintptr>
+    (-105) v7 = Arg <*[15]uint64> {out} (out[*[15]uint64])
+    (-105) v8 = Arg <*[14]uint64> {a} (a[*[14]uint64])
+    (-105) v9 = Arg <*[14]uint64> {b} (b[*[14]uint64])
+    (+106) v10 = NilCheck <*[14]uint64> v8 v1
+    (106) v15 = NilCheck <*[14]uint64> v9 v1
+    (?) v18 = Const64 <uint64> [0]
+    (+107) v22 = NilCheck <*[14]uint64> v8 v1
+    (107) v26 = NilCheck <*[14]uint64> v9 v1
+    (+108) v32 = NilCheck <*[14]uint64> v8 v1
+    (108) v36 = NilCheck <*[14]uint64> v9 v1
+    (+109) v42 = NilCheck <*[14]uint64> v8 v1
+    (109) v44 = OffPtr <*uint64> [24] v42
+    (109) v45 = Load <uint64> v44 v1
+    (109) v46 = NilCheck <*[14]uint64> v9 v1
+    (+110) v52 = NilCheck <*[14]uint64> v8 v1
+    (110) v54 = OffPtr <*uint64> [32] v42
+    (110) v55 = Load <uint64> v54 v1
+    (110) v56 = NilCheck <*[14]uint64> v9 v1
+    (+111) v62 = NilCheck <*[14]uint64> v8 v1
+    (111) v64 = OffPtr <*uint64> [40] v42
+    (111) v65 = Load <uint64> v64 v1
+    (111) v66 = NilCheck <*[14]uint64> v9 v1
+    (+112) v72 = NilCheck <*[14]uint64> v8 v1
+    (112) v74 = OffPtr <*uint64> [48] v42
+    (112) v75 = Load <uint64> v74 v1
+    (112) v76 = NilCheck <*[14]uint64> v9 v1
+    (112) v77 = OffPtr <*uint64> [48] v76
+    (112) v78 = Load <uint64> v77 v1
+    (+113) v82 = NilCheck <*[14]uint64> v8 v1
+    (113) v84 = OffPtr <*uint64> [56] v42
+    (113) v85 = Load <uint64> v84 v1
+    (+114) v89 = NilCheck <*[14]uint64> v8 v1
+    (114) v91 = OffPtr <*uint64> [64] v42
+    (114) v92 = Load <uint64> v91 v1
+    (114) v93 = NilCheck <*[14]uint64> v9 v1
+    (114) v94 = OffPtr <*uint64> [64] v76
+    (114) v95 = Load <uint64> v94 v1
+    (+115) v99 = NilCheck <*[14]uint64> v8 v1
+    (115) v101 = OffPtr <*uint64> [72] v42
+    (115) v102 = Load <uint64> v101 v1
+    (115) v103 = NilCheck <*[14]uint64> v9 v1
+    (115) v104 = OffPtr <*uint64> [72] v76
+    (115) v105 = Load <uint64> v104 v1
+    (+116) v109 = NilCheck <*[14]uint64> v8 v1
+    (116) v111 = OffPtr <*uint64> [80] v42
+    (116) v112 = Load <uint64> v111 v1
+    (116) v113 = NilCheck <*[14]uint64> v9 v1
+    (116) v114 = OffPtr <*uint64> [80] v76
+    (116) v115 = Load <uint64> v114 v1
+    (+117) v119 = NilCheck <*[14]uint64> v8 v1
+    (117) v121 = OffPtr <*uint64> [88] v42
+    (117) v122 = Load <uint64> v121 v1
+    (117) v123 = NilCheck <*[14]uint64> v9 v1
+    (117) v124 = OffPtr <*uint64> [88] v76
+    (117) v125 = Load <uint64> v124 v1
+    (+118) v129 = NilCheck <*[14]uint64> v8 v1
+    (118) v131 = OffPtr <*uint64> [96] v42
+    (118) v132 = Load <uint64> v131 v1
+    (118) v133 = NilCheck <*[14]uint64> v9 v1
+    (118) v134 = OffPtr <*uint64> [96] v76
+    (118) v135 = Load <uint64> v134 v1
+    (+119) v139 = NilCheck <*[14]uint64> v8 v1
+    (119) v141 = OffPtr <*uint64> [104] v42
+    (119) v142 = Load <uint64> v141 v1
+    (119) v143 = NilCheck <*[14]uint64> v9 v1
+    (119) v144 = OffPtr <*uint64> [104] v76
+    (119) v145 = Load <uint64> v144 v1
+    (-120) v150 = VarDef <mem> {.autotmp_76} v1
+    (-120) v151 = LocalAddr <*[15]uint64> {.autotmp_76} v2 v150
+    (+120) v152 = Zero <mem> {[15]uint64} [120] v151 v150
+    (120) v155 = OffPtr <*uint64> [0] v151
+    (120) v158 = OffPtr <*uint64> [8] v151
+    (120) v161 = OffPtr <*uint64> [16] v151
+    (120) v164 = OffPtr <*uint64> [24] v151
+    (120) v167 = OffPtr <*uint64> [32] v151
+    (120) v170 = OffPtr <*uint64> [40] v151
+    (120) v173 = OffPtr <*uint64> [48] v151
+    (120) v176 = OffPtr <*uint64> [56] v151
+    (120) v179 = OffPtr <*uint64> [64] v151
+    (120) v182 = OffPtr <*uint64> [72] v151
+    (120) v185 = OffPtr <*uint64> [80] v151
+    (120) v188 = OffPtr <*uint64> [88] v151
+    (120) v191 = OffPtr <*uint64> [96] v151
+    (120) v194 = OffPtr <*uint64> [104] v151
+    (120) v198 = OffPtr <*uint64> [112] v151
+    (106) v13 = OffPtr <*uint64> [0] v42
+    (106) v14 = Load <uint64> v13 v1
+    (106) v16 = OffPtr <*uint64> [0] v76
+    (106) v17 = Load <uint64> v16 v1
+    (106) v19 = Add64carry <uint64,uint64> v17 v14 v18
+    (106) v20 = Select0 <uint64> v19 (x0[uint64])
+    (106) v21 = Select1 <uint64> v19 (ca[uint64])
+    (107) v24 = OffPtr <*uint64> [8] v42
+    (107) v25 = Load <uint64> v24 v1
+    (107) v27 = OffPtr <*uint64> [8] v76
+    (107) v28 = Load <uint64> v27 v1
+    (107) v29 = Add64carry <uint64,uint64> v28 v25 v21
+    (107) v30 = Select0 <uint64> v29 (x1[uint64])
+    (107) v31 = Select1 <uint64> v29 (ca[uint64])
+    (108) v34 = OffPtr <*uint64> [16] v42
+    (108) v35 = Load <uint64> v34 v1
+    (108) v37 = OffPtr <*uint64> [16] v76
+    (108) v38 = Load <uint64> v37 v1
+    (108) v39 = Add64carry <uint64,uint64> v38 v35 v31
+    (108) v40 = Select0 <uint64> v39 (x2[uint64])
+    (108) v41 = Select1 <uint64> v39 (ca[uint64])
+    (109) v47 = OffPtr <*uint64> [24] v76
+    (109) v48 = Load <uint64> v47 v1
+    (109) v49 = Add64carry <uint64,uint64> v48 v45 v41
+    (109) v50 = Select0 <uint64> v49 (x3[uint64])
+    (109) v51 = Select1 <uint64> v49 (ca[uint64])
+    (110) v57 = OffPtr <*uint64> [32] v76
+    (110) v58 = Load <uint64> v57 v1
+    (110) v59 = Add64carry <uint64,uint64> v58 v55 v51
+    (110) v60 = Select0 <uint64> v59 (x4[uint64])
+    (110) v61 = Select1 <uint64> v59 (ca[uint64])
+    (111) v67 = OffPtr <*uint64> [40] v76
+    (111) v68 = Load <uint64> v67 v1
+    (111) v69 = Add64carry <uint64,uint64> v68 v65 v61
+    (111) v70 = Select0 <uint64> v69 (x5[uint64])
+    (111) v71 = Select1 <uint64> v69 (ca[uint64])
+    (112) v79 = Add64carry <uint64,uint64> v78 v75 v71
+    (112) v80 = Select0 <uint64> v79 (x6[uint64])
+    (112) v81 = Select1 <uint64> v79 (ca[uint64])
+    (113) v86 = Add64carry <uint64,uint64> v85 v80 v18
+    (113) v87 = Select0 <uint64> v86 (y0[uint64])
+    (113) v88 = Select1 <uint64> v86 (cb[uint64])
+    (114) v96 = Add64carry <uint64,uint64> v92 v95 v88
+    (114) v97 = Select0 <uint64> v96 (y1[uint64])
+    (114) v98 = Select1 <uint64> v96 (cb[uint64])
+    (115) v106 = Add64carry <uint64,uint64> v102 v105 v98
+    (115) v107 = Select0 <uint64> v106 (y2[uint64])
+    (115) v108 = Select1 <uint64> v106 (cb[uint64])
+    (116) v116 = Add64carry <uint64,uint64> v112 v115 v108
+    (116) v117 = Select0 <uint64> v116 (y3[uint64])
+    (116) v118 = Select1 <uint64> v116 (cb[uint64])
+    (117) v126 = Add64carry <uint64,uint64> v122 v125 v118
+    (117) v127 = Select0 <uint64> v126 (y4[uint64])
+    (117) v128 = Select1 <uint64> v126 (cb[uint64])
+    (118) v136 = Add64carry <uint64,uint64> v132 v135 v128
+    (118) v137 = Select0 <uint64> v136 (y5[uint64])
+    (118) v138 = Select1 <uint64> v136 (cb[uint64])
+    (119) v146 = Add64carry <uint64,uint64> v142 v145 v138
+    (119) v147 = Select0 <uint64> v146 (y6[uint64])
+    (119) v148 = Select1 <uint64> v146 (cb[uint64])
+    (120) v156 = Store <mem> {uint64} v155 v20 v152
+    (120) v159 = Store <mem> {uint64} v158 v30 v156
+    (120) v162 = Store <mem> {uint64} v161 v40 v159
+    (120) v165 = Store <mem> {uint64} v164 v50 v162
+    (120) v168 = Store <mem> {uint64} v167 v60 v165
+    (120) v171 = Store <mem> {uint64} v170 v70 v168
+    (120) v174 = Store <mem> {uint64} v173 v80 v171
+    (120) v177 = Store <mem> {uint64} v176 v87 v174
+    (120) v180 = Store <mem> {uint64} v179 v97 v177
+    (120) v183 = Store <mem> {uint64} v182 v107 v180
+    (120) v186 = Store <mem> {uint64} v185 v117 v183
+    (120) v189 = Store <mem> {uint64} v188 v127 v186
+    (120) v192 = Store <mem> {uint64} v191 v137 v189
+    (120) v195 = Store <mem> {uint64} v194 v147 v192
+    (120) v196 = Add64 <uint64> v148 v81
+    (120) v199 = Store <mem> {uint64} v198 v196 v195
+    (120) v201 = NilCheck <*[15]uint64> v7 v199
+    (120) v202 = Move <mem> {[15]uint64} [120] v201 v151 v199
+    (+121) v203 = MakeResult <mem> v202
+    Ret v203
+name out[*[15]uint64]: [v7]
+name a[*[14]uint64]: [v8]
+name b[*[14]uint64]: [v9]
+name x0[uint64]: [v20]
+name ca[uint64]: [v21 v31 v41 v51 v61 v71 v81]
+name x1[uint64]: [v30]
+name x2[uint64]: [v40]
+name x3[uint64]: [v50]
+name x4[uint64]: [v60]
+name x5[uint64]: [v70]
+name x6[uint64]: [v80]
+name y0[uint64]: [v87]
+name cb[uint64]: [v88 v98 v108 v118 v128 v138 v148]
+name y1[uint64]: [v97]
+name y2[uint64]: [v107]
+name y3[uint64]: [v117]
+name y4[uint64]: [v127]
+name y5[uint64]: [v137]
+name y6[uint64]: [v147]

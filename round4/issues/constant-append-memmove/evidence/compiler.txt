@@ -1,0 +1,364 @@
+# example.com/constantappend [example.com/constantappend.test]
+./repro.go:6:6: cannot inline Append32: marked go:noinline
+./repro.go:11:6: cannot inline Append28: marked go:noinline
+./repro.go:18:6: cannot inline Local32: marked go:noinline
+./repro.go:26:6: cannot inline Array32: marked go:noinline
+./repro.go:37:6: cannot inline Scalar32: marked go:noinline
+./repro.go:48:6: cannot inline Copy32: marked go:noinline
+./repro_test.go:12:6: cannot inline TestAppends: function too complex: cost 428 exceeds budget 80
+./repro_test.go:38:6: cannot inline TestCopyOverlap: function too complex: cost 192 exceeds budget 80
+./repro_test.go:51:6: cannot inline BenchmarkPublicWarmHMAC: function too complex: cost 434 exceeds budget 80
+./repro_test.go:31:20: inlining call to bytes.Equal
+./repro_test.go:57:16: inlining call to testing.(*B).ReportAllocs
+./repro.go:7:15: append(in, p[:]...) escapes to heap in Append32:
+./repro.go:7:15:   flow: ~r0 ← &{storage for append(in, p[:]...)}:
+./repro.go:7:15:     from append(in, p[:]...) (spill) at ./repro.go:7:15
+./repro.go:7:15:     from return append(in, p[:]...) (return) at ./repro.go:7:2
+./repro.go:6:15: parameter in leaks to ~r0 for Append32 with derefs=0:
+./repro.go:6:15:   flow: {temp} ← in:
+./repro.go:6:15:     from append(in, p[:]...) (call parameter) at ./repro.go:7:15
+./repro.go:6:15:   flow: ~r0 ← {temp}:
+./repro.go:6:15:     from return append(in, p[:]...) (return) at ./repro.go:7:2
+./repro.go:6:15: leaking param: in to result ~r0 level=0
+./repro.go:6:26: p does not escape
+./repro.go:7:15: append escapes to heap
+./repro.go:12:15: append(in, p[:28]...) escapes to heap in Append28:
+./repro.go:12:15:   flow: ~r0 ← &{storage for append(in, p[:28]...)}:
+./repro.go:12:15:     from append(in, p[:28]...) (spill) at ./repro.go:12:15
+./repro.go:12:15:     from return append(in, p[:28]...) (return) at ./repro.go:12:2
+./repro.go:11:15: parameter in leaks to ~r0 for Append28 with derefs=0:
+./repro.go:11:15:   flow: {temp} ← in:
+./repro.go:11:15:     from append(in, p[:28]...) (call parameter) at ./repro.go:12:15
+./repro.go:11:15:   flow: ~r0 ← {temp}:
+./repro.go:11:15:     from return append(in, p[:28]...) (return) at ./repro.go:12:2
+./repro.go:11:15: leaking param: in to result ~r0 level=0
+./repro.go:11:26: p does not escape
+./repro.go:12:15: append escapes to heap
+./repro.go:20:15: append(in, local[:]...) escapes to heap in Local32:
+./repro.go:20:15:   flow: ~r0 ← &{storage for append(in, local[:]...)}:
+./repro.go:20:15:     from append(in, local[:]...) (spill) at ./repro.go:20:15
+./repro.go:20:15:     from return append(in, local[:]...) (return) at ./repro.go:20:2
+./repro.go:18:14: parameter in leaks to ~r0 for Local32 with derefs=0:
+./repro.go:18:14:   flow: {temp} ← in:
+./repro.go:18:14:     from append(in, local[:]...) (call parameter) at ./repro.go:20:15
+./repro.go:18:14:   flow: ~r0 ← {temp}:
+./repro.go:18:14:     from return append(in, local[:]...) (return) at ./repro.go:20:2
+./repro.go:18:14: leaking param: in to result ~r0 level=0
+./repro.go:18:25: p does not escape
+./repro.go:20:15: append escapes to heap
+./repro.go:26:14: parameter in leaks to ~r0 for Array32 with derefs=0:
+./repro.go:26:14:   flow: ~r0 ← in:
+./repro.go:26:14:     from return in (return) at ./repro.go:31:2
+./repro.go:29:13: append(in, make([]byte, 32)...) escapes to heap in Array32:
+./repro.go:29:13:   flow: in ← &{storage for append(in, make([]byte, 32)...)}:
+./repro.go:29:13:     from append(in, make([]byte, 32)...) (spill) at ./repro.go:29:13
+./repro.go:29:13:     from in = append(in, make([]byte, 32)...) (assign) at ./repro.go:29:5
+./repro.go:29:13:   flow: ~r0 ← in:
+./repro.go:29:13:     from return in (return) at ./repro.go:31:2
+./repro.go:26:14: leaking param: in to result ~r0 level=0
+./repro.go:26:25: p does not escape
+./repro.go:29:22: make([]byte, 32) does not escape
+./repro.go:29:13: append escapes to heap
+./repro.go:38:15: append(in, p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10], p[11], p[12], p[13], p[14], p[15], p[16], p[17], p[18], p[19], p[20], p[21], p[22], p[23], p[24], p[25], p[26], p[27], p[28], p[29], p[30], p[31]) escapes to heap in Scalar32:
+./repro.go:38:15:   flow: ~r0 ← &{storage for append(in, p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10], p[11], p[12], p[13], p[14], p[15], p[16], p[17], p[18], p[19], p[20], p[21], p[22], p[23], p[24], p[25], p[26], p[27], p[28], p[29], p[30], p[31])}:
+./repro.go:38:15:     from append(in, p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10], p[11], p[12], p[13], p[14], p[15], p[16], p[17], p[18], p[19], p[20], p[21], p[22], p[23], p[24], p[25], p[26], p[27], p[28], p[29], p[30], p[31]) (spill) at ./repro.go:38:15
+./repro.go:38:15:     from return append(in, p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10], p[11], p[12], p[13], p[14], p[15], p[16], p[17], p[18], p[19], p[20], p[21], p[22], p[23], p[24], p[25], p[26], p[27], p[28], p[29], p[30], p[31]) (return) at ./repro.go:38:2
+./repro.go:37:15: parameter in leaks to ~r0 for Scalar32 with derefs=0:
+./repro.go:37:15:   flow: {temp} ← in:
+./repro.go:37:15:     from append(in, p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10], p[11], p[12], p[13], p[14], p[15], p[16], p[17], p[18], p[19], p[20], p[21], p[22], p[23], p[24], p[25], p[26], p[27], p[28], p[29], p[30], p[31]) (call parameter) at ./repro.go:38:15
+./repro.go:37:15:   flow: ~r0 ← {temp}:
+./repro.go:37:15:     from return append(in, p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10], p[11], p[12], p[13], p[14], p[15], p[16], p[17], p[18], p[19], p[20], p[21], p[22], p[23], p[24], p[25], p[26], p[27], p[28], p[29], p[30], p[31]) (return) at ./repro.go:38:2
+./repro.go:37:15: leaking param: in to result ~r0 level=0
+./repro.go:37:26: p does not escape
+./repro.go:38:15: append escapes to heap
+./repro.go:48:13: dst does not escape
+./repro.go:48:18: src does not escape
+./repro_test.go:34:26: new([32]byte) escapes to heap in TestAppends:
+./repro_test.go:34:26:   flow: {heap} ← &{storage for new([32]byte)}:
+./repro_test.go:34:26:     from new([32]byte) (spill) at ./repro_test.go:34:26
+./repro_test.go:34:26:     from v.fn(nil, new([32]byte)) (call parameter) at ./repro_test.go:34:17
+./repro_test.go:12:18: parameter t leaks to {heap} for TestAppends with derefs=0:
+./repro_test.go:12:18:   flow: {heap} ← t:
+./repro_test.go:12:18:     from t.common (dot of pointer) at ./repro_test.go:31:35
+./repro_test.go:12:18:     from t.common (address-of) at ./repro_test.go:31:35
+./repro_test.go:12:18:     from (*testing.common).Fatalf(t.common, "%s cap=%d at=%d", ... argument...) (call parameter) at ./repro_test.go:31:42
+./repro_test.go:21:9: backing escapes to heap in TestAppends:
+./repro_test.go:21:9:   flow: in ← &backing:
+./repro_test.go:21:9:     from backing (address-of) at ./repro_test.go:26:18
+./repro_test.go:21:9:     from backing[:length:capacity] (slice) at ./repro_test.go:26:18
+./repro_test.go:21:9:     from in := backing[:length:capacity] (assign) at ./repro_test.go:26:8
+./repro_test.go:21:9:   flow: {heap} ← in:
+./repro_test.go:21:9:     from v.fn(in, p) (call parameter) at ./repro_test.go:30:16
+./repro_test.go:31:63: v.name escapes to heap in TestAppends:
+./repro_test.go:31:63:   flow: {storage for ... argument} ← &{storage for v.name}:
+./repro_test.go:31:63:     from v.name (spill) at ./repro_test.go:31:63
+./repro_test.go:31:63:     from ... argument (slice-literal-element) at ./repro_test.go:31:42
+./repro_test.go:31:63:   flow: {heap} ← {storage for ... argument}:
+./repro_test.go:31:63:     from ... argument (spill) at ./repro_test.go:31:42
+./repro_test.go:31:63:     from (*testing.common).Fatalf(t.common, "%s cap=%d at=%d", ... argument...) (call parameter) at ./repro_test.go:31:42
+./repro_test.go:31:70: capacity escapes to heap in TestAppends:
+./repro_test.go:31:70:   flow: {storage for ... argument} ← &{storage for capacity}:
+./repro_test.go:31:70:     from capacity (spill) at ./repro_test.go:31:70
+./repro_test.go:31:70:     from ... argument (slice-literal-element) at ./repro_test.go:31:42
+./repro_test.go:31:70:   flow: {heap} ← {storage for ... argument}:
+./repro_test.go:31:70:     from ... argument (spill) at ./repro_test.go:31:42
+./repro_test.go:31:70:     from (*testing.common).Fatalf(t.common, "%s cap=%d at=%d", ... argument...) (call parameter) at ./repro_test.go:31:42
+./repro_test.go:31:80: sourceAt escapes to heap in TestAppends:
+./repro_test.go:31:80:   flow: {storage for ... argument} ← &{storage for sourceAt}:
+./repro_test.go:31:80:     from sourceAt (spill) at ./repro_test.go:31:80
+./repro_test.go:31:80:     from ... argument (slice-literal-element) at ./repro_test.go:31:42
+./repro_test.go:31:80:   flow: {heap} ← {storage for ... argument}:
+./repro_test.go:31:80:     from ... argument (spill) at ./repro_test.go:31:42
+./repro_test.go:31:80:     from (*testing.common).Fatalf(t.common, "%s cap=%d at=%d", ... argument...) (call parameter) at ./repro_test.go:31:42
+./repro_test.go:34:66: v.name escapes to heap in TestAppends:
+./repro_test.go:34:66:   flow: {storage for ... argument} ← &{storage for v.name}:
+./repro_test.go:34:66:     from v.name (spill) at ./repro_test.go:34:66
+./repro_test.go:34:66:     from ... argument (slice-literal-element) at ./repro_test.go:34:64
+./repro_test.go:34:66:   flow: {heap} ← {storage for ... argument}:
+./repro_test.go:34:66:     from ... argument (spill) at ./repro_test.go:34:64
+./repro_test.go:34:66:     from (*testing.common).Fatal(t.common, ... argument...) (call parameter) at ./repro_test.go:34:64
+./repro_test.go:12:18: leaking param: t
+./repro_test.go:21:9: moved to heap: backing
+./repro_test.go:17:3: []struct { name string; fn func([]byte, *[32]byte) []byte; n int }{...} does not escape
+./repro_test.go:19:33: []int{...} does not escape
+./repro_test.go:20:34: []int{...} does not escape
+./repro_test.go:27:17: make([]byte, length + v.n) does not escape
+./repro_test.go:31:20: string(bytes.a) does not escape
+./repro_test.go:31:20: string(bytes.b) does not escape
+./repro_test.go:31:42: ... argument does not escape
+./repro_test.go:31:63: v.name escapes to heap
+./repro_test.go:31:70: capacity escapes to heap
+./repro_test.go:31:80: sourceAt escapes to heap
+./repro_test.go:34:26: new([32]byte) escapes to heap
+./repro_test.go:34:64: ... argument does not escape
+./repro_test.go:34:66: v.name escapes to heap
+./repro_test.go:38:22: parameter t leaks to {heap} for TestCopyOverlap with derefs=0:
+./repro_test.go:38:22:   flow: {heap} ← t:
+./repro_test.go:38:22:     from t.common (dot of pointer) at ./repro_test.go:44:55
+./repro_test.go:38:22:     from t.common (address-of) at ./repro_test.go:44:55
+./repro_test.go:38:22:     from (*testing.common).Fatal(t.common, ... argument...) (call parameter) at ./repro_test.go:44:61
+./repro_test.go:44:62: delta escapes to heap in TestCopyOverlap:
+./repro_test.go:44:62:   flow: {storage for ... argument} ← &{storage for delta}:
+./repro_test.go:44:62:     from delta (spill) at ./repro_test.go:44:62
+./repro_test.go:44:62:     from ... argument (slice-literal-element) at ./repro_test.go:44:61
+./repro_test.go:44:62:   flow: {heap} ← {storage for ... argument}:
+./repro_test.go:44:62:     from ... argument (spill) at ./repro_test.go:44:61
+./repro_test.go:44:62:     from (*testing.common).Fatal(t.common, ... argument...) (call parameter) at ./repro_test.go:44:61
+./repro_test.go:38:22: leaking param: t
+./repro_test.go:39:29: []int{...} does not escape
+./repro_test.go:44:61: ... argument does not escape
+./repro_test.go:44:62: delta escapes to heap
+./repro_test.go:52:18: make([]byte, 32) escapes to heap in BenchmarkPublicWarmHMAC:
+./repro_test.go:52:18:   flow: key ← &{storage for make([]byte, 32)}:
+./repro_test.go:52:18:     from make([]byte, 32) (spill) at ./repro_test.go:52:18
+./repro_test.go:52:18:     from key, msg := make([]byte, 32), make([]byte, 32) (assign-pair) at ./repro_test.go:52:11
+./repro_test.go:52:18:   flow: {heap} ← key:
+./repro_test.go:52:18:     from hmac.New(sha256.New, key) (call parameter) at ./repro_test.go:54:15
+./repro_test.go:52:36: make([]byte, 32) escapes to heap in BenchmarkPublicWarmHMAC:
+./repro_test.go:52:36:   flow: msg ← &{storage for make([]byte, 32)}:
+./repro_test.go:52:36:     from make([]byte, 32) (spill) at ./repro_test.go:52:36
+./repro_test.go:52:36:     from key, msg := make([]byte, 32), make([]byte, 32) (assign-pair) at ./repro_test.go:52:11
+./repro_test.go:52:36:   flow: {heap} ← msg:
+./repro_test.go:52:36:     from h.Write(msg) (call parameter) at ./repro_test.go:61:10
+./repro_test.go:56:13: make([]byte, 0, 32) escapes to heap in BenchmarkPublicWarmHMAC:
+./repro_test.go:56:13:   flow: out ← &{storage for make([]byte, 0, 32)}:
+./repro_test.go:56:13:     from make([]byte, 0, 32) (spill) at ./repro_test.go:56:13
+./repro_test.go:56:13:     from out := make([]byte, 0, 32) (assign) at ./repro_test.go:56:6
+./repro_test.go:56:13:   flow: {heap} ← out:
+./repro_test.go:56:13:     from out[:0] (slice) at ./repro_test.go:62:18
+./repro_test.go:56:13:     from h.Sum(out[:0]) (call parameter) at ./repro_test.go:62:14
+./repro_test.go:51:30: b does not escape
+./repro_test.go:52:18: make([]byte, 32) escapes to heap
+./repro_test.go:52:36: make([]byte, 32) escapes to heap
+./repro_test.go:56:13: make([]byte, 0, 32) escapes to heap
+./repro_test.go:23:29: Found IsSliceInBounds
+./repro_test.go:23:29: Found IsSliceInBounds
+./repro_test.go:26:18: Found IsSliceInBounds
+./repro_test.go:26:18: Found IsSliceInBounds
+./repro_test.go:29:14: Found IsSliceInBounds
+./repro_test.go:29:26: Found IsSliceInBounds
+./repro_test.go:43:23: Found IsSliceInBounds
+./repro_test.go:43:23: Found IsSliceInBounds
+./repro_test.go:44:16: Found IsSliceInBounds
+./repro_test.go:44:16: Found IsSliceInBounds
+./repro.go:30:17: Found IsSliceInBounds
+./repro.go:30:17: Found IsSliceInBounds
+# example.com/constantappend.test
+_testmain.go:41:6: can inline init.0 with cost 6 as: func() { testdeps.ModulePath = "example.com/constantappend"; testdeps.ImportPath = "example.com/constantappend" }
+_testmain.go:47:6: cannot inline main: function too complex: cost 187 exceeds budget 80
+<autogenerated>:1: inlining call to reflect.flag.kind
+<autogenerated>:1: inlining call to reflect.flag.kind
+<autogenerated>:1: inlining call to reflect.flag.mustBe
+<autogenerated>:1: inlining call to reflect.flag.kind
+<autogenerated>:1: inlining call to reflect.flag.mustBe
+<autogenerated>:1: inlining call to reflect.flag.kind
+<autogenerated>:1: inlining call to reflect.flag.mustBeAssignable
+<autogenerated>:1: inlining call to reflect.flag.mustBeAssignable
+<autogenerated>:1: inlining call to reflect.flag.mustBeExported
+<autogenerated>:1: inlining call to reflect.flag.mustBeExported
+<autogenerated>:1: inlining call to reflect.flag.ro
+<autogenerated>:1: inlining call to reflect.flag.ro
+_testmain.go:48:42: testdeps.TestDeps{} escapes to heap in main:
+_testmain.go:48:42:   flow: {heap} ← &{storage for testdeps.TestDeps{}}:
+_testmain.go:48:42:     from testdeps.TestDeps{} (spill) at _testmain.go:48:42
+_testmain.go:48:42:     from testing.MainStart(testdeps.TestDeps{}, tests, benchmarks, fuzzTargets, examples) (call parameter) at _testmain.go:48:24
+_testmain.go:48:42: testdeps.TestDeps{} escapes to heap
+<autogenerated>:1: &reflect.ValueError{...} escapes to heap in struct { reflect.typ_ *internal/abi.Type; reflect.ptr unsafe.Pointer; reflect.flag }.reflect.mustBe:
+<autogenerated>:1:   flow: {heap} ← &{storage for &reflect.ValueError{...}}:
+<autogenerated>:1:     from &reflect.ValueError{...} (spill) at <autogenerated>:1
+<autogenerated>:1:     from &reflect.ValueError{...} (interface-converted) at <autogenerated>:1
+<autogenerated>:1:     from panic(&reflect.ValueError{...}) (call parameter) at <autogenerated>:1
+<autogenerated>:1: &reflect.ValueError{...} escapes to heap
+<autogenerated>:1: &reflect.ValueError{...} escapes to heap in .embed.1.16.reflect.flag.mustBe:
+<autogenerated>:1:   flow: {heap} ← &{storage for &reflect.ValueError{...}}:
+<autogenerated>:1:     from &reflect.ValueError{...} (spill) at <autogenerated>:1
+<autogenerated>:1:     from &reflect.ValueError{...} (interface-converted) at <autogenerated>:1
+<autogenerated>:1:     from panic(&reflect.ValueError{...}) (call parameter) at <autogenerated>:1
+<autogenerated>:1: &reflect.ValueError{...} escapes to heap
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Align with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Align() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.AssignableTo with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.AssignableTo(reflect.u) (call parameter) at <autogenerated>:1
+/home/exedev/go-crypto/src/reflect/type.go:122:15: parameter reflect.u leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.AssignableTo with derefs=0:
+/home/exedev/go-crypto/src/reflect/type.go:122:15:   flow: {heap} ← reflect.u:
+/home/exedev/go-crypto/src/reflect/type.go:122:15:     from go.shape.~p0.AssignableTo(reflect.u) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Bits with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Bits() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.CanSeq with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.CanSeq() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.CanSeq2 with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.CanSeq2() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.ChanDir with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.ChanDir() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Comparable with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Comparable() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.ConvertibleTo with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.ConvertibleTo(reflect.u) (call parameter) at <autogenerated>:1
+/home/exedev/go-crypto/src/reflect/type.go:128:16: parameter reflect.u leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.ConvertibleTo with derefs=0:
+/home/exedev/go-crypto/src/reflect/type.go:128:16:   flow: {heap} ← reflect.u:
+/home/exedev/go-crypto/src/reflect/type.go:128:16:     from go.shape.~p0.ConvertibleTo(reflect.u) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Elem with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Elem() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Field with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Field(reflect.i) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.FieldAlign with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.FieldAlign() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.FieldByIndex with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.FieldByIndex(reflect.index) (call parameter) at <autogenerated>:1
+/home/exedev/go-crypto/src/reflect/type.go:189:15: parameter reflect.index leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.FieldByIndex with derefs=0:
+/home/exedev/go-crypto/src/reflect/type.go:189:15:   flow: {heap} ← reflect.index:
+/home/exedev/go-crypto/src/reflect/type.go:189:15:     from go.shape.~p0.FieldByIndex(reflect.index) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.FieldByName with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.FieldByName(reflect.name) (call parameter) at <autogenerated>:1
+/home/exedev/go-crypto/src/reflect/type.go:196:14: parameter reflect.name leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.FieldByName with derefs=0:
+/home/exedev/go-crypto/src/reflect/type.go:196:14:   flow: {heap} ← reflect.name:
+/home/exedev/go-crypto/src/reflect/type.go:196:14:     from go.shape.~p0.FieldByName(reflect.name) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.FieldByNameFunc with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.FieldByNameFunc(reflect.match) (call parameter) at <autogenerated>:1
+/home/exedev/go-crypto/src/reflect/type.go:214:18: parameter reflect.match leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.FieldByNameFunc with derefs=0:
+/home/exedev/go-crypto/src/reflect/type.go:214:18:   flow: {heap} ← reflect.match:
+/home/exedev/go-crypto/src/reflect/type.go:214:18:     from go.shape.~p0.FieldByNameFunc(reflect.match) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Fields with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Fields() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Implements with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Implements(reflect.u) (call parameter) at <autogenerated>:1
+/home/exedev/go-crypto/src/reflect/type.go:119:13: parameter reflect.u leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Implements with derefs=0:
+/home/exedev/go-crypto/src/reflect/type.go:119:13:   flow: {heap} ← reflect.u:
+/home/exedev/go-crypto/src/reflect/type.go:119:13:     from go.shape.~p0.Implements(reflect.u) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.In with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.In(reflect.i) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Ins with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Ins() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.IsVariadic with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.IsVariadic() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Key with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Key() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Kind with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Kind() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Len with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Len() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Method with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Method(go.shape.~p1) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.MethodByName with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.MethodByName(go.shape.~p1) (call parameter) at <autogenerated>:1
+/home/exedev/go-crypto/src/reflect/type.go:84:15: parameter go.shape.~p1 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.MethodByName with derefs=0:
+/home/exedev/go-crypto/src/reflect/type.go:84:15:   flow: {heap} ← go.shape.~p1:
+/home/exedev/go-crypto/src/reflect/type.go:84:15:     from go.shape.~p0.MethodByName(go.shape.~p1) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Methods with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Methods() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Name with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Name() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.NumField with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.NumField() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.NumIn with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.NumIn() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.NumMethod with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.NumMethod() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.NumOut with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.NumOut() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Out with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Out(reflect.i) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Outs with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Outs() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.OverflowComplex with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.OverflowComplex(reflect.x) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.OverflowFloat with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.OverflowFloat(reflect.x) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.OverflowInt with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.OverflowInt(reflect.x) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.OverflowUint with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.OverflowUint(reflect.x) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.PkgPath with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.PkgPath() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.Size with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.Size() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.String with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.String() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.reflect.common with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.common() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter go.shape.~p0 leaks to {heap} for 5614d73739c4cb953979c5b476501cda147b86386834ff88f636587787e0f1e9.reflect.uncommon with derefs=0:
+<autogenerated>:1:   flow: {heap} ← go.shape.~p0:
+<autogenerated>:1:     from go.shape.~p0.uncommon() (call parameter) at <autogenerated>:1
+testing: warning: no tests to run
+PASS
+ok  	example.com/constantappend	0.001s

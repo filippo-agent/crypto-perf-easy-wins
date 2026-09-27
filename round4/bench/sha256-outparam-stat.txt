@@ -1,0 +1,25 @@
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+                          │ /home/exedev/crypto-audit/round4/bench/sha256-outparam-old.txt │ /home/exedev/crypto-audit/round4/bench/sha256-outparam-new.txt │
+                          │                             sec/op                             │                 sec/op                   vs base               │
+AuditPublicSHA2/SHA256/32                                                      81.78n ± 5%                              76.79n ±  6%  -6.10% (p=0.017 n=12)
+AuditPublicSHA2/SHA512/32                                                      242.4n ± 5%                              228.9n ± 17%       ~ (p=0.117 n=12)
+geomean                                                                        140.8n                                   132.6n        -5.83%
+
+                          │ /home/exedev/crypto-audit/round4/bench/sha256-outparam-old.txt │ /home/exedev/crypto-audit/round4/bench/sha256-outparam-new.txt │
+                          │                              B/op                              │                 B/op                   vs base                 │
+AuditPublicSHA2/SHA256/32                                                     0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+AuditPublicSHA2/SHA512/32                                                     0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                  ²                                          +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                          │ /home/exedev/crypto-audit/round4/bench/sha256-outparam-old.txt │ /home/exedev/crypto-audit/round4/bench/sha256-outparam-new.txt │
+                          │                           allocs/op                            │               allocs/op                vs base                 │
+AuditPublicSHA2/SHA256/32                                                     0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+AuditPublicSHA2/SHA512/32                                                     0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                  ²                                          +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

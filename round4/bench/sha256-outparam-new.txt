@@ -1,0 +1,84 @@
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 2994372	        78.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1000000	       219.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3174675	        81.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1000000	       212.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3364540	        74.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1000000	       225.0 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3137419	        77.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1048597	       229.0 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3416671	        73.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1000000	       236.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3071386	        89.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	  737972	       273.1 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 2726558	        80.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1000000	       273.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3355885	        70.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1000000	       225.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3310627	        71.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1000000	       224.4 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3198811	        81.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1003540	       267.4 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3222114	        76.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1014655	       228.8 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/sha256
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditPublicSHA2/SHA256/32         	 3237013	        75.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAuditPublicSHA2/SHA512/32         	 1048017	       241.5 ns/op	       0 B/op	       0 allocs/op
+PASS

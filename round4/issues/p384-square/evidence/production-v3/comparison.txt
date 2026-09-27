@@ -1,0 +1,10 @@
+Mul reference: address=0x5f05a0; bytes through RET=4136; full symbol bytes=4176; morestack CALL offsets=[4151]; core SHA256=bdc720e5cbcee0bcab98089e38325fed4f4a1212e110daea75f556d090a85fea
+  repro-Mul: address=0x5ee6c0; CORE BYTE IDENTICAL=True; FULL BYTE IDENTICAL except morestack rel32=True; bytes=4176; CALL offsets=[4151]
+  ecdsa-mul-Mul: address=0x6182a0; CORE BYTE IDENTICAL=True; FULL BYTE IDENTICAL except morestack rel32=True; bytes=4176; CALL offsets=[4151]
+  ecdsa-square-Mul: address=0x6182a0; CORE BYTE IDENTICAL=True; FULL BYTE IDENTICAL except morestack rel32=True; bytes=4176; CALL offsets=[4151]
+  ecdh-mul-Mul: address=0x5f4920; CORE BYTE IDENTICAL=True; FULL BYTE IDENTICAL except morestack rel32=True; bytes=4176; CALL offsets=[4151]
+  ecdh-square-Mul: address=0x5f4920; CORE BYTE IDENTICAL=True; FULL BYTE IDENTICAL except morestack rel32=True; bytes=4176; CALL offsets=[4151]
+Square reference: address=0x5f1600; bytes through RET=3675; full symbol bytes=3705; morestack CALL offsets=[3685]; core SHA256=64d60e8abe9c980be1de746de0ee61e5033ad01c10cb6735e5576460e40f42e9
+  repro-Square: address=0x5ef720; CORE BYTE IDENTICAL=True; FULL BYTE IDENTICAL except morestack rel32=True; bytes=3705; CALL offsets=[3685]
+  ecdsa-square-Square: address=0x619300; CORE BYTE IDENTICAL=True; FULL BYTE IDENTICAL except morestack rel32=True; bytes=3705; CALL offsets=[3685]
+  ecdh-square-Square: address=0x5f5980; CORE BYTE IDENTICAL=True; FULL BYTE IDENTICAL except morestack rel32=True; bytes=3705; CALL offsets=[3685]

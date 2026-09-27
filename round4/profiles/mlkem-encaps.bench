@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLKEM/768/EncapsWarm         	  298461	     33734 ns/op	    1216 B/op	       2 allocs/op
+PASS

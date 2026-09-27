@@ -1,0 +1,38 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                           │ /home/exedev/crypto-audit/round4/bench/rsa-assign-old.txt │ /home/exedev/crypto-audit/round4/bench/rsa-assign-new.txt │
+                           │                          sec/op                           │               sec/op                vs base               │
+Round2Verify/2048/PKCS1v15                                                 32.43µ ± 4%                          31.81µ ± 8%       ~ (p=0.590 n=12)
+Round2Verify/2048/PSS                                                      33.07µ ± 5%                          32.30µ ± 3%       ~ (p=0.378 n=12)
+Round2Verify/3072/PKCS1v15                                                 116.9µ ± 4%                          112.6µ ± 6%       ~ (p=0.128 n=12)
+Round2Verify/3072/PSS                                                      117.5µ ± 6%                          115.8µ ± 6%       ~ (p=1.000 n=12)
+Round2Verify/4096/PKCS1v15                                                 195.4µ ± 9%                          197.3µ ± 7%       ~ (p=0.932 n=12)
+Round2Verify/4096/PSS                                                      193.5µ ± 7%                          202.7µ ± 6%       ~ (p=0.198 n=12)
+Round3PrecomputedRSASign                                                   1.039m ± 8%                          1.047m ± 9%       ~ (p=0.755 n=12)
+geomean                                                                    128.5µ                               127.9µ       -0.44%
+
+                           │ /home/exedev/crypto-audit/round4/bench/rsa-assign-old.txt │ /home/exedev/crypto-audit/round4/bench/rsa-assign-new.txt │
+                           │                           B/op                            │               B/op                vs base                 │
+Round2Verify/2048/PKCS1v15                                                1.344Ki ± 0%                       1.344Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/2048/PSS                                                     1.297Ki ± 0%                       1.297Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/3072/PKCS1v15                                                25.72Ki ± 0%                       25.72Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/3072/PSS                                                     25.55Ki ± 0%                       25.55Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/4096/PKCS1v15                                                34.09Ki ± 0%                       34.09Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/4096/PSS                                                     33.80Ki ± 0%                       33.80Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round3PrecomputedRSASign                                                    512.0 ± 0%                         512.0 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                   6.782Ki                            6.782Ki       +0.00%
+¹ all samples are equal
+
+                           │ /home/exedev/crypto-audit/round4/bench/rsa-assign-old.txt │ /home/exedev/crypto-audit/round4/bench/rsa-assign-new.txt │
+                           │                         allocs/op                         │            allocs/op              vs base                 │
+Round2Verify/2048/PKCS1v15                                                  9.000 ± 0%                         9.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/2048/PSS                                                       13.00 ± 0%                         13.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/3072/PKCS1v15                                                  54.00 ± 0%                         54.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/3072/PSS                                                       58.00 ± 0%                         58.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/4096/PKCS1v15                                                  54.00 ± 0%                         54.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/4096/PSS                                                       58.00 ± 0%                         58.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PrecomputedRSASign                                                    2.000 ± 0%                         2.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                     21.74                              21.74       +0.00%
+¹ all samples are equal

@@ -1,0 +1,144 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    7198	     32610 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    7320	     32542 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2311	    119512 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    1993	    131226 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1346	    174886 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1350	    178367 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     252	    948840 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    6493	     32045 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    6760	     32005 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    1966	    111931 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2280	    117750 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1044	    209175 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1310	    202539 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     224	   1194023 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    8143	     34444 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    7930	     34754 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2407	    104493 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2368	    104869 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1300	    199074 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1153	    203255 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     236	   1118683 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    6650	     31715 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    7935	     32961 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2169	    113552 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2322	    116356 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1353	    190658 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1053	    195951 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     236	   1082801 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    7633	     34747 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    7153	     32350 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    1768	    120311 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    1791	    116832 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1334	    186504 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1190	    187012 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     247	   1007145 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    7328	     29923 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    6937	     34036 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2359	    116051 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    1808	    117127 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1089	    195209 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1197	    202777 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     231	   1056980 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    7352	     29322 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    7338	     41837 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2208	    117037 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2349	    119925 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1165	    194604 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1056	    220968 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     204	   1150670 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    7146	     30132 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    8038	     29776 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2402	    102644 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2318	    103972 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1360	    174335 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1369	    175718 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     252	    950525 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    7300	     31699 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    7683	     31551 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2275	    115619 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2282	    125698 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1035	    225009 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1262	    211990 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     252	    950069 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    5997	     33706 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    7158	     31597 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2334	    115959 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2161	    113782 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1203	    220926 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1288	    213893 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     222	   1078929 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    7249	     33113 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    7252	     32630 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2392	    107793 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2302	    112988 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1266	    182127 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1358	    189881 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     222	   1073782 ns/op	     512 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2Verify/2048/PKCS1v15         	    7614	     30523 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2Verify/2048/PSS              	    6566	     32681 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2Verify/3072/PKCS1v15         	    2122	    121917 ns/op	   26336 B/op	      54 allocs/op
+BenchmarkRound2Verify/3072/PSS              	    2167	    119214 ns/op	   26160 B/op	      58 allocs/op
+BenchmarkRound2Verify/4096/PKCS1v15         	    1146	    210939 ns/op	   34912 B/op	      54 allocs/op
+BenchmarkRound2Verify/4096/PSS              	    1258	    205967 ns/op	   34608 B/op	      58 allocs/op
+BenchmarkRound3PrecomputedRSASign           	     234	   1080463 ns/op	     512 B/op	       2 allocs/op
+PASS

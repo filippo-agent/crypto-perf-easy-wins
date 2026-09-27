@@ -1,0 +1,13 @@
+--- a/src/crypto/internal/fips140/mldsa/field.go
++++ b/src/crypto/internal/fips140/mldsa/field.go
+@@ -52,7 +52,9 @@
+ // standard representation.
+ func fieldFromMontgomery(a fieldElement) uint32 {
+ 	// (a * R) * 1 * R⁻¹ ≡ a (mod q)
+-	return uint32(fieldMontgomeryReduce(uint64(a)))
++	// a < q and t <= R-1, so a+t*q <= q-1+(R-1)*q = q*R-1.
++	// The partial reduction is therefore already strictly less than q.
++	return uint32(fieldMontgomeryPartialReduce(uint64(a)))
+ }
+ 
+ // fieldCenteredMod returns r mod± q, the value r reduced to the range

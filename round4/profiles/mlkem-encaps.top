@@ -1,0 +1,49 @@
+File: mlkem-encaps.test
+Build ID: de8c3817820d809c4e12d686002dd10dfc758ad8
+Type: cpu
+Time: 2026-09-27 17:19:31 UTC
+Duration: 10.07s, Total samples = 10.04s (99.70%)
+Showing nodes accounting for 9.78s, 97.41% of 10.04s total
+Dropped 58 nodes (cum <= 0.05s)
+      flat  flat%   sum%        cum   cum%
+     1.94s 19.32% 19.32%      3.28s 32.67%  crypto/internal/fips140/mlkem.fieldReduce (inline)
+     1.71s 17.03% 36.35%      2.37s 23.61%  crypto/internal/fips140/mlkem.fieldReduceOnce (inline)
+     0.81s  8.07% 44.42%      0.81s  8.07%  crypto/internal/fips140/sha3.keccakF1600
+     0.68s  6.77% 51.20%      2.35s 23.41%  crypto/internal/fips140/mlkem.ntt
+     0.62s  6.18% 57.37%      0.63s  6.27%  crypto/internal/constanttime.LessOrEq (inline)
+     0.62s  6.18% 63.55%      1.91s 19.02%  crypto/internal/fips140/mlkem.nttMulAddPrecomputed
+     0.58s  5.78% 69.32%      1.73s 17.23%  crypto/internal/fips140/mlkem.samplePolyCBD
+     0.44s  4.38% 73.71%      0.52s  5.18%  crypto/internal/fips140/mlkem.fieldAdd (inline)
+     0.43s  4.28% 77.99%      2.39s 23.80%  crypto/internal/fips140/mlkem.inverseNTT
+     0.42s  4.18% 82.17%      1.41s 14.04%  crypto/internal/fips140/mlkem.fieldSub (inline)
+     0.34s  3.39% 85.56%      0.48s  4.78%  crypto/internal/fips140/mlkem.ringCompressAndEncode10
+     0.33s  3.29% 88.84%      9.78s 97.41%  crypto/internal/fips140/mlkem.pkeEncrypt
+     0.19s  1.89% 90.74%      0.19s  1.89%  crypto/internal/fips140/mlkem.compress (inline)
+     0.17s  1.69% 92.43%      1.41s 14.04%  crypto/internal/fips140/mlkem.fieldMulSub (inline)
+     0.13s  1.29% 93.73%      0.68s  6.77%  crypto/internal/fips140/mlkem.fieldMul (inline)
+     0.10s     1% 94.72%      0.10s     1%  runtime.asyncPreempt
+     0.08s   0.8% 95.52%      0.14s  1.39%  crypto/internal/fips140/mlkem.ringCompressAndEncode4
+     0.06s   0.6% 96.12%      0.20s  1.99%  crypto/internal/fips140/mlkem.nttMulPrecompute
+     0.06s   0.6% 96.71%      0.20s  1.99%  crypto/internal/fips140/mlkem.polyAdd[go.shape.[256]crypto/internal/fips140/mlkem.fieldElement] (inline)
+     0.02s   0.2% 96.91%      0.06s   0.6%  crypto/internal/fips140/sha3.(*Digest).writeGeneric
+     0.02s   0.2% 97.11%      0.06s   0.6%  crypto/internal/sysrand.read
+     0.01s   0.1% 97.21%      0.82s  8.17%  crypto/internal/fips140/sha3.(*Digest).padAndPermute
+     0.01s   0.1% 97.31%      0.84s  8.37%  crypto/internal/fips140/sha3.(*Digest).readGeneric
+     0.01s   0.1% 97.41%      0.78s  7.77%  crypto/internal/fips140/sha3.(*SHAKE).Read
+         0     0% 97.41%      0.06s   0.6%  crypto/internal/fips140/drbg.Read
+         0     0% 97.41%      9.99s 99.50%  crypto/internal/fips140/mlkem.(*EncapsulationKey768).Encapsulate (inline)
+         0     0% 97.41%      9.94s 99.00%  crypto/internal/fips140/mlkem.(*EncapsulationKey768).encapsulate
+         0     0% 97.41%      9.88s 98.41%  crypto/internal/fips140/mlkem.kemEncaps
+         0     0% 97.41%      0.08s   0.8%  crypto/internal/fips140/sha3.(*Digest).Sum
+         0     0% 97.41%      0.06s   0.6%  crypto/internal/fips140/sha3.(*Digest).Write
+         0     0% 97.41%      0.81s  8.07%  crypto/internal/fips140/sha3.(*Digest).permute (inline)
+         0     0% 97.41%      0.84s  8.37%  crypto/internal/fips140/sha3.(*Digest).read (inline)
+         0     0% 97.41%      0.08s   0.8%  crypto/internal/fips140/sha3.(*Digest).sum (inline)
+         0     0% 97.41%      0.08s   0.8%  crypto/internal/fips140/sha3.(*Digest).sumGeneric
+         0     0% 97.41%      0.06s   0.6%  crypto/internal/fips140/sha3.(*Digest).write (inline)
+         0     0% 97.41%      0.06s   0.6%  crypto/internal/sysrand.Read
+         0     0% 97.41%      9.99s 99.50%  crypto/mlkem.(*EncapsulationKey768).Encapsulate
+         0     0% 97.41%      9.99s 99.50%  crypto/mlkem_test.BenchmarkRound2MLKEM.func1.3
+         0     0% 97.41%      0.06s   0.6%  runtime.systemstack
+         0     0% 97.41%      9.99s 99.50%  testing.(*B).run1.func1
+         0     0% 97.41%      9.99s 99.50%  testing.(*B).runN

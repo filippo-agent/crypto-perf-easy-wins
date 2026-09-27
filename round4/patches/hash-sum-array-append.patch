@@ -1,0 +1,21 @@
+--- a/src/crypto/internal/fips140/sha256/sha256.go
++++ b/src/crypto/internal/fips140/sha256/sha256.go
+@@ -203,9 +203,15 @@
+ 	d0 := *d
+ 	hash := d0.checkSum()
+ 	if d0.is224 {
+-		return append(in, hash[:size224]...)
+-	}
+-	return append(in, hash[:]...)
++		n := len(in)
++		in = append(in, make([]byte, size224)...)
++		*(*[size224]byte)(in[n:]) = [size224]byte(hash[:size224])
++		return in
++	}
++	n := len(in)
++	in = append(in, make([]byte, size)...)
++	*(*[size]byte)(in[n:]) = hash
++	return in
+ }
+ 
+ func (d *Digest) checkSum() [size]byte {

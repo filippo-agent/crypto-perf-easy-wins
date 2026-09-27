@@ -1,0 +1,10 @@
+goos: linux
+goarch: amd64
+pkg: example.com/constantappend
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkPublicWarmHMAC 	  751856	       163.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPublicWarmHMAC 	  831304	       161.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPublicWarmHMAC 	  814372	       157.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPublicWarmHMAC 	  776690	       161.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPublicWarmHMAC 	  822489	       187.6 ns/op	       0 B/op	       0 allocs/op
+PASS

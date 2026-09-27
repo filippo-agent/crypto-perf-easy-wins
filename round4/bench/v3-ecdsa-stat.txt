@@ -1,0 +1,17 @@
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                       │ /home/exedev/crypto-audit/round4/bench/v3-ecdsa-mul.txt │ /home/exedev/crypto-audit/round4/bench/v3-ecdsa-square.txt │
+                                       │                         sec/op                          │                  sec/op                   vs base          │
+Round3VerifyEngine/P-384/Reparse/Valid                                               804.8µ ± 5%                                780.4µ ± 9%  ~ (p=0.713 n=12)
+
+                                       │ /home/exedev/crypto-audit/round4/bench/v3-ecdsa-mul.txt │ /home/exedev/crypto-audit/round4/bench/v3-ecdsa-square.txt │
+                                       │                          B/op                           │                  B/op                   vs base            │
+Round3VerifyEngine/P-384/Reparse/Valid                                              1.086Ki ± 0%                             1.086Ki ± 0%  ~ (p=1.000 n=12) ¹
+¹ all samples are equal
+
+                                       │ /home/exedev/crypto-audit/round4/bench/v3-ecdsa-mul.txt │ /home/exedev/crypto-audit/round4/bench/v3-ecdsa-square.txt │
+                                       │                        allocs/op                        │               allocs/op                 vs base            │
+Round3VerifyEngine/P-384/Reparse/Valid                                                23.00 ± 0%                               23.00 ± 0%  ~ (p=1.000 n=12) ¹
+¹ all samples are equal

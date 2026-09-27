@@ -1,0 +1,16 @@
+--- a/src/crypto/internal/fips140/bigmod/nat.go
++++ b/src/crypto/internal/fips140/bigmod/nat.go
+@@ -43,10 +43,9 @@
+ // ctEq returns 1 if x == y, and 0 otherwise. The execution time of this
+ // function does not depend on its inputs.
+ func ctEq(x, y uint) choice {
+-	// If x != y, then either x - y or y - x will generate a carry.
+-	_, c1 := bits.Sub(x, y, 0)
+-	_, c2 := bits.Sub(y, x, 0)
+-	return not(choice(c1 | c2))
++	// x ^ y is zero exactly when x == y. Subtracting one then borrows.
++	_, c := bits.Sub(x^y, 1, 0)
++	return choice(c)
+ }
+ 
+ // Nat represents an arbitrary natural number

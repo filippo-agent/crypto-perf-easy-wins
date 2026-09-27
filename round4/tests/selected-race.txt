@@ -1,0 +1,4 @@
+ok  	crypto/internal/fips140/sha256	1.075s
+ok  	crypto/sha256	1.101s
+ok  	crypto/hmac	1.347s
+ok  	crypto/pbkdf2	1.611s

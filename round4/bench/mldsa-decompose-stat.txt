@@ -1,0 +1,37 @@
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                     │ /home/exedev/crypto-audit/round4/bench/mldsa-decompose-old.txt │ /home/exedev/crypto-audit/round4/bench/mldsa-decompose-new.txt │
+                                     │                             sec/op                             │                 sec/op                   vs base               │
+Round2MLDSA/44/SignDeterministicWarm                                                     238.5µ ±  6%                              230.9µ ±  6%       ~ (p=0.143 n=12)
+Round2MLDSA/44/ParseVerifyCold                                                           67.91µ ± 10%                              64.97µ ±  6%       ~ (p=0.060 n=12)
+Round2MLDSA/65/SignDeterministicWarm                                                     384.4µ ±  7%                              358.4µ ±  7%       ~ (p=0.078 n=12)
+Round2MLDSA/65/ParseVerifyCold                                                           104.3µ ±  5%                              101.1µ ±  8%       ~ (p=0.347 n=12)
+Round2MLDSA/87/SignDeterministicWarm                                                     407.8µ ± 15%                              409.6µ ± 10%       ~ (p=0.887 n=12)
+Round2MLDSA/87/ParseVerifyCold                                                           153.1µ ±  4%                              154.5µ ±  9%       ~ (p=0.755 n=12)
+geomean                                                                                  185.4µ                                    180.4µ        -2.70%
+
+                                     │ /home/exedev/crypto-audit/round4/bench/mldsa-decompose-old.txt │ /home/exedev/crypto-audit/round4/bench/mldsa-decompose-new.txt │
+                                     │                              B/op                              │                 B/op                   vs base                 │
+Round2MLDSA/44/SignDeterministicWarm                                                   2.641Ki ± 0%                              2.641Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/44/ParseVerifyCold                                                           0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/65/SignDeterministicWarm                                                   3.391Ki ± 0%                              3.391Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/65/ParseVerifyCold                                                           0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/87/SignDeterministicWarm                                                   4.766Ki ± 0%                              4.766Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/87/ParseVerifyCold                                                           0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                             ²                                          +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                     │ /home/exedev/crypto-audit/round4/bench/mldsa-decompose-old.txt │ /home/exedev/crypto-audit/round4/bench/mldsa-decompose-new.txt │
+                                     │                           allocs/op                            │               allocs/op                vs base                 │
+Round2MLDSA/44/SignDeterministicWarm                                                     2.000 ± 0%                                2.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/44/ParseVerifyCold                                                           0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/65/SignDeterministicWarm                                                     2.000 ± 0%                                2.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/65/ParseVerifyCold                                                           0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/87/SignDeterministicWarm                                                     2.000 ± 0%                                2.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2MLDSA/87/ParseVerifyCold                                                           0.000 ± 0%                                0.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                             ²                                          +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

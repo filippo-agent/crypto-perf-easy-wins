@@ -1,0 +1,108 @@
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  399177	       581.6 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1390945	       165.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  199690	      1162 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  564733	       454.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  513596	       471.1 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1551115	       155.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  184149	      1158 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  553971	       439.5 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  450607	       523.5 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1406872	       167.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  191331	      1291 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  573598	       463.7 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  501951	       477.4 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1603642	       149.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  197282	      1163 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  568035	       442.2 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  494486	       483.9 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1531087	       155.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  183495	      1176 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  552526	       444.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  461754	       504.5 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1487229	       166.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  195124	      1218 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  569451	       459.5 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  293287	       682.0 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1000000	       226.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  207714	      1257 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  524157	       489.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  445438	       532.9 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1492684	       157.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  173161	      1408 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  561835	       438.7 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  389574	       522.6 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1332182	       176.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  192429	      1215 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  583356	       453.8 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  486165	       489.3 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1487563	       162.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  172987	      1378 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  543853	       437.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  415419	       503.7 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1454350	       165.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  178190	      1319 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  548341	       472.5 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicHMAC/SHA256/32/Cold         	  537331	       445.9 ns/op	     480 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA256/32/Warm         	 1659933	       153.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Cold         	  186288	      1187 ns/op	     800 B/op	       5 allocs/op
+BenchmarkRound2PublicHMAC/SHA512/32/Warm         	  550125	       425.9 ns/op	       0 B/op	       0 allocs/op
+PASS

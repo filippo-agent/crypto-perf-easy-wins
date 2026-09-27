@@ -1,0 +1,24 @@
+--- a/src/crypto/internal/fips140/mldsa/field.go
++++ b/src/crypto/internal/fips140/mldsa/field.go
+@@ -686,7 +686,9 @@
+ 	r1 = highBits32(x)
+ 
+ 	// r - r1 * (2 * γ2) mod± q
+-	r0 = int32(x) - int32(r1)*2*(q-1)/32
++	// Group the constant factor to avoid a multiply followed by a division.
++	// r1 <= 15, so the original int32 product did not overflow.
++	r0 = int32(x) - int32(r1)*(2*(q-1)/32)
+ 	r0 = constantTimeSelectLessOrEqual(q/2+1, r0, r0-q, r0)
+ 
+ 	return r1, r0
+@@ -736,7 +738,9 @@
+ 	r1 = highBits88(x)
+ 
+ 	// r - r1 * (2 * γ2) mod± q
+-	r0 = int32(x) - int32(r1)*2*(q-1)/88
++	// Group the constant factor to avoid a multiply followed by a division.
++	// r1 <= 43, so the original int32 product did not overflow.
++	r0 = int32(x) - int32(r1)*(2*(q-1)/88)
+ 	r0 = constantTimeSelectLessOrEqual(q/2+1, r0, r0-q, r0)
+ 
+ 	return r1, r0

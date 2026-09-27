@@ -1,0 +1,4 @@
+go version go1.28-devel_2ff5743d Sat Sep 26 15:27:19 2026 -0700 linux/amd64
+Selected main: 7a8ab8f78ea8cca13a5d835c69aa500927878ce4
+PQ baseline: db19b48d27dde1bb6c7c2c144ba3099536382374
+Recorded: Sun Sep 27 18:26:39 UTC 2026

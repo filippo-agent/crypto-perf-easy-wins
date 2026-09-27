@@ -4,6 +4,10 @@
 
 **Acceptance bar:** no BoringCrypto; meaningful improvement to the complete public operation, not just an internal helper. No new assembly, cryptographic algorithms, validation shortcuts, mutable key caches, or removal of required self-tests. Source review and measurement are distinct: plausible candidates without an adequate whole-operation result are not recommendations.
 
+## Hot-helper/compiler-codegen follow-up
+
+See **[round4/README.md](round4/README.md)**: small carry-chain replay localized to flag allocation, redundant byte extensions, bounded multiply/divide folding, fixed-copy and aggregate-return issues, with tested reproducers and amd64/arm64 machine code. Source candidates are checked against complete public operations, including an independent confirmation run; PQ remains measured on top of the full pending stack. No external issues or CLs have been filed.
+
 ## Profile-guided follow-up (PQ measured over the full pending stack)
 
 See **[round3/README.md](round3/README.md)** and **[round3/PROFILE-NOTES.md](round3/PROFILE-NOTES.md)**. This is the authoritative current PQ baseline/comparison. RSA key-reuse caching has been declined and removed from the new branch.

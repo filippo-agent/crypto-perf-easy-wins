@@ -1,0 +1,21 @@
+--- a/src/crypto/internal/fips140/bigmod/nat.go
++++ b/src/crypto/internal/fips140/bigmod/nat.go
+@@ -5,6 +5,7 @@
+ package bigmod
+ 
+ import (
++	"crypto/internal/constanttime"
+ 	_ "crypto/internal/fips140/check"
+ 	"crypto/internal/fips140deps/byteorder"
+ 	"errors"
+@@ -363,9 +364,8 @@
+ 	xLimbs := x.limbs[:size]
+ 	yLimbs := y.limbs[:size]
+ 
+-	mask := ctMask(on)
+ 	for i := 0; i < size; i++ {
+-		xLimbs[i] ^= mask & (xLimbs[i] ^ yLimbs[i])
++		xLimbs[i] = uint(constanttime.Select(int(on), int(yLimbs[i]), int(xLimbs[i])))
+ 	}
+ 	return x
+ }

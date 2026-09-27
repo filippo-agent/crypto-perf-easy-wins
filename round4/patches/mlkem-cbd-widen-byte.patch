@@ -1,0 +1,12 @@
+--- a/src/crypto/internal/fips140/mlkem/field.go
++++ b/src/crypto/internal/fips140/mlkem/field.go
+@@ -480,7 +480,8 @@
+ 
+ 	var f ringElement
+ 	for i := 0; i < n; i += 2 {
+-		b := B[i/2]
++		// Keep bit sums at the field width, avoiding intermediate byte truncations.
++		b := uint16(B[i/2])
+ 		b_7, b_6, b_5, b_4 := b>>7, b>>6&1, b>>5&1, b>>4&1
+ 		b_3, b_2, b_1, b_0 := b>>3&1, b>>2&1, b>>1&1, b&1
+ 		f[i] = fieldSub(fieldElement(b_0+b_1), fieldElement(b_2+b_3))

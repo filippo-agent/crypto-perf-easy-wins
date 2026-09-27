@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/golang/go/issues/comments/841826434",
+    "html_url": "https://github.com/golang/go/issues/46008#issuecomment-841826434",
+    "issue_url": "https://api.github.com/repos/golang/go/issues/46008",
+    "id": 841826434,
+    "node_id": "MDEyOklzc3VlQ29tbWVudDg0MTgyNjQzNA==",
+    "user": {
+      "login": "gopherbot",
+      "id": 8566911,
+      "node_id": "MDQ6VXNlcjg1NjY5MTE=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8566911?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gopherbot",
+      "html_url": "https://github.com/gopherbot",
+      "followers_url": "https://api.github.com/users/gopherbot/followers",
+      "following_url": "https://api.github.com/users/gopherbot/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gopherbot/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gopherbot/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gopherbot/subscriptions",
+      "organizations_url": "https://api.github.com/users/gopherbot/orgs",
+      "repos_url": "https://api.github.com/users/gopherbot/repos",
+      "events_url": "https://api.github.com/users/gopherbot/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gopherbot/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2021-05-16T14:38:38Z",
+    "updated_at": "2021-05-16T14:38:38Z",
+    "body": "Change https://golang.org/cl/320251 mentions this issue: `doc/go1.17: document database/sql changes for Go 1.17`",
+    "author_association": "CONTRIBUTOR",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/golang/go/issues/comments/841826434/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

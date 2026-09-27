@@ -1,0 +1,37 @@
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                   │ /home/exedev/crypto-audit/round4/bench/selected/hmac-old.txt │ /home/exedev/crypto-audit/round4/bench/selected/hmac-new.txt │
+                                   │                            sec/op                            │                sec/op                  vs base               │
+Round2PublicHMAC/SHA256/32/Cold                                                       481.1n ± 3%                             466.4n ± 4%  -3.05% (p=0.033 n=12)
+Round2PublicHMAC/SHA256/32/Warm                                                       153.7n ± 6%                             150.8n ± 5%       ~ (p=0.224 n=12)
+Round2PublicHMAC/SHA256/32/TwoUses                                                    816.1n ± 8%                             773.8n ± 3%       ~ (p=0.086 n=12)
+Round2PublicHMAC/SHA512/32/Cold                                                       1.216µ ± 6%                             1.181µ ± 6%       ~ (p=0.319 n=12)
+Round2PublicHMAC/SHA512/32/Warm                                                       467.0n ± 6%                             453.9n ± 5%       ~ (p=0.128 n=12)
+Round2PublicHMAC/SHA512/32/TwoUses                                                    2.221µ ± 7%                             2.184µ ± 6%       ~ (p=0.590 n=12)
+geomean                                                                               650.9n                                  631.9n       -2.92%
+
+                                   │ /home/exedev/crypto-audit/round4/bench/selected/hmac-old.txt │ /home/exedev/crypto-audit/round4/bench/selected/hmac-new.txt │
+                                   │                             B/op                             │                B/op                  vs base                 │
+Round2PublicHMAC/SHA256/32/Cold                                                      480.0 ± 0%                              480.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA256/32/Warm                                                      0.000 ± 0%                              0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA256/32/TwoUses                                                   704.0 ± 0%                              704.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA512/32/Cold                                                      800.0 ± 0%                              800.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA512/32/Warm                                                      0.000 ± 0%                              0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA512/32/TwoUses                                                 1.188Ki ± 0%                            1.188Ki ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                         ²                                        +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                   │ /home/exedev/crypto-audit/round4/bench/selected/hmac-old.txt │ /home/exedev/crypto-audit/round4/bench/selected/hmac-new.txt │
+                                   │                          allocs/op                           │              allocs/op               vs base                 │
+Round2PublicHMAC/SHA256/32/Cold                                                      5.000 ± 0%                              5.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA256/32/Warm                                                      0.000 ± 0%                              0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA256/32/TwoUses                                                   7.000 ± 0%                              7.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA512/32/Cold                                                      5.000 ± 0%                              5.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA512/32/Warm                                                      0.000 ± 0%                              0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2PublicHMAC/SHA512/32/TwoUses                                                   7.000 ± 0%                              7.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                         ²                                        +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

@@ -1,0 +1,132 @@
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	     987	    241982 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3458	     66310 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     634	    399740 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2451	    103541 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     633	    445060 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1728	    142951 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	    1011	    228286 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3781	     70670 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     613	    380211 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2541	     94022 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     556	    373981 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1722	    138730 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	     914	    229016 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3727	     68937 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     412	    492194 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2570	     99632 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     645	    383675 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1680	    156071 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	     972	    239289 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    2920	     71763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     624	    411891 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2289	    117133 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     462	    441313 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1447	    161797 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	     912	    252360 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3841	     65995 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     718	    358212 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2523	    110069 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     615	    398580 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1626	    146644 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	    1069	    238411 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3478	     67410 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     655	    366982 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2098	    101815 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     655	    389258 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1568	    150754 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	    1020	    239361 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3382	     67127 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     644	    366186 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2335	    101306 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     650	    369235 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1473	    156006 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	     900	    237590 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3511	     69821 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     639	    372454 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2122	    106668 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     609	    400070 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1544	    154305 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	     765	    289001 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3390	     68159 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     681	    368091 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2377	    105649 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     572	    371580 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1731	    165522 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	     936	    234923 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3842	     71682 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     687	    352765 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2349	    101030 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     582	    400981 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1531	    156404 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	    1077	    252820 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3579	     69042 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     589	    375165 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2338	    105737 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     576	    407755 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1438	    159226 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	     968	    240561 ns/op	    2704 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/44/ParseVerifyCold               	    3693	     63204 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/65/SignDeterministicWarm         	     705	    363683 ns/op	    3472 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/65/ParseVerifyCold               	    2233	    115872 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRound2MLDSA/87/SignDeterministicWarm         	     480	    423996 ns/op	    4880 B/op	       2 allocs/op
+BenchmarkRound2MLDSA/87/ParseVerifyCold               	    1718	    158882 ns/op	       0 B/op	       0 allocs/op
+PASS

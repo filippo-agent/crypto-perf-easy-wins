@@ -1,0 +1,89 @@
+Total: 9.74s
+ROUTINE ======================== crypto/internal/fips140/hmac.(*HMAC).Sum in /home/exedev/go-crypto/src/crypto/internal/fips140/hmac/hmac.go
+     230ms      9.21s (flat, cum) 94.56% of Total
+      30ms       30ms     47:func (h *HMAC) Sum(in []byte) []byte {
+         .          .     48:	// Per FIPS 140-3 IG C.M, key lengths below 112 bits are only allowed for
+         .          .     49:	// legacy use (i.e. verification only) and we don't support that. However,
+         .          .     50:	// HKDF uses the HMAC key for the salt, which is allowed to be shorter.
+      10ms       10ms     51:	if h.keyLen < 112/8 && !h.forHKDF {
+         .          .     52:		fips140.RecordNonApproved()
+         .          .     53:	}
+      50ms       50ms     54:	switch h.inner.(type) {
+         .          .     55:	case *sha256.Digest, *sha512.Digest, *sha3.Digest:
+         .          .     56:	default:
+         .          .     57:		fips140.RecordNonApproved()
+         .          .     58:	}
+         .          .     59:
+         .          .     60:	origLen := len(in)
+      30ms      4.09s     61:	in = h.inner.Sum(in)
+         .          .     62:
+      10ms       10ms     63:	if h.marshaled {
+      30ms      230ms     64:		if err := h.outer.(marshalable).UnmarshalBinary(h.opad); err != nil {
+         .          .     65:			panic(err)
+         .          .     66:		}
+         .          .     67:	} else {
+         .          .     68:		h.outer.Reset()
+         .          .     69:		h.outer.Write(h.opad)
+         .          .     70:	}
+      20ms      150ms     71:	h.outer.Write(in[origLen:])
+      50ms      4.64s     72:	return h.outer.Sum(in[:origLen])
+         .          .     73:}
+         .          .     74:
+         .          .     75:func (h *HMAC) Write(p []byte) (n int, err error) {
+         .          .     76:	return h.inner.Write(p)
+         .          .     77:}
+ROUTINE ======================== crypto/internal/fips140/sha256.(*Digest).Sum in /home/exedev/go-crypto/src/crypto/internal/fips140/sha256/sha256.go
+     1.57s      8.65s (flat, cum) 88.81% of Total
+      30ms       30ms    200:func (d *Digest) Sum(in []byte) []byte {
+         .       40ms    201:	fips140.RecordApproved()
+         .          .    202:	// Make a copy of d so that caller can keep writing and summing.
+     560ms      580ms    203:	d0 := *d
+     800ms      7.49s    204:	hash := d0.checkSum()
+     120ms      120ms    205:	if d0.is224 {
+         .          .    206:		return append(in, hash[:size224]...)
+         .          .    207:	}
+      60ms      390ms    208:	return append(in, hash[:]...)
+         .          .    209:}
+         .          .    210:
+         .          .    211:func (d *Digest) checkSum() [size]byte {
+         .          .    212:	len := d.len
+         .          .    213:	// Padding. Add a 1 bit and 0 bits until 56 bytes mod 64.
+ROUTINE ======================== crypto/internal/fips140/sha256.(*Digest).checkSum in /home/exedev/go-crypto/src/crypto/internal/fips140/sha256/sha256.go
+     830ms      6.69s (flat, cum) 68.69% of Total
+      20ms       20ms    211:func (d *Digest) checkSum() [size]byte {
+         .          .    212:	len := d.len
+         .          .    213:	// Padding. Add a 1 bit and 0 bits until 56 bytes mod 64.
+      80ms       80ms    214:	var tmp [64 + 8]byte // padding + length buffer
+         .          .    215:	tmp[0] = 0x80
+         .          .    216:	var t uint64
+      30ms       30ms    217:	if len%64 < 56 {
+      10ms       10ms    218:		t = 56 - len%64
+         .          .    219:	} else {
+      20ms       20ms    220:		t = 64 + 56 - len%64
+         .          .    221:	}
+         .          .    222:
+         .          .    223:	// Length in bits.
+         .          .    224:	len <<= 3
+     160ms      160ms    225:	padlen := tmp[:t+8]
+      30ms       30ms    226:	byteorder.BEPutUint64(padlen[t+0:], len)
+     290ms      5.95s    227:	d.Write(padlen)
+         .          .    228:
+      50ms       50ms    229:	if d.nx != 0 {
+         .          .    230:		panic("d.nx != 0")
+         .          .    231:	}
+         .          .    232:
+      10ms       10ms    233:	var digest [size]byte
+         .          .    234:
+         .      110ms    235:	byteorder.BEPutUint32(digest[0:], d.h[0])
+         .          .    236:	byteorder.BEPutUint32(digest[4:], d.h[1])
+      40ms       80ms    237:	byteorder.BEPutUint32(digest[8:], d.h[2])
+      20ms       30ms    238:	byteorder.BEPutUint32(digest[12:], d.h[3])
+         .       20ms    239:	byteorder.BEPutUint32(digest[16:], d.h[4])
+         .          .    240:	byteorder.BEPutUint32(digest[20:], d.h[5])
+      10ms       10ms    241:	byteorder.BEPutUint32(digest[24:], d.h[6])
+      10ms       10ms    242:	if !d.is224 {
+         .       20ms    243:		byteorder.BEPutUint32(digest[28:], d.h[7])
+         .          .    244:	}
+         .          .    245:
+      50ms       50ms    246:	return digest
+         .          .    247:}

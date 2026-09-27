@@ -1,0 +1,228 @@
+
+## default
+BenchmarkRaw/Square median 85.37 ns/op; samples [90.05, 85.37, 83.85, 82.04, 87.03]
+BenchmarkRaw/Mul median 57.71 ns/op; samples [57.22, 66.38, 60.05, 57.71, 54.67]
+BenchmarkFull/Square median 90.46 ns/op; samples [90.53, 90.46, 90.57, 87.89, 86.29]
+BenchmarkFull/Mul median 53.05 ns/op; samples [63.42, 61.07, 53.03, 53.05, 53.04]
+BenchmarkIndependent/Square median 78.44 ns/op; samples [78.14, 78.26, 78.56, 78.44, 78.55]
+BenchmarkIndependent/Mul median 52.34 ns/op; samples [52.34, 52.41, 52.29, 52.34, 52.31]
+Mul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+Mul_02__generic_cse.dump values 780 {'Mul64uhilo': 66}
+Mul_03__gcse_deadcode.dump values 780 {'Mul64uhilo': 66}
+Mul_04__lowered_cse.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_05__lowered_deadcode.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_06__schedule.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_07__flagalloc.dump values 784 {'MULQU2': 66, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Mul_08__regalloc.dump values 1278 {'StoreReg': 187, 'Copy': 50, 'MULQU2': 66, 'LoadReg': 225, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawMul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+RawMul_02__generic_cse.dump values 780 {'Mul64uhilo': 66}
+RawMul_03__gcse_deadcode.dump values 780 {'Mul64uhilo': 66}
+RawMul_04__lowered_cse.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_05__lowered_deadcode.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_06__schedule.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_07__flagalloc.dump values 784 {'MULQU2': 66, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawMul_08__regalloc.dump values 1278 {'StoreReg': 187, 'Copy': 50, 'MULQU2': 66, 'LoadReg': 225, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+RawSquare_02__generic_cse.dump values 722 {'Mul64uhilo': 51}
+RawSquare_03__gcse_deadcode.dump values 722 {'Mul64uhilo': 51}
+RawSquare_04__lowered_cse.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_05__lowered_deadcode.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_06__schedule.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_07__flagalloc.dump values 732 {'MULQU2': 51, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_08__regalloc.dump values 1175 {'StoreReg': 158, 'Copy': 39, 'MULQU2': 51, 'LoadReg': 214, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Square_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+Square_02__generic_cse.dump values 722 {'Mul64uhilo': 51}
+Square_03__gcse_deadcode.dump values 722 {'Mul64uhilo': 51}
+Square_04__lowered_cse.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_05__lowered_deadcode.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_06__schedule.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_07__flagalloc.dump values 732 {'MULQU2': 51, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Square_08__regalloc.dump values 1175 {'StoreReg': 158, 'Copy': 39, 'MULQU2': 51, 'LoadReg': 214, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Mul.asm instructions 831 MULQ 66 MULXQ 0 ADCQ 161 SP operands 419
+RawMul.asm instructions 831 MULQ 66 MULXQ 0 ADCQ 161 SP operands 419
+RawSquare.asm instructions 756 MULQ 51 MULXQ 0 ADCQ 161 SP operands 377
+Square.asm instructions 756 MULQ 51 MULXQ 0 ADCQ 161 SP operands 377
+
+## nocse
+BenchmarkRaw/Square median 221.6 ns/op; samples [212.0, 212.7, 234.4, 221.6, 231.3]
+BenchmarkRaw/Mul median 216.8 ns/op; samples [242.7, 263.8, 216.6, 216.8, 214.2]
+BenchmarkFull/Square median 219.8 ns/op; samples [211.1, 208.4, 223.2, 228.0, 219.8]
+BenchmarkFull/Mul median 226.1 ns/op; samples [249.9, 225.1, 244.5, 226.1, 220.3]
+BenchmarkIndependent/Square median 219.6 ns/op; samples [219.6, 220.9, 212.1, 229.8, 218.0]
+BenchmarkIndependent/Mul median 213.9 ns/op; samples [213.9, 206.5, 207.3, 214.2, 233.2]
+Mul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+Mul_02__gcse_deadcode.dump values 898 {'Mul64uhilo': 78}
+Mul_03__lowered_deadcode.dump values 935 {'MULQU2': 78, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+Mul_04__schedule.dump values 935 {'MULQU2': 78, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+Mul_05__flagalloc.dump values 1664 {'MULQU2': 78, 'ADDQcarry': 154, 'ADCQ': 465, 'ADCQconst': 17, 'SETB': 7}
+Mul_06__regalloc.dump values 3255 {'StoreReg': 244, 'Copy': 349, 'MULQU2': 78, 'LoadReg': 651, 'ADDQcarry': 191, 'ADCQ': 585, 'ADCQconst': 17, 'SETB': 7}
+RawMul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+RawMul_02__gcse_deadcode.dump values 898 {'Mul64uhilo': 78}
+RawMul_03__lowered_deadcode.dump values 935 {'MULQU2': 78, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+RawMul_04__schedule.dump values 935 {'MULQU2': 78, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+RawMul_05__flagalloc.dump values 1664 {'MULQU2': 78, 'ADDQcarry': 154, 'ADCQ': 465, 'ADCQconst': 17, 'SETB': 7}
+RawMul_06__regalloc.dump values 3255 {'StoreReg': 244, 'Copy': 349, 'MULQU2': 78, 'LoadReg': 651, 'ADDQcarry': 191, 'ADCQ': 585, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+RawSquare_02__gcse_deadcode.dump values 897 {'Mul64uhilo': 78}
+RawSquare_03__lowered_deadcode.dump values 933 {'MULQU2': 78, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_04__schedule.dump values 933 {'MULQU2': 78, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_05__flagalloc.dump values 1663 {'MULQU2': 78, 'ADDQcarry': 154, 'ADCQ': 465, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_06__regalloc.dump values 3254 {'StoreReg': 244, 'Copy': 349, 'MULQU2': 78, 'LoadReg': 651, 'ADDQcarry': 191, 'ADCQ': 585, 'ADCQconst': 17, 'SETB': 7}
+Square_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+Square_02__gcse_deadcode.dump values 897 {'Mul64uhilo': 78}
+Square_03__lowered_deadcode.dump values 933 {'MULQU2': 78, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+Square_04__schedule.dump values 933 {'MULQU2': 78, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+Square_05__flagalloc.dump values 1663 {'MULQU2': 78, 'ADDQcarry': 154, 'ADCQ': 465, 'ADCQconst': 17, 'SETB': 7}
+Square_06__regalloc.dump values 3254 {'StoreReg': 244, 'Copy': 349, 'MULQU2': 78, 'LoadReg': 651, 'ADDQcarry': 191, 'ADCQ': 585, 'ADCQconst': 17, 'SETB': 7}
+Mul.asm instructions 2295 MULQ 78 MULXQ 0 ADCQ 602 SP operands 902
+RawMul.asm instructions 2295 MULQ 78 MULXQ 0 ADCQ 602 SP operands 902
+RawSquare.asm instructions 2293 MULQ 78 MULXQ 0 ADCQ 602 SP operands 900
+Square.asm instructions 2293 MULQ 78 MULXQ 0 ADCQ 602 SP operands 900
+
+## nogeneric
+BenchmarkRaw/Square median 126.4 ns/op; samples [124.3, 126.4, 138.1, 122.7, 130.8]
+BenchmarkRaw/Mul median 59.81 ns/op; samples [54.52, 59.81, 75.75, 60.33, 56.21]
+BenchmarkFull/Square median 126.0 ns/op; samples [126.0, 117.7, 136.4, 116.1, 147.1]
+BenchmarkFull/Mul median 58.63 ns/op; samples [58.63, 58.71, 56.99, 59.42, 58.01]
+BenchmarkIndependent/Square median 124.6 ns/op; samples [127.6, 124.2, 119.5, 127.2, 124.6]
+BenchmarkIndependent/Mul median 60.04 ns/op; samples [60.04, 55.34, 57.47, 60.38, 61.0]
+Mul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+Mul_02__gcse_deadcode.dump values 898 {'Mul64uhilo': 78}
+Mul_03__lowered_cse.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_04__lowered_deadcode.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_05__schedule.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_06__flagalloc.dump values 784 {'MULQU2': 66, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Mul_07__regalloc.dump values 1279 {'StoreReg': 187, 'Copy': 61, 'MULQU2': 66, 'LoadReg': 215, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawMul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+RawMul_02__gcse_deadcode.dump values 898 {'Mul64uhilo': 78}
+RawMul_03__lowered_cse.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_04__lowered_deadcode.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_05__schedule.dump values 722 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_06__flagalloc.dump values 784 {'MULQU2': 66, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawMul_07__regalloc.dump values 1279 {'StoreReg': 187, 'Copy': 61, 'MULQU2': 66, 'LoadReg': 215, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+RawSquare_02__gcse_deadcode.dump values 897 {'Mul64uhilo': 78}
+RawSquare_03__lowered_cse.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_04__lowered_deadcode.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_05__schedule.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_06__flagalloc.dump values 732 {'MULQU2': 51, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_07__regalloc.dump values 1185 {'StoreReg': 161, 'Copy': 44, 'MULQU2': 51, 'LoadReg': 216, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Square_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+Square_02__gcse_deadcode.dump values 897 {'Mul64uhilo': 78}
+Square_03__lowered_cse.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_04__lowered_deadcode.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_05__schedule.dump values 669 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_06__flagalloc.dump values 732 {'MULQU2': 51, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Square_07__regalloc.dump values 1185 {'StoreReg': 161, 'Copy': 44, 'MULQU2': 51, 'LoadReg': 216, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Mul.asm instructions 831 MULQ 66 MULXQ 0 ADCQ 161 SP operands 409
+RawMul.asm instructions 831 MULQ 66 MULXQ 0 ADCQ 161 SP operands 409
+RawSquare.asm instructions 766 MULQ 51 MULXQ 0 ADCQ 161 SP operands 382
+Square.asm instructions 766 MULQ 51 MULXQ 0 ADCQ 161 SP operands 382
+
+## nolowered
+BenchmarkRaw/Square median 112.6 ns/op; samples [128.6, 112.6, 114.2, 112.3, 112.5]
+BenchmarkRaw/Mul median 114.4 ns/op; samples [116.5, 150.7, 109.8, 114.4, 108.6]
+BenchmarkFull/Square median 112.0 ns/op; samples [110.1, 111.0, 112.0, 154.5, 116.5]
+BenchmarkFull/Mul median 113.9 ns/op; samples [113.9, 112.3, 117.7, 113.6, 115.9]
+BenchmarkIndependent/Square median 113.0 ns/op; samples [112.4, 110.5, 120.2, 116.4, 113.0]
+BenchmarkIndependent/Mul median 121.9 ns/op; samples [107.8, 121.3, 121.9, 136.7, 123.9]
+Mul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+Mul_02__generic_cse.dump values 780 {'Mul64uhilo': 66}
+Mul_03__gcse_deadcode.dump values 780 {'Mul64uhilo': 66}
+Mul_04__lowered_deadcode.dump values 859 {'MULQU2': 66, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+Mul_05__schedule.dump values 859 {'MULQU2': 66, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+Mul_06__flagalloc.dump values 1588 {'MULQU2': 66, 'ADDQcarry': 154, 'ADCQ': 465, 'ADCQconst': 17, 'SETB': 7}
+Mul_07__regalloc.dump values 3201 {'StoreReg': 220, 'Copy': 353, 'MULQU2': 66, 'LoadReg': 645, 'ADDQcarry': 198, 'ADCQ': 605, 'ADCQconst': 17, 'SETB': 7}
+RawMul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+RawMul_02__generic_cse.dump values 780 {'Mul64uhilo': 66}
+RawMul_03__gcse_deadcode.dump values 780 {'Mul64uhilo': 66}
+RawMul_04__lowered_deadcode.dump values 859 {'MULQU2': 66, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+RawMul_05__schedule.dump values 859 {'MULQU2': 66, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+RawMul_06__flagalloc.dump values 1588 {'MULQU2': 66, 'ADDQcarry': 154, 'ADCQ': 465, 'ADCQconst': 17, 'SETB': 7}
+RawMul_07__regalloc.dump values 3201 {'StoreReg': 220, 'Copy': 353, 'MULQU2': 66, 'LoadReg': 645, 'ADDQcarry': 198, 'ADCQ': 605, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+RawSquare_02__generic_cse.dump values 722 {'Mul64uhilo': 51}
+RawSquare_03__gcse_deadcode.dump values 722 {'Mul64uhilo': 51}
+RawSquare_04__lowered_deadcode.dump values 806 {'MULQU2': 51, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_05__schedule.dump values 806 {'MULQU2': 51, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_06__flagalloc.dump values 1536 {'MULQU2': 51, 'ADDQcarry': 154, 'ADCQ': 465, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_07__regalloc.dump values 3253 {'StoreReg': 191, 'Copy': 316, 'MULQU2': 51, 'LoadReg': 703, 'ADDQcarry': 210, 'ADCQ': 649, 'ADCQconst': 17, 'SETB': 7}
+Square_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+Square_02__generic_cse.dump values 722 {'Mul64uhilo': 51}
+Square_03__gcse_deadcode.dump values 722 {'Mul64uhilo': 51}
+Square_04__lowered_deadcode.dump values 806 {'MULQU2': 51, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+Square_05__schedule.dump values 806 {'MULQU2': 51, 'ADDQcarry': 40, 'ADCQ': 228, 'ADCQconst': 17, 'SETB': 7}
+Square_06__flagalloc.dump values 1536 {'MULQU2': 51, 'ADDQcarry': 154, 'ADCQ': 465, 'ADCQconst': 17, 'SETB': 7}
+Square_07__regalloc.dump values 3253 {'StoreReg': 191, 'Copy': 316, 'MULQU2': 51, 'LoadReg': 703, 'ADDQcarry': 210, 'ADCQ': 649, 'ADCQconst': 17, 'SETB': 7}
+Mul.asm instructions 2238 MULQ 66 MULXQ 0 ADCQ 622 SP operands 872
+RawMul.asm instructions 2238 MULQ 66 MULXQ 0 ADCQ 622 SP operands 872
+RawSquare.asm instructions 2264 MULQ 51 MULXQ 0 ADCQ 666 SP operands 899
+Square.asm instructions 2264 MULQ 51 MULXQ 0 ADCQ 666 SP operands 899
+
+## probes
+BenchmarkPrefixes/1/Square median 11.31 ns/op; samples [11.28, 12.0, 11.31, 11.88, 11.02]
+BenchmarkPrefixes/1/Mul median 11.21 ns/op; samples [10.97, 10.76, 11.21, 12.04, 11.33]
+BenchmarkPrefixes/2/Square median 17.81 ns/op; samples [17.92, 18.98, 17.73, 17.81, 17.8]
+BenchmarkPrefixes/2/Mul median 16.21 ns/op; samples [17.66, 16.91, 16.21, 16.18, 16.16]
+BenchmarkPrefixes/3/Square median 24.47 ns/op; samples [23.96, 23.95, 24.47, 38.39, 27.43]
+BenchmarkPrefixes/3/Mul median 28.25 ns/op; samples [28.84, 31.1, 28.25, 26.61, 26.77]
+BenchmarkPrefixes/4/Square median 32.5 ns/op; samples [32.38, 32.19, 32.5, 34.24, 32.74]
+BenchmarkPrefixes/4/Mul median 37.07 ns/op; samples [37.07, 37.31, 36.8, 37.24, 36.09]
+BenchmarkPrefixes/5/Square median 41.91 ns/op; samples [41.83, 42.43, 41.91, 41.48, 43.27]
+BenchmarkPrefixes/5/Mul median 42.79 ns/op; samples [42.87, 42.6, 41.54, 43.03, 42.79]
+BenchmarkPrefixes/6/Square median 75.44 ns/op; samples [75.35, 75.29, 75.44, 76.06, 75.75]
+BenchmarkPrefixes/6/Mul median 44.87 ns/op; samples [44.89, 45.24, 44.81, 44.87, 44.83]
+Prefix6Mul_01__gcse_deadcode.dump values 711 {'Mul64uhilo': 66}
+Prefix6Mul_02__schedule.dump values 679 {'MULQU2': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 6}
+Prefix6Mul_03__flagalloc.dump values 689 {'MULQU2': 66, 'ADDQcarry': 24, 'ADCQ': 120, 'ADCQconst': 17, 'SETB': 6}
+Prefix6Mul_04__regalloc.dump values 1067 {'StoreReg': 134, 'Copy': 68, 'MULQU2': 66, 'LoadReg': 150, 'ADDQcarry': 24, 'ADCQ': 120, 'ADCQconst': 17, 'SETB': 6}
+Prefix6Square_01__gcse_deadcode.dump values 653 {'Mul64uhilo': 51}
+Prefix6Square_02__schedule.dump values 626 {'MULQU2': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 6}
+Prefix6Square_03__flagalloc.dump values 689 {'MULQU2': 51, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 6}
+Prefix6Square_04__regalloc.dump values 1127 {'StoreReg': 154, 'Copy': 41, 'MULQU2': 51, 'LoadReg': 213, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 6}
+Prefix6Mul.asm instructions 665 MULQ 66 MULXQ 0 ADCQ 137 SP operands 299
+Prefix6Square.asm instructions 727 MULQ 51 MULXQ 0 ADCQ 161 SP operands 380
+
+## v3
+BenchmarkRaw/Square median 48.63 ns/op; samples [48.63, 51.07, 56.38, 48.18, 46.59]
+BenchmarkRaw/Mul median 91.35 ns/op; samples [82.96, 96.3, 127.5, 91.35, 87.78]
+BenchmarkFull/Square median 51.48 ns/op; samples [53.42, 55.93, 49.86, 50.57, 51.48]
+BenchmarkFull/Mul median 87.92 ns/op; samples [82.07, 86.2, 92.81, 93.11, 87.92]
+BenchmarkIndependent/Square median 47.64 ns/op; samples [47.64, 45.96, 46.9, 53.36, 52.16]
+BenchmarkIndependent/Mul median 85.9 ns/op; samples [85.9, 78.67, 86.31, 87.4, 83.58]
+Mul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+Mul_02__generic_cse.dump values 780 {'Mul64uhilo': 66}
+Mul_03__gcse_deadcode.dump values 780 {'Mul64uhilo': 66}
+Mul_04__lowered_cse.dump values 721 {'MULXQ': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_05__lowered_deadcode.dump values 721 {'MULXQ': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_06__schedule.dump values 721 {'MULXQ': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Mul_07__flagalloc.dump values 783 {'MULXQ': 66, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Mul_08__regalloc.dump values 1196 {'StoreReg': 162, 'MULXQ': 66, 'Copy': 45, 'LoadReg': 175, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawMul_01__opt_deadcode.dump values 898 {'Mul64uhilo': 78}
+RawMul_02__generic_cse.dump values 780 {'Mul64uhilo': 66}
+RawMul_03__gcse_deadcode.dump values 780 {'Mul64uhilo': 66}
+RawMul_04__lowered_cse.dump values 721 {'MULXQ': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_05__lowered_deadcode.dump values 721 {'MULXQ': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_06__schedule.dump values 721 {'MULXQ': 66, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawMul_07__flagalloc.dump values 783 {'MULXQ': 66, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawMul_08__regalloc.dump values 1196 {'StoreReg': 162, 'MULXQ': 66, 'Copy': 45, 'LoadReg': 175, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+RawSquare_02__generic_cse.dump values 722 {'Mul64uhilo': 51}
+RawSquare_03__gcse_deadcode.dump values 722 {'Mul64uhilo': 51}
+RawSquare_04__lowered_cse.dump values 668 {'MULXQ': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_05__lowered_deadcode.dump values 668 {'MULXQ': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_06__schedule.dump values 668 {'MULXQ': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_07__flagalloc.dump values 731 {'MULXQ': 51, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+RawSquare_08__regalloc.dump values 1093 {'StoreReg': 132, 'MULXQ': 51, 'Copy': 31, 'ADDQcarry': 28, 'ADCQ': 144, 'LoadReg': 168, 'ADCQconst': 17, 'SETB': 7}
+Square_01__opt_deadcode.dump values 897 {'Mul64uhilo': 78}
+Square_02__generic_cse.dump values 722 {'Mul64uhilo': 51}
+Square_03__gcse_deadcode.dump values 722 {'Mul64uhilo': 51}
+Square_04__lowered_cse.dump values 668 {'MULXQ': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_05__lowered_deadcode.dump values 668 {'MULXQ': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_06__schedule.dump values 668 {'MULXQ': 51, 'ADDQcarry': 23, 'ADCQ': 114, 'ADCQconst': 17, 'SETB': 7}
+Square_07__flagalloc.dump values 731 {'MULXQ': 51, 'ADDQcarry': 28, 'ADCQ': 144, 'ADCQconst': 17, 'SETB': 7}
+Square_08__regalloc.dump values 1093 {'StoreReg': 132, 'MULXQ': 51, 'Copy': 31, 'ADDQcarry': 28, 'ADCQ': 144, 'LoadReg': 168, 'ADCQconst': 17, 'SETB': 7}
+Mul.asm instructions 748 MULQ 0 MULXQ 66 ADCQ 161 SP operands 344
+RawMul.asm instructions 748 MULQ 0 MULXQ 66 ADCQ 161 SP operands 344
+RawSquare.asm instructions 674 MULQ 0 MULXQ 51 ADCQ 161 SP operands 305
+Square.asm instructions 674 MULQ 0 MULXQ 51 ADCQ 161 SP operands 305

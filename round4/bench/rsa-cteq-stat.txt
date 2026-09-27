@@ -1,0 +1,38 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                           │ /home/exedev/crypto-audit/round4/bench/rsa-cteq-old.txt │ /home/exedev/crypto-audit/round4/bench/rsa-cteq-new.txt │
+                           │                         sec/op                          │              sec/op               vs base               │
+Round2Verify/2048/PKCS1v15                                              34.67µ ± 10%                       31.88µ ±  6%  -8.04% (p=0.033 n=12)
+Round2Verify/2048/PSS                                                   33.15µ ±  5%                       32.59µ ±  4%       ~ (p=0.514 n=12)
+Round2Verify/3072/PKCS1v15                                              114.4µ ± 10%                       115.8µ ±  7%       ~ (p=0.630 n=12)
+Round2Verify/3072/PSS                                                   115.8µ ± 10%                       117.0µ ±  3%       ~ (p=0.755 n=12)
+Round2Verify/4096/PKCS1v15                                              197.2µ ±  4%                       194.9µ ±  8%       ~ (p=0.977 n=12)
+Round2Verify/4096/PSS                                                   195.4µ ±  8%                       202.7µ ±  8%       ~ (p=0.799 n=12)
+Round3PrecomputedRSASign                                                1.021m ±  6%                       1.076m ± 12%       ~ (p=0.178 n=12)
+geomean                                                                 129.1µ                             129.1µ        -0.02%
+
+                           │ /home/exedev/crypto-audit/round4/bench/rsa-cteq-old.txt │ /home/exedev/crypto-audit/round4/bench/rsa-cteq-new.txt │
+                           │                          B/op                           │              B/op               vs base                 │
+Round2Verify/2048/PKCS1v15                                              1.344Ki ± 0%                     1.344Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/2048/PSS                                                   1.297Ki ± 0%                     1.297Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/3072/PKCS1v15                                              25.72Ki ± 0%                     25.72Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/3072/PSS                                                   25.55Ki ± 0%                     25.55Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/4096/PKCS1v15                                              34.09Ki ± 0%                     34.09Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/4096/PSS                                                   33.80Ki ± 0%                     33.80Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round3PrecomputedRSASign                                                  512.0 ± 0%                       512.0 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                 6.782Ki                          6.782Ki       +0.00%
+¹ all samples are equal
+
+                           │ /home/exedev/crypto-audit/round4/bench/rsa-cteq-old.txt │ /home/exedev/crypto-audit/round4/bench/rsa-cteq-new.txt │
+                           │                        allocs/op                        │           allocs/op             vs base                 │
+Round2Verify/2048/PKCS1v15                                                9.000 ± 0%                       9.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/2048/PSS                                                     13.00 ± 0%                       13.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/3072/PKCS1v15                                                54.00 ± 0%                       54.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/3072/PSS                                                     58.00 ± 0%                       58.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/4096/PKCS1v15                                                54.00 ± 0%                       54.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2Verify/4096/PSS                                                     58.00 ± 0%                       58.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PrecomputedRSASign                                                  2.000 ± 0%                       2.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                   21.74                            21.74       +0.00%
+¹ all samples are equal

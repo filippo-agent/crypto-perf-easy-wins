@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3PrecomputedRSASign 	    9156	   1010964 ns/op	     512 B/op	       2 allocs/op
+PASS

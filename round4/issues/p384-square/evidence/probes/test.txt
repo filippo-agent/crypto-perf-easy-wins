@@ -1,0 +1,5 @@
+=== RUN   TestPrefixes
+--- PASS: TestPrefixes (0.01s)
+=== RUN   TestFull
+--- PASS: TestFull (0.01s)
+PASS

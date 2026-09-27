@@ -1,0 +1,2 @@
+SHA256-only final patch; 12 alternating pairs, 300ms, CPU0/GOMAXPROCS1.
+[('sha256', 'sha256-base', 'sha256-sha256-only', '^BenchmarkAuditPublicSHA2$/^(SHA256|SHA512)$/^(0|32|64|1024)$'), ('hmac', 'hmac-base', 'hmac-sha256-only', '^BenchmarkRound2PublicHMAC$/^(SHA256|SHA512)$/^32$/^(Cold|Warm|TwoUses)$')]

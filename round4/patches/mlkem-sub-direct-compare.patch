@@ -1,0 +1,16 @@
+--- a/src/crypto/internal/fips140/mlkem/field.go
++++ b/src/crypto/internal/fips140/mlkem/field.go
+@@ -35,8 +35,11 @@
+ }
+ 
+ func fieldSub(a, b fieldElement) fieldElement {
+-	x := uint16(a - b + q)
+-	return fieldReduceOnce(x)
++	// Compare canonical inputs, not the wrapped, q-offset difference.
++	// a,b < q, so d is in [-(q-1), q-1] and fits int on every target.
++	d := int(a) - int(b)
++	v := constanttime.LessOrEq(int(b), int(a))
++	return fieldElement(constanttime.Select(v, d, d+q))
+ }
+ 
+ const (

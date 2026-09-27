@@ -1,0 +1,414 @@
+{
+  "snapshot_date": "2026-09-27",
+  "issues": [
+    {
+      "number": 15925,
+      "title": "cmd/compile: SSA performance regression due to array zeroing",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/15925",
+      "source": "issue-15925.json",
+      "comments_expected": 14
+    },
+    {
+      "number": 24537,
+      "title": "cmd/compile: less optimized AMD64 code",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/24537",
+      "source": "issue-24537.json",
+      "comments_expected": 5
+    },
+    {
+      "number": 25239,
+      "title": "cmd/compile: use proved bounds to remove signed division fix-ups",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2018-10-23T02:30:41Z",
+      "url": "https://github.com/golang/go/issues/25239",
+      "source": "issue-25239.json",
+      "comments_expected": 11
+    },
+    {
+      "number": 33349,
+      "title": "cmd/compile: redundant moves and stack variables when function using bits.Add64 is inlined",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/33349",
+      "source": "issue-33349.json",
+      "comments_expected": 6
+    },
+    {
+      "number": 36897,
+      "title": "cmd/compile: possible latent codegen issue on amd64 removing zero extensions",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/36897",
+      "source": "issue-36897.json",
+      "comments_expected": 7
+    },
+    {
+      "number": 41662,
+      "title": "cmd/compile: missed opportunity to inline runtime.memmove",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2021-05-12T16:24:06Z",
+      "url": "https://github.com/golang/go/issues/41662",
+      "source": "issue-41662.json",
+      "comments_expected": 9
+    },
+    {
+      "number": 42162,
+      "title": "cmd/compile: find a good way to eliminate zero/sign extensions on arm64",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2023-02-28T03:17:17Z",
+      "url": "https://github.com/golang/go/issues/42162",
+      "source": "issue-42162.json",
+      "comments_expected": 12
+    },
+    {
+      "number": 46008,
+      "title": "doc/go1.17: document database/sql changes for Go 1.17",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2021-05-21T17:44:28Z",
+      "url": "https://github.com/golang/go/issues/46008",
+      "source": "issue-46008.json",
+      "comments_expected": 1
+    },
+    {
+      "number": 47107,
+      "title": "cmd/compile: eliminate redundant zeroing after lower pass",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2025-02-04T20:52:36Z",
+      "url": "https://github.com/golang/go/issues/47107",
+      "source": "issue-47107.json",
+      "comments_expected": 10
+    },
+    {
+      "number": 4750,
+      "title": "cmd/compile: omit zeroing of named return value when possible",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/4750",
+      "source": "issue-4750.json",
+      "comments_expected": 8
+    },
+    {
+      "number": 50126,
+      "title": "cmd/compile: simplify multiplication and division of Abs() ",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/50126",
+      "source": "issue-50126.json",
+      "comments_expected": 2
+    },
+    {
+      "number": 54467,
+      "title": "cmd/compile: miscompilation of partially-overlapping array assignments",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2022-08-23T19:58:06Z",
+      "url": "https://github.com/golang/go/issues/54467",
+      "source": "issue-54467.json",
+      "comments_expected": 22
+    },
+    {
+      "number": 55111,
+      "title": "go tool compile",
+      "state": "closed",
+      "state_reason": "not_planned",
+      "closed_at": "2022-09-16T21:48:47Z",
+      "url": "https://github.com/golang/go/issues/55111",
+      "source": "issue-55111.json",
+      "comments_expected": 1
+    },
+    {
+      "number": 59021,
+      "title": "cmd/compile: small struct initialization code is suboptimal because of redundant zeroing",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2024-04-25T20:08:05Z",
+      "url": "https://github.com/golang/go/issues/59021",
+      "source": "issue-59021.json",
+      "comments_expected": 2
+    },
+    {
+      "number": 65039,
+      "title": "cmd/compile: flagalloc doesn't delete dead instructions",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/65039",
+      "source": "issue-65039.json",
+      "comments_expected": 6
+    },
+    {
+      "number": 67957,
+      "title": "cmd/compile: double zeroing and unnecessary copying/stack use",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2024-07-23T20:56:16Z",
+      "url": "https://github.com/golang/go/issues/67957",
+      "source": "issue-67957.json",
+      "comments_expected": 10
+    },
+    {
+      "number": 68961,
+      "title": "cmd/compile: amd64 carry flag spilling uses SBBQ + NEGQ instead of SETCS",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2026-07-14T13:16:11Z",
+      "url": "https://github.com/golang/go/issues/68961",
+      "source": "issue-68961.json",
+      "comments_expected": 8
+    },
+    {
+      "number": 76056,
+      "title": "cmd/compile: optimize conditional subtractions",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2026-05-15T23:24:02Z",
+      "url": "https://github.com/golang/go/issues/76056",
+      "source": "issue-76056.json",
+      "comments_expected": 16
+    },
+    {
+      "number": 78060,
+      "title": "crypto/internal/fips140test: TestIntegrityCheckFailure failures",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/78060",
+      "source": "issue-78060.json",
+      "comments_expected": 3
+    },
+    {
+      "number": 80399,
+      "title": "cmd/compile: materialized bits.Add64/Sub64 carries no longer fold into consumers on amd64 (regression from CL 778140)",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2026-07-15T18:38:48Z",
+      "url": "https://github.com/golang/go/issues/80399",
+      "source": "issue-80399.json",
+      "comments_expected": 8
+    },
+    {
+      "number": 10931,
+      "title": "cmd/compile: constant evaluation could commute and associate",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/10931",
+      "source": "html-extract-10931.json",
+      "fetched_at": "2026-09-27T18:10:54.606402+00:00",
+      "comments_captured": 4
+    },
+    {
+      "number": 12841,
+      "title": "cmd/compile: optimize struct copy",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/12841",
+      "source": "html-extract-12841.json",
+      "fetched_at": "2026-09-27T18:09:36.887884+00:00",
+      "comments_captured": 1
+    },
+    {
+      "number": 14762,
+      "title": "cmd/compile: let SSA store to PPARAMOUT variables earlier than return",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/14762",
+      "source": "html-extract-14762.json",
+      "fetched_at": "2026-09-27T18:08:27.763297+00:00",
+      "comments_captured": 0
+    },
+    {
+      "number": 16192,
+      "title": "cmd/compile: new backend; multiple efficiency issues...",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/16192",
+      "source": "html-extract-16192.json",
+      "fetched_at": "2026-09-27T18:10:55.286266+00:00",
+      "comments_captured": 9
+    },
+    {
+      "number": 18529,
+      "title": "cmd/compile: improve code generation for temporary slice copy and inlining",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/18529",
+      "source": "html-extract-18529.json",
+      "fetched_at": "2026-09-27T18:09:36.986114+00:00",
+      "comments_captured": 2
+    },
+    {
+      "number": 19712,
+      "title": "cmd/compile: Unnecessary register high-bytes rezeroing after unsigned right shift",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/19712",
+      "source": "html-extract-19712.json",
+      "fetched_at": "2026-09-27T18:08:28.582523+00:00",
+      "comments_captured": 2
+    },
+    {
+      "number": 27572,
+      "title": "cmd/compile: eliminate unnecessary extend-of-truncate calculations in prove pass",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/27572",
+      "source": "html-extract-27572.json",
+      "fetched_at": "2026-09-27T18:10:54.678381+00:00",
+      "comments_captured": 2
+    },
+    {
+      "number": 30582,
+      "title": "proposal: unsafe: add Unreachable",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/30582",
+      "source": "html-extract-30582.json",
+      "fetched_at": "2026-09-27T18:09:37.682880+00:00",
+      "comments_captured": 11
+    },
+    {
+      "number": 32969,
+      "title": "cmd/compile: superfluous MOV instructions",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/32969",
+      "source": "html-extract-32969.json",
+      "fetched_at": "2026-09-27T18:09:36.915101+00:00",
+      "comments_captured": 2
+    },
+    {
+      "number": 36405,
+      "title": "cmd/compile: performance of slice append is optimizable",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/36405",
+      "source": "html-extract-36405.json",
+      "fetched_at": "2026-09-27T18:09:36.917037+00:00",
+      "comments_captured": 5
+    },
+    {
+      "number": 43357,
+      "title": "cmd/compile: inefficient assembly code on arm64",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/43357",
+      "source": "html-extract-43357.json",
+      "fetched_at": "2026-09-27T18:10:55.308126+00:00",
+      "comments_captured": 5
+    },
+    {
+      "number": 49495,
+      "title": "cmd/compile compiler can't optimize calculations with constants",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/49495",
+      "source": "html-extract-49495.json",
+      "fetched_at": "2026-09-27T18:10:54.547927+00:00",
+      "comments_captured": 4
+    },
+    {
+      "number": 50821,
+      "title": "cmd/compile/internal/amd64: huge performance degradation (register allocation issue?)",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/50821",
+      "source": "html-extract-50821.json",
+      "fetched_at": "2026-09-27T18:08:27.029951+00:00",
+      "comments_captured": 1
+    },
+    {
+      "number": 57759,
+      "title": "cmd/compile: append should be optmized as copy",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/57759",
+      "source": "html-extract-57759.json",
+      "fetched_at": "2026-09-27T18:08:28.011565+00:00",
+      "comments_captured": 8
+    },
+    {
+      "number": 65495,
+      "title": "cmd/compile: unnecessary temporary variable on stack",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/65495",
+      "source": "html-extract-65495.json",
+      "fetched_at": "2026-09-27T18:08:28.625951+00:00",
+      "comments_captured": 9
+    },
+    {
+      "number": 76066,
+      "title": "cmd/compile: on `AMD64` slow instruction sequence to Zext a < register size instruction output",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/76066",
+      "source": "html-extract-76066.json",
+      "fetched_at": "2026-09-27T18:08:27.938672+00:00",
+      "comments_captured": 6
+    },
+    {
+      "number": 77380,
+      "title": "cmd/compile: emit better code for bit vectors",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/77380",
+      "source": "html-extract-77380.json",
+      "fetched_at": "2026-09-27T18:08:28.375804+00:00",
+      "comments_captured": 3
+    },
+    {
+      "number": 80146,
+      "title": "cmd/compile/internal/ssa: eSSA for the prove pass",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/80146",
+      "source": "html-extract-80146.json",
+      "fetched_at": "2026-09-27T18:10:54.695600+00:00",
+      "comments_captured": 6
+    },
+    {
+      "number": 80400,
+      "title": "cmd/compile: add memory operand ADC and SBB to `AMD64.rules`",
+      "state": "open",
+      "state_reason": null,
+      "closed_at": null,
+      "url": "https://github.com/golang/go/issues/80400",
+      "source": "html-extract-80400.json",
+      "fetched_at": "2026-09-27T18:08:27.200782+00:00",
+      "comments_captured": 3
+    }
+  ]
+}

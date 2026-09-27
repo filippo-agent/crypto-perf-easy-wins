@@ -1,0 +1,29 @@
+goos: linux
+goarch: amd64
+pkg: crypto/mlkem
+cpu: AMD EPYC 9554P 64-Core Processor               
+                            │ /home/exedev/crypto-audit/round4/bench/confirmation/mlkem-cbd-old.txt │ /home/exedev/crypto-audit/round4/bench/confirmation/mlkem-cbd-new.txt │
+                            │                                sec/op                                 │                     sec/op                      vs base               │
+Round2MLKEM/768/EncapsWarm                                                              33.38µ ± 4%                                      32.36µ ± 3%       ~ (p=0.149 n=16)
+Round2MLKEM/768/DecapsWarm                                                              49.83µ ± 5%                                      49.94µ ± 2%       ~ (p=0.780 n=16)
+Round2MLKEM/1024/EncapsWarm                                                             43.29µ ± 5%                                      43.08µ ± 2%       ~ (p=0.780 n=16)
+Round2MLKEM/1024/DecapsWarm                                                             64.92µ ± 6%                                      64.43µ ± 4%       ~ (p=0.897 n=16)
+geomean                                                                                 46.50µ                                           46.02µ       -1.03%
+
+                            │ /home/exedev/crypto-audit/round4/bench/confirmation/mlkem-cbd-old.txt │ /home/exedev/crypto-audit/round4/bench/confirmation/mlkem-cbd-new.txt │
+                            │                                 B/op                                  │                     B/op                      vs base                 │
+Round2MLKEM/768/EncapsWarm                                                             1.188Ki ± 0%                                   1.188Ki ± 0%       ~ (p=1.000 n=16) ¹
+Round2MLKEM/768/DecapsWarm                                                               64.00 ± 0%                                     64.00 ± 0%       ~ (p=1.000 n=16) ¹
+Round2MLKEM/1024/EncapsWarm                                                            1.812Ki ± 0%                                   1.812Ki ± 0%       ~ (p=1.000 n=16) ¹
+Round2MLKEM/1024/DecapsWarm                                                              64.00 ± 0%                                     64.00 ± 0%       ~ (p=1.000 n=16) ¹
+geomean                                                                                  310.1                                          310.1       +0.00%
+¹ all samples are equal
+
+                            │ /home/exedev/crypto-audit/round4/bench/confirmation/mlkem-cbd-old.txt │ /home/exedev/crypto-audit/round4/bench/confirmation/mlkem-cbd-new.txt │
+                            │                               allocs/op                               │                  allocs/op                    vs base                 │
+Round2MLKEM/768/EncapsWarm                                                               2.000 ± 0%                                     2.000 ± 0%       ~ (p=1.000 n=16) ¹
+Round2MLKEM/768/DecapsWarm                                                               2.000 ± 0%                                     2.000 ± 0%       ~ (p=1.000 n=16) ¹
+Round2MLKEM/1024/EncapsWarm                                                              2.000 ± 0%                                     2.000 ± 0%       ~ (p=1.000 n=16) ¹
+Round2MLKEM/1024/DecapsWarm                                                              2.000 ± 0%                                     2.000 ± 0%       ~ (p=1.000 n=16) ¹
+geomean                                                                                  2.000                                          2.000       +0.00%
+¹ all samples are equal

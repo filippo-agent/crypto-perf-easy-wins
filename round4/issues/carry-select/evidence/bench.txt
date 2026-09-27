@@ -1,0 +1,45 @@
+goos: linux
+goarch: amd64
+pkg: carryselect
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkEq/TwoBorrow         	69208821	         1.686 ns/op
+BenchmarkEq/TwoBorrow         	78945184	         1.556 ns/op
+BenchmarkEq/TwoBorrow         	73968372	         1.849 ns/op
+BenchmarkEq/TwoBorrow         	73749439	         1.560 ns/op
+BenchmarkEq/TwoBorrow         	73531754	         1.768 ns/op
+BenchmarkEq/XorBorrow         	77179442	         1.601 ns/op
+BenchmarkEq/XorBorrow         	78826149	         1.587 ns/op
+BenchmarkEq/XorBorrow         	70793744	         1.660 ns/op
+BenchmarkEq/XorBorrow         	72955911	         1.494 ns/op
+BenchmarkEq/XorBorrow         	74034679	         1.442 ns/op
+BenchmarkAssign/Mask          	11630134	        11.64 ns/op
+BenchmarkAssign/Mask          	11617178	        11.85 ns/op
+BenchmarkAssign/Mask          	11306416	        11.32 ns/op
+BenchmarkAssign/Mask          	11390838	        11.86 ns/op
+BenchmarkAssign/Mask          	 9728038	        12.62 ns/op
+BenchmarkAssign/Select        	16357790	         8.603 ns/op
+BenchmarkAssign/Select        	15952066	         8.783 ns/op
+BenchmarkAssign/Select        	14161279	         7.623 ns/op
+BenchmarkAssign/Select        	16416175	         7.519 ns/op
+BenchmarkAssign/Select        	16251340	         8.614 ns/op
+BenchmarkNegBorrow/Neg        	88329858	         1.529 ns/op
+BenchmarkNegBorrow/Neg        	79052632	         1.973 ns/op
+BenchmarkNegBorrow/Neg        	70142253	         1.592 ns/op
+BenchmarkNegBorrow/Neg        	71111382	         1.502 ns/op
+BenchmarkNegBorrow/Neg        	74433883	         1.534 ns/op
+BenchmarkNegBorrow/Sub        	77494249	         1.552 ns/op
+BenchmarkNegBorrow/Sub        	84152298	         1.413 ns/op
+BenchmarkNegBorrow/Sub        	89364904	         1.398 ns/op
+BenchmarkNegBorrow/Sub        	89426240	         1.596 ns/op
+BenchmarkNegBorrow/Sub        	89127552	         1.798 ns/op
+BenchmarkDot/Schedule         	 5127562	        24.88 ns/op
+BenchmarkDot/Schedule         	 5660954	        22.71 ns/op
+BenchmarkDot/Schedule         	 5815984	        22.93 ns/op
+BenchmarkDot/Schedule         	 5190433	        23.98 ns/op
+BenchmarkDot/Schedule         	 5396054	        24.78 ns/op
+BenchmarkDot/Barrier          	 4999963	        25.82 ns/op
+BenchmarkDot/Barrier          	 5056107	        23.81 ns/op
+BenchmarkDot/Barrier          	 4305878	        31.79 ns/op
+BenchmarkDot/Barrier          	 4594542	        23.48 ns/op
+BenchmarkDot/Barrier          	 4701362	        24.46 ns/op
+PASS

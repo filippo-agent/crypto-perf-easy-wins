@@ -1,0 +1,121 @@
+DependentAB func(*[15]uint64, *[14]uint64, *[14]uint64)
+  b1:
+    (102) v7 = ArgIntReg <*[15]uint64> {out+0} [0] (out[*[15]uint64])
+    (102) v8 = ArgIntReg <*[14]uint64> {a+0} [1] (a[*[14]uint64])
+    (102) v9 = ArgIntReg <*[14]uint64> {b+0} [2] (b[*[14]uint64])
+    (?) v2 = SP <uintptr>
+    (?) v1 = InitMem <mem>
+    (+87) v10 = LoweredNilCheck <void> v8 v1
+    (87) v15 = LoweredNilCheck <void> v9 v1
+    (87) v14 = MOVQload <uint64> v8 v1
+    (87) v17 = MOVQload <uint64> v9 v1
+    (+88) v25 = MOVQload <uint64> [8] v8 v1
+    (88) v28 = MOVQload <uint64> [8] v9 v1
+    (+89) v35 = MOVQload <uint64> [16] v8 v1
+    (89) v38 = MOVQload <uint64> [16] v9 v1
+    (+90) v45 = MOVQload <uint64> [24] v8 v1
+    (90) v48 = MOVQload <uint64> [24] v9 v1
+    (+91) v55 = MOVQload <uint64> [32] v8 v1
+    (91) v58 = MOVQload <uint64> [32] v9 v1
+    (+92) v65 = MOVQload <uint64> [40] v8 v1
+    (92) v68 = MOVQload <uint64> [40] v9 v1
+    (+93) v75 = MOVQload <uint64> [48] v8 v1
+    (93) v78 = MOVQload <uint64> [48] v9 v1
+    (+94) v85 = MOVQload <uint64> [56] v8 v1
+    (+95) v92 = MOVQload <uint64> [64] v8 v1
+    (95) v95 = MOVQload <uint64> [64] v9 v1
+    (+96) v102 = MOVQload <uint64> [72] v8 v1
+    (96) v105 = MOVQload <uint64> [72] v9 v1
+    (+97) v112 = MOVQload <uint64> [80] v8 v1
+    (97) v115 = MOVQload <uint64> [80] v9 v1
+    (+98) v122 = MOVQload <uint64> [88] v8 v1
+    (98) v125 = MOVQload <uint64> [88] v9 v1
+    (+99) v132 = MOVQload <uint64> [96] v8 v1
+    (99) v135 = MOVQload <uint64> [96] v9 v1
+    (+100) v142 = MOVQload <uint64> [104] v8 v1
+    (100) v145 = MOVQload <uint64> [104] v9 v1
+    (-101) v150 = VarDef <mem> {.autotmp_76} v1
+    (-101) v151 = LEAQ <*[15]uint64> {.autotmp_76} v2
+    (87) v119 = ADDQcarry <uint64,flags> v17 v14
+    (87) v20 = Select0 <uint64> v119 (x0[uint64])
+    (87) v123 = Select1 <flags> v119
+    (+101) v156 = MOVQstore <mem> {.autotmp_76} v2 v20 v150
+    (88) v76 = ADCQ <uint64,flags> v28 v25 v123
+    (88) v30 = Select0 <uint64> v76 (x1[uint64])
+    (88) v82 = Select1 <flags> v76
+    (101) v159 = MOVQstore <mem> {.autotmp_76} [8] v2 v30 v156
+    (89) v36 = ADCQ <uint64,flags> v38 v35 v82
+    (89) v40 = Select0 <uint64> v36 (x2[uint64])
+    (89) v42 = Select1 <flags> v36
+    (101) v162 = MOVQstore <mem> {.autotmp_76} [16] v2 v40 v159
+    (90) v22 = ADCQ <uint64,flags> v48 v45 v42
+    (90) v50 = Select0 <uint64> v22 (x3[uint64])
+    (90) v190 = Select1 <flags> v22
+    (101) v165 = MOVQstore <mem> {.autotmp_76} [24] v2 v50 v162
+    (91) v163 = ADCQ <uint64,flags> v58 v55 v190
+    (91) v60 = Select0 <uint64> v163 (x4[uint64])
+    (91) v166 = Select1 <flags> v163
+    (101) v168 = MOVQstore <mem> {.autotmp_76} [32] v2 v60 v165
+    (92) v153 = ADCQ <uint64,flags> v68 v65 v166
+    (92) v70 = Select0 <uint64> v153 (x5[uint64])
+    (92) v280 = Select1 <flags> v153
+    (101) v171 = MOVQstore <mem> {.autotmp_76} [40] v2 v70 v168
+    (93) v276 = ADCQ <uint64,flags> v78 v75 v280
+    (93) v80 = Select0 <uint64> v276 (x6[uint64])
+    (93) v272 = Select1 <flags> v276
+    (101) v174 = MOVQstore <mem> {.autotmp_76} [48] v2 v80 v171
+    (93) v273 = SETB <uint8> v272
+    (93) v81 = MOVBQZX <uint64> v273 (ca[uint64])
+    (94) v263 = ADDQcarry <uint64,flags> v85 v80
+    (94) v87 = Select0 <uint64> v263 (y0[uint64])
+    (94) v264 = Select1 <flags> v263
+    (101) v177 = MOVQstore <mem> {.autotmp_76} [56] v2 v87 v174
+    (95) v260 = ADCQ <uint64,flags> v95 v92 v264
+    (95) v97 = Select0 <uint64> v260 (y1[uint64])
+    (95) v256 = Select1 <flags> v260
+    (101) v180 = MOVQstore <mem> {.autotmp_76} [64] v2 v97 v177
+    (96) v252 = ADCQ <uint64,flags> v105 v102 v256
+    (96) v107 = Select0 <uint64> v252 (y2[uint64])
+    (96) v248 = Select1 <flags> v252
+    (101) v183 = MOVQstore <mem> {.autotmp_76} [72] v2 v107 v180
+    (97) v239 = ADCQ <uint64,flags> v115 v112 v248
+    (97) v117 = Select0 <uint64> v239 (y3[uint64])
+    (97) v240 = Select1 <flags> v239
+    (101) v186 = MOVQstore <mem> {.autotmp_76} [80] v2 v117 v183
+    (98) v236 = ADCQ <uint64,flags> v125 v122 v240
+    (98) v127 = Select0 <uint64> v236 (y4[uint64])
+    (98) v232 = Select1 <flags> v236
+    (101) v189 = MOVQstore <mem> {.autotmp_76} [88] v2 v127 v186
+    (99) v228 = ADCQ <uint64,flags> v135 v132 v232
+    (99) v137 = Select0 <uint64> v228 (y5[uint64])
+    (99) v224 = Select1 <flags> v228
+    (101) v192 = MOVQstore <mem> {.autotmp_76} [96] v2 v137 v189
+    (100) v220 = ADCQ <uint64,flags> v145 v142 v224
+    (100) v147 = Select0 <uint64> v220 (y6[uint64])
+    (100) v216 = Select1 <flags> v220
+    (101) v195 = MOVQstore <mem> {.autotmp_76} [104] v2 v147 v192
+    (101) v212 = ADCQconst <uint64,flags> [0] v81 v216
+    (101) v196 = Select0 <uint64> v212
+    (101) v199 = MOVQstore <mem> {.autotmp_76} [112] v2 v196 v195
+    (101) v201 = LoweredNilCheck <void> v7 v199
+    (101) v202 = LoweredMove <mem> [120] v7 v151 v199
+    (+102) v203 = MakeResult <mem> v202
+    Ret v203
+name out[*[15]uint64]: [v7]
+name a[*[14]uint64]: [v8]
+name b[*[14]uint64]: [v9]
+name x0[uint64]: [v20]
+name ca[uint64]: [v81]
+name x1[uint64]: [v30]
+name x2[uint64]: [v40]
+name x3[uint64]: [v50]
+name x4[uint64]: [v60]
+name x5[uint64]: [v70]
+name x6[uint64]: [v80]
+name y0[uint64]: [v87]
+name y1[uint64]: [v97]
+name y2[uint64]: [v107]
+name y3[uint64]: [v117]
+name y4[uint64]: [v127]
+name y5[uint64]: [v137]
+name y6[uint64]: [v147]

@@ -1,0 +1,66 @@
+File: mldsa-verify.test
+Build ID: 93ecb4f4277ffbcd78c5091e1973499102c1d894
+Type: cpu
+Time: 2026-09-27 17:19:21 UTC
+Duration: 9.72s, Total samples = 9.69s (99.65%)
+Showing nodes accounting for 9.54s, 98.45% of 9.69s total
+Dropped 10 nodes (cum <= 0.05s)
+      flat  flat%   sum%        cum   cum%
+        2s 20.64% 20.64%      2.03s 20.95%  crypto/internal/fips140/mldsa.fieldMontgomeryPartialReduce (inline)
+     1.26s 13.00% 33.64%      1.26s 13.00%  crypto/internal/fips140/sha3.keccakF1600x4AVX2
+     1.25s 12.90% 46.54%      2.26s 23.32%  crypto/internal/fips140/mldsa.ntt
+     0.97s 10.01% 56.55%      0.97s 10.01%  crypto/internal/fips140/sha3.keccakF1600
+     0.56s  5.78% 62.33%      1.13s 11.66%  crypto/internal/fips140/mldsa.inverseNTT
+     0.42s  4.33% 66.67%      0.52s  5.37%  crypto/internal/fips140/mldsa.decompose88
+     0.33s  3.41% 70.07%      0.33s  3.41%  crypto/internal/fips140/mldsa.nttMulAdd (inline)
+     0.31s  3.20% 73.27%      9.15s 94.43%  crypto/internal/fips140/mldsa.verifyInternal
+     0.27s  2.79% 76.06%      0.96s  9.91%  crypto/internal/fips140/mldsa.parseSampleNTT
+     0.19s  1.96% 78.02%      1.29s 13.31%  crypto/internal/fips140/mldsa.fieldMontgomeryMulShortByWide (inline)
+     0.18s  1.86% 79.88%      0.33s  3.41%  crypto/internal/fips140/mldsa.bitUnpack18
+     0.17s  1.75% 81.63%      0.17s  1.75%  crypto/internal/fips140/mldsa.fieldPartialReduce (inline)
+     0.15s  1.55% 83.18%      0.15s  1.55%  crypto/internal/fips140/mldsa.fieldReduceOnce (inline)
+     0.10s  1.03% 84.21%      0.10s  1.03%  crypto/internal/fips140/mldsa.pkDecode
+     0.10s  1.03% 85.24%      0.10s  1.03%  runtime.memmove
+     0.09s  0.93% 86.17%      0.09s  0.93%  crypto/internal/constanttime.LessOrEq (inline)
+     0.09s  0.93% 87.10%      0.18s  1.86%  crypto/internal/fips140/mldsa.constantTimeSelectLessOrEqual (inline)
+     0.09s  0.93% 88.03%      0.28s  2.89%  crypto/internal/fips140/mldsa.fieldInfinityNorm
+     0.09s  0.93% 88.96%      0.61s  6.30%  crypto/internal/fips140/mldsa.useHint88
+     0.08s  0.83% 89.78%      0.84s  8.67%  crypto/internal/fips140/mldsa.fieldMontgomeryPartialMul (inline)
+     0.08s  0.83% 90.61%      0.08s  0.83%  crypto/internal/fips140/mldsa.nttMulSub (inline)
+     0.08s  0.83% 91.43%      0.16s  1.65%  crypto/internal/fips140/mldsa.nttReduce (inline)
+     0.07s  0.72% 92.16%      1.29s 13.31%  crypto/internal/fips140/mldsa.computeT1Hat
+     0.07s  0.72% 92.88%      0.46s  4.75%  crypto/internal/fips140/mldsa.w1Encode
+     0.07s  0.72% 93.60%      1.45s 14.96%  crypto/internal/fips140/sha3.readMultiGroup
+     0.06s  0.62% 94.22%      0.18s  1.86%  crypto/internal/fips140/mldsa.fieldMontgomeryMul (inline)
+     0.05s  0.52% 94.74%      0.23s  2.37%  crypto/internal/fips140/mldsa.fieldToMontgomery
+     0.05s  0.52% 95.25%      0.25s  2.58%  crypto/internal/fips140/sha3.(*Digest).readGeneric
+     0.04s  0.41% 95.67%      0.08s  0.83%  crypto/internal/fips140/mldsa.fieldFromMontgomery (inline)
+     0.04s  0.41% 96.08%      0.65s  6.71%  crypto/internal/fips140/mldsa.useHint
+     0.04s  0.41% 96.49%      0.84s  8.67%  crypto/internal/fips140/sha3.(*Digest).writeGeneric
+     0.03s  0.31% 96.80%      0.31s  3.20%  crypto/internal/fips140/mldsa.coefficientsExceedBound (inline)
+     0.03s  0.31% 97.11%      2.52s 26.01%  crypto/internal/fips140/mldsa.computeMatrixA
+     0.02s  0.21% 97.32%      0.15s  1.55%  crypto/internal/fips140/mldsa.fieldSubToMontgomery (inline)
+     0.02s  0.21% 97.52%      0.15s  1.55%  crypto/internal/fips140/mldsa.sampleInBall
+     0.02s  0.21% 97.73%      0.37s  3.82%  crypto/internal/fips140/mldsa.sigDecode
+     0.02s  0.21% 97.94%      0.86s  8.88%  crypto/internal/fips140/sha3.(*SHAKE).Write (inline)
+     0.02s  0.21% 98.14%      1.28s 13.21%  crypto/internal/fips140/sha3.keccakF1600Multi
+     0.01s   0.1% 98.25%      0.34s  3.51%  crypto/internal/fips140/mldsa.bitUnpack
+     0.01s   0.1% 98.35%      0.16s  1.65%  crypto/internal/fips140/mldsa.fieldMontgomeryReduce (inline)
+     0.01s   0.1% 98.45%      0.40s  4.13%  crypto/mldsa.NewPublicKey (inline)
+         0     0% 98.45%      0.39s  4.02%  crypto/internal/fips140/mldsa.NewPublicKey44 (inline)
+         0     0% 98.45%      9.29s 95.87%  crypto/internal/fips140/mldsa.Verify
+         0     0% 98.45%      0.14s  1.44%  crypto/internal/fips140/mldsa.computeMessageHash
+         0     0% 98.45%      0.39s  4.02%  crypto/internal/fips140/mldsa.computePublicKeyHash
+         0     0% 98.45%      0.39s  4.02%  crypto/internal/fips140/mldsa.newPublicKey
+         0     0% 98.45%      0.84s  8.67%  crypto/internal/fips140/sha3.(*Digest).Write
+         0     0% 98.45%      0.20s  2.06%  crypto/internal/fips140/sha3.(*Digest).padAndPermute
+         0     0% 98.45%      0.97s 10.01%  crypto/internal/fips140/sha3.(*Digest).permute (inline)
+         0     0% 98.45%      0.25s  2.58%  crypto/internal/fips140/sha3.(*Digest).read (inline)
+         0     0% 98.45%      0.84s  8.67%  crypto/internal/fips140/sha3.(*Digest).write (inline)
+         0     0% 98.45%      0.25s  2.58%  crypto/internal/fips140/sha3.(*SHAKE).Read
+         0     0% 98.45%      1.46s 15.07%  crypto/internal/fips140/sha3.ReadMulti
+         0     0% 98.45%      9.29s 95.87%  crypto/mldsa.Verify
+         0     0% 98.45%      0.39s  4.02%  crypto/mldsa.newPublicKey
+         0     0% 98.45%      9.69s   100%  crypto/mldsa_test.BenchmarkRound2MLDSA.func1.7
+         0     0% 98.45%      9.69s   100%  testing.(*B).run1.func1
+         0     0% 98.45%      9.69s   100%  testing.(*B).runN

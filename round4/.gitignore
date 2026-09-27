@@ -1,0 +1,14 @@
+# Locally retained build outputs; source and diagnostic evidence are versioned.
+*.test
+*.o
+# Superseded broad searches are retained locally, not used for novelty claims.
+/issues/*-search.json
+/issues/*-exact.json
+/issues/p384-compiler.json
+# Large investigation caches remain on the VM. The compact carry SSA proof,
+# source reproducers, assembly, result summaries, and verified issue index stay
+# versioned.
+/issues/p384-square/evidence/*/*.dump
+/issues/prior-art-snapshot/search-*.json
+/issues/prior-art-snapshot/html-data-*.json
+/issues/prior-art-snapshot/html-extract-*.json

@@ -1,0 +1,42 @@
+File: ecdsa-verify.test
+Build ID: 8cf49860a8be4b743eefcb859699044b19599705
+Type: cpu
+Time: 2026-09-27 17:20:07 UTC
+Duration: 9.56s, Total samples = 9.52s (99.61%)
+Showing nodes accounting for 9.39s, 98.63% of 9.52s total
+Dropped 29 nodes (cum <= 0.05s)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      9.52s   100%  testing.(*B).run1.func1
+         0     0%     0%      9.52s   100%  testing.(*B).runN
+         0     0%     0%      9.51s 99.89%  crypto/ecdsa_test.BenchmarkRound3VerifyEngine.func1.1
+         0     0%     0%      9.50s 99.79%  crypto/ecdsa.VerifyASN1
+         0     0%     0%      9.50s 99.79%  crypto/ecdsa.verifyFIPS[go.shape.*uint8]
+         0     0%     0%      9.50s 99.79%  crypto/internal/fips140/ecdsa.Verify[go.shape.*uint8]
+         0     0%     0%      9.50s 99.79%  crypto/internal/fips140/ecdsa.verifyGeneric[go.shape.*uint8]
+         0     0%     0%      9.50s 99.79%  crypto/internal/fips140/ecdsa.verify[go.shape.*uint8] (inline)
+         0     0%     0%      7.78s 81.72%  crypto/internal/fips140/nistec.(*P384Point).CombinedMultPublic
+     0.01s  0.11%  0.11%      7.78s 81.72%  crypto/internal/fips140/nistec.(*P384Point).VarTimeDoubleScalarBaseMult
+     6.53s 68.59% 68.70%      6.93s 72.79%  crypto/internal/fips140/nistec/fiat.p384Mul
+     0.03s  0.32% 69.01%      5.56s 58.40%  crypto/internal/fips140/nistec.(*P384Point).Double
+     0.01s  0.11% 69.12%      5.48s 57.56%  crypto/internal/fips140/nistec/fiat.(*P384Element).Mul (inline)
+     0.01s  0.11% 69.22%      2.21s 23.21%  crypto/internal/fips140/nistec.(*P384Point).Add
+     0.02s  0.21% 69.43%      1.48s 15.55%  crypto/internal/fips140/nistec/fiat.(*P384Element).Square (inline)
+     0.02s  0.21% 69.64%      1.28s 13.45%  crypto/internal/fips140/bigmod.(*Nat).Exp
+         0     0% 69.64%      1.28s 13.45%  crypto/internal/fips140/ecdsa.inverse[go.shape.*uint8]
+     0.17s  1.79% 71.43%      1.18s 12.39%  crypto/internal/fips140/bigmod.(*Nat).montgomeryMul
+     0.02s  0.21% 71.64%      0.79s  8.30%  crypto/internal/fips140/nistec/fiat.(*P384Element).Add (inline)
+     0.45s  4.73% 76.37%      0.77s  8.09%  crypto/internal/fips140/nistec/fiat.p384Add
+     0.66s  6.93% 83.30%      0.66s  6.93%  crypto/internal/fips140/nistec/fiat.p384CmovznzU64 (inline)
+     0.59s  6.20% 89.50%      0.59s  6.20%  crypto/internal/fips140/bigmod.addMulVVW (inline)
+         0     0% 89.50%      0.43s  4.52%  crypto/internal/fips140/nistec.(*P384Point).BytesX
+         0     0% 89.50%      0.42s  4.41%  crypto/internal/fips140/nistec.(*P384Point).bytesX
+         0     0% 89.50%      0.39s  4.10%  crypto/internal/fips140/nistec/fiat.(*P384Element).Invert
+     0.03s  0.32% 89.81%      0.36s  3.78%  crypto/internal/fips140/nistec/fiat.(*P384Element).Sub (inline)
+     0.31s  3.26% 93.07%      0.33s  3.47%  crypto/internal/fips140/nistec/fiat.p384Sub
+     0.02s  0.21% 93.28%      0.25s  2.63%  crypto/internal/fips140/bigmod.(*Nat).maybeSubtractModulus
+     0.13s  1.37% 94.64%      0.13s  1.37%  crypto/internal/fips140/bigmod.(*Nat).sub (inline)
+     0.10s  1.05% 95.69%      0.10s  1.05%  crypto/internal/fips140/bigmod.(*Nat).assign (inline)
+     0.10s  1.05% 96.74%      0.10s  1.05%  runtime.asyncPreempt
+     0.06s  0.63% 97.37%      0.09s  0.95%  crypto/internal/fips140/bigmod.(*Nat).reset (inline)
+     0.09s  0.95% 98.32%      0.09s  0.95%  runtime.memmove
+     0.03s  0.32% 98.63%      0.06s  0.63%  crypto/internal/fips140/bigmod.(*Nat).set (inline)

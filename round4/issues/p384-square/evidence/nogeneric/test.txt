@@ -1,0 +1,3 @@
+=== RUN   TestFull
+--- PASS: TestFull (0.01s)
+PASS

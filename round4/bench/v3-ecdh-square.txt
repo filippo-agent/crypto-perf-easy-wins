@@ -1,0 +1,72 @@
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     430	    840726 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     453	    746075 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     442	    821347 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     414	    839756 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     432	    911392 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     436	    824482 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     373	    930484 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     464	    807822 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     478	    847987 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     416	    804541 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     441	    748025 ns/op	    1320 B/op	      24 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkECDH/P384         	     392	    830514 ns/op	    1320 B/op	      24 allocs/op
+PASS

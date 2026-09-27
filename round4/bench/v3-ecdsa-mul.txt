@@ -1,0 +1,72 @@
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     427	    773945 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     501	    731451 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     441	    829723 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     450	    803390 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     436	    807390 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     424	    772987 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     464	    808348 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     451	    763314 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     488	    822459 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     450	    806218 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     457	    751520 ns/op	    1112 B/op	      23 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	     445	    830446 ns/op	    1112 B/op	      23 allocs/op
+PASS

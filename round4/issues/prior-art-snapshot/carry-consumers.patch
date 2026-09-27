@@ -1,0 +1,130 @@
+From 0a6ccc557a7205172a9db17acb76cb18428a441e Mon Sep 17 00:00:00 2001
+From: Jorropo <jorropo.pgm@gmail.com>
+Date: Tue, 14 Jul 2026 07:32:30 +0200
+Subject: [PATCH] cmd/compile: on amd64 optimize x + carry and x - carry into
+ ADC and SBB
+
+This doesn't restore the round-about old behavior where we used to take
+an inverse of the inverse of the carry flag to move data from flags to
+GP.
+
+Instead it performs the addition or substraction directly between GP and
+flags which is faster by 1 cycle (TP & LAT & instructions)
+
+Fixes #80399
+
+Change-Id: Id90d3089322ae78887ad9e839838402b70d61ae2
+Reviewed-on: https://go-review.googlesource.com/c/go/+/800460
+Reviewed-by: Keith Randall <khr@google.com>
+Reviewed-by: Keith Randall <khr@golang.org>
+LUCI-TryBot-Result: golang-scoped@luci-project-accounts.iam.gserviceaccount.com <golang-scoped@luci-project-accounts.iam.gserviceaccount.com>
+Auto-Submit: Jorropo <jorropo.pgm@gmail.com>
+Reviewed-by: Russ Cox <rsc@golang.org>
+---
+ src/cmd/compile/internal/ssa/_gen/AMD64.rules |  5 ++-
+ src/cmd/compile/internal/ssa/rewriteAMD64.go  | 44 +++++++++++++++++++
+ test/codegen/mathbits.go                      | 13 ++++++
+ 3 files changed, 61 insertions(+), 1 deletion(-)
+
+diff --git a/src/cmd/compile/internal/ssa/_gen/AMD64.rules b/src/cmd/compile/internal/ssa/_gen/AMD64.rules
+index 36c1e3354d6f06..bb6732d57dfcf3 100644
+--- a/src/cmd/compile/internal/ssa/_gen/AMD64.rules
++++ b/src/cmd/compile/internal/ssa/_gen/AMD64.rules
+@@ -48,7 +48,10 @@
+ (ADCQconst x [c] (InvertFlags f)) => (ADCQconst x [c] (Select1 <types.TypeFlags> (NEGLflags (MOVBQZX <types.Types[types.TUINT32]> (SETA <types.Types[types.TUINT8]> f)))))
+ (SBBQ x y (InvertFlags f)) => (SBBQ x y (Select1 <types.TypeFlags> (NEGLflags (MOVBQZX <types.Types[types.TUINT32]> (SETA <types.Types[types.TUINT8]> f)))))
+ (SBBQconst x [c] (InvertFlags f)) => (SBBQconst x [c] (Select1 <types.TypeFlags> (NEGLflags (MOVBQZX <types.Types[types.TUINT32]> (SETA <types.Types[types.TUINT8]> f)))))
+-
++// ADDQ/SUBQ an from a carry flag into ADCQ/SBBQ
++// TODO: maybe add ADCL and SBBL ?
++(ADDQ x (MOVBQZX (SETB flags))) => (Select0 (ADCQconst [0] x flags))
++(SUBQ x (MOVBQZX (SETB flags))) => (Select0 (SBBQconst [0] x flags))
+ 
+ (Mul64uhilo ...) => (MULQU2 ...)
+ (Div128u ...) => (DIVQU2 ...)
+diff --git a/src/cmd/compile/internal/ssa/rewriteAMD64.go b/src/cmd/compile/internal/ssa/rewriteAMD64.go
+index e37459035b8b0d..303db4728f8c12 100644
+--- a/src/cmd/compile/internal/ssa/rewriteAMD64.go
++++ b/src/cmd/compile/internal/ssa/rewriteAMD64.go
+@@ -8143,6 +8143,30 @@ func rewriteValueAMD64_OpAMD64ADDLmodify(v *Value) bool {
+ func rewriteValueAMD64_OpAMD64ADDQ(v *Value) bool {
+ 	v_1 := v.Args[1]
+ 	v_0 := v.Args[0]
++	b := v.Block
++	typ := &b.Func.Config.Types
++	// match: (ADDQ x (MOVBQZX (SETB flags)))
++	// result: (Select0 (ADCQconst [0] x flags))
++	for {
++		for _i0 := 0; _i0 <= 1; _i0, v_0, v_1 = _i0+1, v_1, v_0 {
++			x := v_0
++			if v_1.Op != OpAMD64MOVBQZX {
++				continue
++			}
++			v_1_0 := v_1.Args[0]
++			if v_1_0.Op != OpAMD64SETB {
++				continue
++			}
++			flags := v_1_0.Args[0]
++			v.reset(OpSelect0)
++			v0 := b.NewValue0(v.Pos, OpAMD64ADCQconst, types.NewTuple(typ.UInt64, types.TypeFlags))
++			v0.AuxInt = int32ToAuxInt(0)
++			v0.AddArg2(x, flags)
++			v.AddArg(v0)
++			return true
++		}
++		break
++	}
+ 	// match: (ADDQ (SHRQconst [1] x) (SHRQconst [1] x))
+ 	// result: (ANDQconst [-2] x)
+ 	for {
+@@ -40322,6 +40346,26 @@ func rewriteValueAMD64_OpAMD64SUBQ(v *Value) bool {
+ 	v_1 := v.Args[1]
+ 	v_0 := v.Args[0]
+ 	b := v.Block
++	typ := &b.Func.Config.Types
++	// match: (SUBQ x (MOVBQZX (SETB flags)))
++	// result: (Select0 (SBBQconst [0] x flags))
++	for {
++		x := v_0
++		if v_1.Op != OpAMD64MOVBQZX {
++			break
++		}
++		v_1_0 := v_1.Args[0]
++		if v_1_0.Op != OpAMD64SETB {
++			break
++		}
++		flags := v_1_0.Args[0]
++		v.reset(OpSelect0)
++		v0 := b.NewValue0(v.Pos, OpAMD64SBBQconst, types.NewTuple(typ.UInt64, types.TypeFlags))
++		v0.AuxInt = int32ToAuxInt(0)
++		v0.AddArg2(x, flags)
++		v.AddArg(v0)
++		return true
++	}
+ 	// match: (SUBQ x (MOVQconst [c]))
+ 	// cond: is32Bit(c)
+ 	// result: (SUBQconst x [int32(c)])
+diff --git a/test/codegen/mathbits.go b/test/codegen/mathbits.go
+index 60db94d6a93f2a..72b425d6429f2c 100644
+--- a/test/codegen/mathbits.go
++++ b/test/codegen/mathbits.go
+@@ -763,6 +763,19 @@ func Add64MPanicOnOverflowGT(a, b [2]uint64) [2]uint64 {
+ 	return r
+ }
+ 
++func issue80399add(a, b [2]uint64, s uint64) uint64 {
++	_, c := bits.Add64(a[0], b[0], 0)
++	_, c2 := bits.Add64(a[1], b[1], c)
++	// amd64:-"SET" -"MOVBLZX" "ADCQ"
++	return s + c2
++}
++func issue80399sub(a, b [2]uint64, s uint64) uint64 {
++	_, c := bits.Add64(a[0], b[0], 0)
++	_, c2 := bits.Add64(a[1], b[1], c)
++	// amd64:-"SET" -"MOVBLZX" "SBBQ"
++	return s - c2
++}
++
+ // Verify independent carry chain operations are scheduled efficiently
+ // and do not cause unnecessary save/restore of the CA bit.
+ //

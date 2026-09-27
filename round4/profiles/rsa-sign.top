@@ -1,0 +1,30 @@
+File: rsa-sign.test
+Build ID: 54b1ca1a36536c064d9d448be8175be9b5a57f0f
+Type: cpu
+Time: 2026-09-27 17:19:51 UTC
+Duration: 9.26s, Total samples = 9.21s (99.49%)
+Showing nodes accounting for 9.10s, 98.81% of 9.21s total
+Dropped 24 nodes (cum <= 0.05s)
+      flat  flat%   sum%        cum   cum%
+     5.27s 57.22% 57.22%      5.27s 57.22%  crypto/internal/fips140/bigmod.addMulVVW1024
+     1.56s 16.94% 74.16%      7.91s 85.88%  crypto/internal/fips140/bigmod.(*Nat).montgomeryMul
+     0.76s  8.25% 82.41%      0.77s  8.36%  crypto/internal/fips140/bigmod.(*Nat).assign (inline)
+     0.54s  5.86% 88.27%      0.56s  6.08%  crypto/internal/fips140/bigmod.(*Nat).shiftIn
+     0.47s  5.10% 93.38%      0.47s  5.10%  crypto/internal/fips140/bigmod.(*Nat).sub (inline)
+     0.14s  1.52% 94.90%      0.14s  1.52%  runtime.memmove
+     0.13s  1.41% 96.31%      0.13s  1.41%  crypto/internal/fips140/bigmod.addMulVVW2048
+     0.09s  0.98% 97.29%      0.09s  0.98%  runtime.memclrNoHeapPointers
+     0.05s  0.54% 97.83%      0.05s  0.54%  crypto/internal/fips140/bigmod.NewNat (inline)
+     0.03s  0.33% 98.15%      8.43s 91.53%  crypto/internal/fips140/bigmod.(*Nat).Exp
+     0.03s  0.33% 98.48%      0.12s  1.30%  crypto/internal/fips140/bigmod.(*Nat).reset (inline)
+     0.02s  0.22% 98.70%      0.17s  1.85%  crypto/internal/fips140/bigmod.(*Nat).set (inline)
+     0.01s  0.11% 98.81%      0.84s  9.12%  crypto/internal/fips140/bigmod.(*Nat).maybeSubtractModulus
+         0     0% 98.81%      0.16s  1.74%  crypto/internal/fips140/bigmod.(*Nat).ExpShortVarTime
+         0     0% 98.81%      0.56s  6.08%  crypto/internal/fips140/bigmod.(*Nat).Mod
+         0     0% 98.81%      9.21s   100%  crypto/internal/fips140/rsa.SignPKCS1v15
+         0     0% 98.81%      9.19s 99.78%  crypto/internal/fips140/rsa.decrypt
+         0     0% 98.81%      9.21s   100%  crypto/internal/fips140/rsa.signPKCS1v15
+         0     0% 98.81%      9.21s   100%  crypto/rsa.SignPKCS1v15
+         0     0% 98.81%      9.21s   100%  crypto/rsa_test.BenchmarkRound3PrecomputedRSASign
+         0     0% 98.81%      9.21s   100%  testing.(*B).run1.func1
+         0     0% 98.81%      9.21s   100%  testing.(*B).runN

@@ -1,0 +1,15 @@
+# Round 4: hot small helper / compiler-codegen audit
+
+User: "These are all great. Especially the CMOV/CSEL one. Look for more like that: find very hot small arithmetic or similar functions, and check if they compile inefficiently. (We have a compiler engineer on the team, so even if you can’t make it better by changing the code like here, we can file a compiler issue.)"
+
+Focus now is PROFILE -> MACHINE CODE -> minimal semantic equivalent / compiler reproducer, not new crypto algorithms or caches. Original small source fixes with significant complete-op wins OR well-evidenced compiler-issue candidates are useful. Distinguish measured, static hypothesis, and regression proof. NO public-key-reuse caches, Boring, uncommon-architecture-only focus. amd64 and arm64 codegen relevant; hardware timing available only amd64. Do not branch on secrets; keep constanttime intrinsics/bounds.
+
+Trees:
+- /home/exedev/go-crypto branch crypto-codegen-round4 BASE2532e0de = prior main selected fixes (PBKDF2 fixed SHA256 recurrence, P384 Square via Mul onAMD64, public genericwNAF, wide constanttime RR). Toolchain /home/exedev/go-crypto/bin/go builtfromupstream2ff5743d9fd52fac166225e75df0c2c1edf82abb, go1.28-devel, with sourceavailable cmd/compile/....
+- /home/exedev/go-pq-stack branch pq-codegen-round4 BASEdb19b48d = whole13Filippo pendingPQstack ending822040 PLUS prior canonicalCMOV/fixed1024codecs/rebasedlocalMLKEMarithmetic. This is the fresh target: already accepted-interest optimizations are baseline, not rediscoveries. All PQ timing/profiles MUST use this tree/GOROOT, same sharedbuiltcompiler pkg/bin tools. See round3/references/pending-stack.json fororiginalCLs.
+
+Current time Sep27 2026. Parent collecting fresh profiles to round4/profiles/. Prior round3/profiles/ and stack-profiles/ useful but pre-new-fixes. Other prior area reports document rejectedideas. Existing p384Square!=Mul codegen is knownpreviousfinding: for this round MINIMIZE/diagnose as compilerissue, not claimanothernewGoop gain. Constanttime reduction alreadyoptimizedbothPQpackages.
+
+ALL builds/tests/timings/profiles/SSA dumps thatconsumeCPU are coordinated by parent. NoCPUwork concurrently with parenttiming. You may read files/disassemblies, write tests/proposedpatches outside repo, and prepare standalone reproduction package under round4/issues/<slug> (gitparent auditrepo). No production edits unless explicitlyauthorized. Avoid globalhelpersoverhauls; no test weakening. For newminimalrepro use independentsemantictests, noinline whereappropriate to preservecallshape, sink results; recordarchitecture/flags. Go compiler warnings -m=2,-d=ssa/check_bce/debug=1, GOSSAFUNC and objdump useful onceparentclears CPU.
+
+For each compilerissue: actualhot publicoperation+profilefraction, smallsource reproducer,beforeactualasm,expectedmechanicallyequivalentbetterasm/workingvariant,cold/hot semantics+aliasandbounds, whetheralgorithmknowledgevscompilerprooflack, compilerpasssuspect withevidence notguess, howtoreproduce and exactGo SHA. Do notfileexternally; prepare drafts.

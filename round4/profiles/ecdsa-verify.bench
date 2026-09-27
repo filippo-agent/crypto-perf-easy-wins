@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound3VerifyEngine/P-384/Reparse/Valid         	   16306	    585391 ns/op	    1112 B/op	      23 allocs/op
+PASS

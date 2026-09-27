@@ -1,0 +1,15 @@
+goos: linux
+goarch: amd64
+pkg: example.com/pq-small-arithmetic
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkBitsOriginal 	45594142	         2.505 ns/op
+BenchmarkBitsOriginal 	51557774	         2.855 ns/op
+BenchmarkBitsOriginal 	46986058	         2.553 ns/op
+BenchmarkBitsOriginal 	44848328	         2.570 ns/op
+BenchmarkBitsOriginal 	44689002	         2.692 ns/op
+BenchmarkBitsWide     	55455247	         2.217 ns/op
+BenchmarkBitsWide     	52416043	         2.466 ns/op
+BenchmarkBitsWide     	51917686	         2.604 ns/op
+BenchmarkBitsWide     	55030674	         2.218 ns/op
+BenchmarkBitsWide     	53492216	         2.476 ns/op
+PASS

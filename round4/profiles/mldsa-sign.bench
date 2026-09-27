@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2MLDSA/44/SignDeterministicWarm         	   40034	    229699 ns/op	    2704 B/op	       2 allocs/op
+PASS

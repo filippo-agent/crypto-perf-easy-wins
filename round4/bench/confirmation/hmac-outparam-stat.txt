@@ -1,0 +1,25 @@
+goos: linux
+goarch: amd64
+pkg: crypto/hmac
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                │ /home/exedev/crypto-audit/round4/bench/confirmation/hmac-outparam-old.txt │ /home/exedev/crypto-audit/round4/bench/confirmation/hmac-outparam-new.txt │
+                                │                                  sec/op                                   │                       sec/op                        vs base               │
+Round2PublicHMAC/SHA256/32/Warm                                                                 154.1n ± 2%                                          145.5n ± 2%  -5.61% (p=0.000 n=16)
+Round2PublicHMAC/SHA512/32/Warm                                                                 457.2n ± 3%                                          460.3n ± 3%       ~ (p=0.423 n=16)
+geomean                                                                                         265.5n                                               258.8n       -2.51%
+
+                                │ /home/exedev/crypto-audit/round4/bench/confirmation/hmac-outparam-old.txt │ /home/exedev/crypto-audit/round4/bench/confirmation/hmac-outparam-new.txt │
+                                │                                   B/op                                    │                       B/op                        vs base                 │
+Round2PublicHMAC/SHA256/32/Warm                                                                0.000 ± 0%                                           0.000 ± 0%       ~ (p=1.000 n=16) ¹
+Round2PublicHMAC/SHA512/32/Warm                                                                0.000 ± 0%                                           0.000 ± 0%       ~ (p=1.000 n=16) ¹
+geomean                                                                                                   ²                                                     +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                │ /home/exedev/crypto-audit/round4/bench/confirmation/hmac-outparam-old.txt │ /home/exedev/crypto-audit/round4/bench/confirmation/hmac-outparam-new.txt │
+                                │                                 allocs/op                                 │                    allocs/op                      vs base                 │
+Round2PublicHMAC/SHA256/32/Warm                                                                0.000 ± 0%                                           0.000 ± 0%       ~ (p=1.000 n=16) ¹
+Round2PublicHMAC/SHA512/32/Warm                                                                0.000 ± 0%                                           0.000 ± 0%       ~ (p=1.000 n=16) ¹
+geomean                                                                                                   ²                                                     +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

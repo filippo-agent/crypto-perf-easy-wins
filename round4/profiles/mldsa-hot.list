@@ -1,0 +1,73 @@
+Total: 9.16s
+ROUTINE ======================== crypto/internal/fips140/mldsa.constantTimeSelectLessOrEqual in /home/exedev/go-pq-stack/src/crypto/internal/fips140/mldsa/field.go
+      70ms      140ms (flat, cum)  1.53% of Total
+         .          .    919:func constantTimeSelectLessOrEqual(a, b, yes, no int32) int32 {
+      70ms      140ms    920:	return int32(constanttime.Select(constanttime.LessOrEq(int(a), int(b)), int(yes), int(no)))
+         .          .    921:}
+         .          .    922:
+         .          .    923:// constantTimeSelectEqual returns yes if a == b, no otherwise, in constant time.
+         .          .    924:func constantTimeSelectEqual(a, b, yes, no uint32) uint32 {
+         .          .    925:	return uint32(constanttime.Select(constanttime.Eq(int32(a), int32(b)), int(yes), int(no)))
+ROUTINE ======================== crypto/internal/fips140/mldsa.decompose88 in /home/exedev/go-pq-stack/src/crypto/internal/fips140/mldsa/field.go
+      90ms      140ms (flat, cum)  1.53% of Total
+      30ms       30ms    734:func decompose88(r fieldElement) (r1 byte, r0 int32) {
+         .          .    735:	x := fieldFromMontgomery(r)
+         .       10ms    736:	r1 = highBits88(x)
+         .          .    737:
+         .          .    738:	// r - r1 * (2 * γ2) mod± q
+      60ms       60ms    739:	r0 = int32(x) - int32(r1)*2*(q-1)/88
+         .       40ms    740:	r0 = constantTimeSelectLessOrEqual(q/2+1, r0, r0-q, r0)
+         .          .    741:
+         .          .    742:	return r1, r0
+         .          .    743:}
+         .          .    744:
+         .          .    745:// useHint88 implements UseHint from FIPS 204 for γ2 = (q - 1) / 88.
+ROUTINE ======================== crypto/internal/fips140/mldsa.fieldInfinityNorm in /home/exedev/go-pq-stack/src/crypto/internal/fips140/mldsa/field.go
+     150ms      300ms (flat, cum)  3.28% of Total
+         .          .     68:func fieldInfinityNorm(r fieldElement) uint32 {
+         .      100ms     69:	x := int32(fieldFromMontgomery(r))
+         .          .     70:	// x <= q / 2 ? x : |x - q|
+         .          .     71:	// |x - q| = -(x - q) = q - x because x < q => x - q < 0
+     150ms      200ms     72:	return uint32(constantTimeSelectLessOrEqual(x, q/2, x, q-x))
+         .          .     73:}
+         .          .     74:
+         .          .     75:// fieldReduceOnce reduces a value a < 2q.
+         .          .     76:func fieldReduceOnce(a fieldElementPartiallyReduced) fieldElement {
+         .          .     77:	// a and q-1 are non-negative and fit int32, as LessOrEq requires.
+ROUTINE ======================== crypto/internal/fips140/mldsa.fieldMontgomeryPartialReduce in /home/exedev/go-pq-stack/src/crypto/internal/fips140/mldsa/field.go
+     2.89s      2.90s (flat, cum) 31.66% of Total
+         .          .    143:func fieldMontgomeryPartialReduce(x uint64) fieldElementPartiallyReduced {
+     710ms      720ms    144:	t := uint32(x) * qNegInv
+     2.18s      2.18s    145:	u := (x + uint64(t)*q) >> 32
+         .          .    146:	return fieldElementPartiallyReduced(u)
+         .          .    147:}
+         .          .    148:
+         .          .    149:// fieldMontgomeryReduce returns x * R⁻¹ mod q for x ≤ q * R.
+         .          .    150:func fieldMontgomeryReduce(x uint64) fieldElement {
+ROUTINE ======================== crypto/internal/fips140/mldsa.fieldPartialReduce in /home/exedev/go-pq-stack/src/crypto/internal/fips140/mldsa/field.go
+      90ms       90ms (flat, cum)  0.98% of Total
+         .          .     83:func fieldPartialReduce(a uint32) fieldElementPartiallyReduced {
+         .          .     84:	// Split a into the 23 low bits a₂ and the remaining 9 high bits a₁
+         .          .     85:	//
+         .          .     86:	//	a = a₁·2²³ + a₂
+         .          .     87:	//
+         .          .     88:	// then apply the shape of q = 2²³ - 2¹³ + 1 where
+         .          .     89:	//
+         .          .     90:	//	2²³ ≡ 2¹³ - 1 (mod q)
+         .          .     91:	//
+         .          .     92:	// to get
+         .          .     93:	//
+         .          .     94:	//	a ≡ a₂ + a₁·(2¹³ - 1) ≡ a₂ + a₁·2¹³ - a₁ (mod q)
+         .          .     95:	//
+         .          .     96:	// and observe that
+         .          .     97:	//
+         .          .     98:	//  a₂ + a₁·2¹³ - a₁ ≤ 2²³ + 2⁹·2¹³ = 2²³ + 2²² < 2q
+         .          .     99:	//
+         .          .    100:	a1 := a >> 23
+         .          .    101:	a2 := a & 0b01111111_11111111_11111111
+      90ms       90ms    102:	return fieldElementPartiallyReduced(a2 + a1<<13 - a1)
+         .          .    103:}
+         .          .    104:
+         .          .    105:// fieldAdd returns a + b mod q.
+         .          .    106:func fieldAdd(a, b fieldElement) fieldElement {
+         .          .    107:	x := fieldElementPartiallyReduced(a + b)
