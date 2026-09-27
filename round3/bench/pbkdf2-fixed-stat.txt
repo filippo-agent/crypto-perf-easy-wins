@@ -1,0 +1,41 @@
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                               │ /home/exedev/crypto-audit/round3/bench/pbkdf2-fixed-old.txt │ /home/exedev/crypto-audit/round3/bench/pbkdf2-fixed-new.txt │
+                                               │                           sec/op                            │               sec/op                 vs base                │
+Round3PublicPBKDF2/SHA256/Iter1/Len32                                                           706.9n ±  6%                          713.1n ±  6%        ~ (p=0.347 n=12)
+Round3PublicPBKDF2/SHA256/Iter4096/Len32                                                        670.8µ ±  6%                          435.8µ ±  4%  -35.03% (p=0.000 n=12)
+Round3PublicPBKDF2/SHA224/Iter1/Len32                                                           931.2n ±  8%                          897.5n ±  5%        ~ (p=0.551 n=12)
+Round3PublicPBKDF2/SHA224/Iter4096/Len32                                                        1.494m ±  4%                          1.456m ± 15%        ~ (p=0.799 n=12)
+Round3PublicPBKDF2/SHA512/Iter1/Len32                                                           1.711µ ±  4%                          1.616µ ±  6%        ~ (p=0.178 n=12)
+Round3PublicPBKDF2/SHA512/Iter4096/Len32                                                        1.915m ±  5%                          1.824m ±  6%   -4.75% (p=0.014 n=12)
+Round3PublicPBKDF2/OpaqueSHA256/Iter1/Len32                                                     697.6n ±  5%                          670.0n ± 10%        ~ (p=0.139 n=12)
+Round3PublicPBKDF2/OpaqueSHA256/Iter4096/Len32                                                  1.070m ± 10%                          1.032m ±  5%        ~ (p=0.078 n=12)
+geomean                                                                                         33.57µ                                30.88µ         -8.01%
+
+                                               │ /home/exedev/crypto-audit/round3/bench/pbkdf2-fixed-old.txt │ /home/exedev/crypto-audit/round3/bench/pbkdf2-fixed-new.txt │
+                                               │                            B/op                             │                B/op                 vs base                 │
+Round3PublicPBKDF2/SHA256/Iter1/Len32                                                             820.0 ± 0%                           820.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA256/Iter4096/Len32                                                          820.0 ± 0%                           820.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA224/Iter1/Len32                                                             852.0 ± 0%                           852.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA224/Iter4096/Len32                                                          852.0 ± 0%                           852.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA512/Iter1/Len32                                                           1.363Ki ± 0%                         1.363Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA512/Iter4096/Len32                                                        1.363Ki ± 0%                         1.363Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/OpaqueSHA256/Iter1/Len32                                                       628.0 ± 0%                           628.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/OpaqueSHA256/Iter4096/Len32                                                    628.0 ± 0%                           628.0 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                           884.7                                884.7       +0.00%
+¹ all samples are equal
+
+                                               │ /home/exedev/crypto-audit/round3/bench/pbkdf2-fixed-old.txt │ /home/exedev/crypto-audit/round3/bench/pbkdf2-fixed-new.txt │
+                                               │                          allocs/op                          │             allocs/op               vs base                 │
+Round3PublicPBKDF2/SHA256/Iter1/Len32                                                             11.00 ± 0%                           11.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA256/Iter4096/Len32                                                          11.00 ± 0%                           11.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA224/Iter1/Len32                                                             11.00 ± 0%                           11.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA224/Iter4096/Len32                                                          11.00 ± 0%                           11.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA512/Iter1/Len32                                                             11.00 ± 0%                           11.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/SHA512/Iter4096/Len32                                                          11.00 ± 0%                           11.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/OpaqueSHA256/Iter1/Len32                                                       11.00 ± 0%                           11.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3PublicPBKDF2/OpaqueSHA256/Iter4096/Len32                                                    11.00 ± 0%                           11.00 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                           11.00                                11.00       +0.00%
+¹ all samples are equal

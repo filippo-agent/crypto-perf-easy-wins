@@ -1,0 +1,182 @@
+--- a/src/crypto/internal/fips140/mlkem/field.go
++++ b/src/crypto/internal/fips140/mlkem/field.go
+@@ -466,7 +466,7 @@
+ // It implements NTT⁻¹, according to FIPS 203, Algorithm 10.
+ func inverseNTT(f nttElement) ringElement {
+ 	k := 127
+-	for len := 2; len <= 128; len *= 2 {
++	for len := 2; len < 128; len *= 2 {
+ 		for start := 0; start < 256; start += 2 * len {
+ 			zeta := zetas[k]
+ 			k--
+@@ -479,8 +479,15 @@
+ 			}
+ 		}
+ 	}
+-	for i := range f {
+-		f[i] = fieldMul(f[i], 3303) // 3303 = 128⁻¹ mod q
++	// The first six stages consume zetas[127] through zetas[2].
++	// Fuse the final stage (zeta = zetas[1]) with scaling by 128⁻¹.
++	const scale = 3303
++	const zetaScaled = 1729 * scale % q // zetas[1] * 128⁻¹ mod q
++	for i := 0; i < 128; i++ {
++		a, b := f[i], f[i+128]
++		// a+b < 2q, so (a+b)*scale < 2q², within fieldReduce's bound.
++		f[i] = fieldReduce(uint32(a+b) * scale)
++		f[i+128] = fieldMulSub(zetaScaled, b, a)
+ 	}
+ 	return ringElement(f)
+ }
+@@ -590,3 +597,36 @@
+ 	}
+ 	return j
+ }
++
++// nttMulAdd adds f*g to h without materializing the product.
++// All inputs and outputs have coefficients reduced to [0, q).
++// h may alias f or g: each pair of inputs is loaded before it is overwritten.
++func nttMulAdd(h, f, g *nttElement) {
++	for i := 0; i < n; i += 2 {
++		a0, a1 := f[i], f[i+1]
++		b0, b1 := g[i], g[i+1]
++		// Both sums are at most 2(q-1)^2 + (q-1) < 2q².
++		h[i] = fieldReduce(uint32(h[i]) + uint32(a0)*uint32(b0) + uint32(fieldMul(a1, b1))*uint32(gammas[i/2]))
++		h[i+1] = fieldReduce(uint32(h[i+1]) + uint32(a0)*uint32(b1) + uint32(a1)*uint32(b0))
++	}
++}
++
++// nttMulPrecompute computes the gamma-scaled odd coefficients of g.
++// The result is local to one matrix/vector multiplication, not retained in a key.
++func nttMulPrecompute(p *[n / 2]fieldElement, g *nttElement) {
++	for i := range p {
++		p[i] = fieldMul(g[2*i+1], gammas[i])
++	}
++}
++
++// nttMulAddPrecomputed adds f*g to h, given nttMulPrecompute(g).
++// All inputs and outputs are reduced. h may alias f or g.
++func nttMulAddPrecomputed(h, f, g *nttElement, gamma *[n / 2]fieldElement) {
++	for i := 0; i < n; i += 2 {
++		a0, a1 := f[i], f[i+1]
++		b0, b1 := g[i], g[i+1]
++		// Both sums are at most 2(q-1)^2 + (q-1) < 2q².
++		h[i] = fieldReduce(uint32(h[i]) + uint32(a0)*uint32(b0) + uint32(a1)*uint32(gamma[i/2]))
++		h[i+1] = fieldReduce(uint32(h[i+1]) + uint32(a0)*uint32(b1) + uint32(a1)*uint32(b0))
++	}
++}
+--- a/src/crypto/internal/fips140/mlkem/mlkem768.go
++++ b/src/crypto/internal/fips140/mlkem/mlkem768.go
+@@ -289,11 +289,16 @@
+ 		N++
+ 	}
+ 
++	sGamma := make([][n / 2]fieldElement, k)
++	for i := range s {
++		nttMulPrecompute(&sGamma[i], &s[i])
++	}
++
+ 	t := &dk.t
+ 	for i := range t { // t = A ◦ s + e
+ 		t[i] = e[i]
+ 		for j := range s {
+-			t[i] = polyAdd(t[i], nttMul(A[i*k+j], s[j]))
++			nttMulAddPrecomputed(&t[i], &A[i*k+j], &s[j], &sGamma[j])
+ 		}
+ 	}
+ 
+@@ -418,12 +423,17 @@
+ 	}
+ 	e2 := samplePolyCBD(rnd, N)
+ 
++	rGamma := make([][n / 2]fieldElement, k)
++	for i := range r {
++		nttMulPrecompute(&rGamma[i], &r[i])
++	}
++
+ 	u := make([]ringElement, k) // NTT⁻¹(AT ◦ r) + e1
+ 	for i := range u {
+ 		var uHat nttElement
+ 		for j := range r {
+ 			// Note that i and j are inverted, as we need the transposed of A.
+-			uHat = polyAdd(uHat, nttMul(ex.a[j*k+i], r[j]))
++			nttMulAddPrecomputed(&uHat, &ex.a[j*k+i], &r[j], &rGamma[j])
+ 		}
+ 		u[i] = polyAdd(e1[i], inverseNTT(uHat))
+ 	}
+@@ -432,7 +442,7 @@
+ 
+ 	var vNTT nttElement // t⊺ ◦ r
+ 	for i := range ex.t {
+-		vNTT = polyAdd(vNTT, nttMul(ex.t[i], r[i]))
++		nttMulAddPrecomputed(&vNTT, &ex.t[i], &r[i], &rGamma[i])
+ 	}
+ 	v := polyAdd(polyAdd(inverseNTT(vNTT), e2), μ)
+ 
+@@ -506,7 +516,8 @@
+ 
+ 	var mask nttElement // s⊺ ◦ NTT(u)
+ 	for i := range dx.s {
+-		mask = polyAdd(mask, nttMul(dx.s[i], ntt(u[i])))
++		ui := ntt(u[i])
++		nttMulAdd(&mask, &dx.s[i], &ui)
+ 	}
+ 	w := polySub(v, inverseNTT(mask))
+ 
+--- a/src/crypto/internal/fips140/mlkem/mlkem1024.go
++++ b/src/crypto/internal/fips140/mlkem/mlkem1024.go
+@@ -230,11 +230,16 @@
+ 		N++
+ 	}
+ 
++	sGamma := make([][n / 2]fieldElement, k1024)
++	for i := range s {
++		nttMulPrecompute(&sGamma[i], &s[i])
++	}
++
+ 	t := &dk.t
+ 	for i := range t { // t = A ◦ s + e
+ 		t[i] = e[i]
+ 		for j := range s {
+-			t[i] = polyAdd(t[i], nttMul(A[i*k1024+j], s[j]))
++			nttMulAddPrecomputed(&t[i], &A[i*k1024+j], &s[j], &sGamma[j])
+ 		}
+ 	}
+ 
+@@ -359,12 +364,17 @@
+ 	}
+ 	e2 := samplePolyCBD(rnd, N)
+ 
++	rGamma := make([][n / 2]fieldElement, k1024)
++	for i := range r {
++		nttMulPrecompute(&rGamma[i], &r[i])
++	}
++
+ 	u := make([]ringElement, k1024) // NTT⁻¹(AT ◦ r) + e1
+ 	for i := range u {
+ 		var uHat nttElement
+ 		for j := range r {
+ 			// Note that i and j are inverted, as we need the transposed of A.
+-			uHat = polyAdd(uHat, nttMul(ex.a[j*k1024+i], r[j]))
++			nttMulAddPrecomputed(&uHat, &ex.a[j*k1024+i], &r[j], &rGamma[j])
+ 		}
+ 		u[i] = polyAdd(e1[i], inverseNTT(uHat))
+ 	}
+@@ -373,7 +383,7 @@
+ 
+ 	var vNTT nttElement // t⊺ ◦ r
+ 	for i := range ex.t {
+-		vNTT = polyAdd(vNTT, nttMul(ex.t[i], r[i]))
++		nttMulAddPrecomputed(&vNTT, &ex.t[i], &r[i], &rGamma[i])
+ 	}
+ 	v := polyAdd(polyAdd(inverseNTT(vNTT), e2), μ)
+ 
+@@ -441,7 +451,8 @@
+ 
+ 	var mask nttElement // s⊺ ◦ NTT(u)
+ 	for i := range dx.s {
+-		mask = polyAdd(mask, nttMul(dx.s[i], ntt(u[i])))
++		ui := ntt(u[i])
++		nttMulAdd(&mask, &dx.s[i], &ui)
+ 	}
+ 	w := polySub(v, inverseNTT(mask))
+ 

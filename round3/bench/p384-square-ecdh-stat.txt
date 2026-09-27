@@ -1,0 +1,17 @@
+goos: linux
+goarch: amd64
+pkg: crypto/ecdh
+cpu: AMD EPYC 9554P 64-Core Processor               
+          │ /home/exedev/crypto-audit/round3/bench/p384-square-ecdh-old.txt │ /home/exedev/crypto-audit/round3/bench/p384-square-ecdh-new.txt │
+          │                             sec/op                              │                 sec/op                   vs base                │
+ECDH/P384                                                      747.1µ ± 11%                               646.1µ ± 8%  -13.53% (p=0.000 n=12)
+
+          │ /home/exedev/crypto-audit/round3/bench/p384-square-ecdh-old.txt │ /home/exedev/crypto-audit/round3/bench/p384-square-ecdh-new.txt │
+          │                              B/op                               │                    B/op                      vs base            │
+ECDH/P384                                                      1.289Ki ± 0%                                  1.289Ki ± 0%  ~ (p=1.000 n=12) ¹
+¹ all samples are equal
+
+          │ /home/exedev/crypto-audit/round3/bench/p384-square-ecdh-old.txt │ /home/exedev/crypto-audit/round3/bench/p384-square-ecdh-new.txt │
+          │                            allocs/op                            │                  allocs/op                   vs base            │
+ECDH/P384                                                        24.00 ± 0%                                    24.00 ± 0%  ~ (p=1.000 n=12) ¹
+¹ all samples are equal

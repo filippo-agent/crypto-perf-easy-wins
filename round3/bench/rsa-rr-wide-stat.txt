@@ -1,0 +1,53 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                                      │ /home/exedev/crypto-audit/round3/bench/rsa-rr-wide-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-wide-new.txt │
+                                                      │                           sec/op                           │               sec/op                vs base                │
+Round3RSAPublic/2048/PerOperationSetup/VerifyPKCS1                                                     31.69µ ± 5%                         31.95µ ±  3%        ~ (p=0.799 n=12)
+Round3RSAPublic/2048/PerOperationSetup/EncryptOAEP                                                     33.47µ ± 3%                         33.17µ ±  7%        ~ (p=0.977 n=12)
+Round3RSAPublic/2048/DERParseAndOperation/VerifyPKCS1                                                  32.68µ ± 4%                         31.93µ ±  4%        ~ (p=0.319 n=12)
+Round3RSAPublic/2048/DERParseAndOperation/EncryptOAEP                                                  32.92µ ± 7%                         34.03µ ±  5%        ~ (p=0.514 n=12)
+Round3RSAPublic/3072/PerOperationSetup/VerifyPKCS1                                                     139.3µ ± 8%                         113.4µ ±  4%  -18.58% (p=0.000 n=12)
+Round3RSAPublic/3072/PerOperationSetup/EncryptOAEP                                                     133.8µ ± 4%                         117.0µ ±  4%  -12.53% (p=0.000 n=12)
+Round3RSAPublic/3072/DERParseAndOperation/VerifyPKCS1                                                  137.2µ ± 6%                         117.5µ ±  4%  -14.39% (p=0.000 n=12)
+Round3RSAPublic/3072/DERParseAndOperation/EncryptOAEP                                                  138.5µ ± 8%                         116.6µ ± 13%  -15.79% (p=0.002 n=12)
+Round3RSAPublic/4096/PerOperationSetup/VerifyPKCS1                                                     239.6µ ± 2%                         193.8µ ±  4%  -19.13% (p=0.000 n=12)
+Round3RSAPublic/4096/PerOperationSetup/EncryptOAEP                                                     229.5µ ± 6%                         197.9µ ±  5%  -13.75% (p=0.000 n=12)
+Round3RSAPublic/4096/DERParseAndOperation/VerifyPKCS1                                                  233.4µ ± 9%                         200.6µ ±  5%  -14.06% (p=0.000 n=12)
+Round3RSAPublic/4096/DERParseAndOperation/EncryptOAEP                                                  235.1µ ± 9%                         205.7µ ±  6%  -12.51% (p=0.000 n=12)
+geomean                                                                                                101.7µ                              91.21µ        -10.29%
+
+                                                      │ /home/exedev/crypto-audit/round3/bench/rsa-rr-wide-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-wide-new.txt │
+                                                      │                            B/op                            │               B/op                vs base                  │
+Round3RSAPublic/2048/PerOperationSetup/VerifyPKCS1                                                    1.344Ki ± 0%                       1.344Ki ± 0%        ~ (p=1.000 n=12) ¹
+Round3RSAPublic/2048/PerOperationSetup/EncryptOAEP                                                    1.570Ki ± 0%                       1.570Ki ± 0%        ~ (p=1.000 n=12) ¹
+Round3RSAPublic/2048/DERParseAndOperation/VerifyPKCS1                                                 1.703Ki ± 0%                       1.703Ki ± 0%        ~ (p=1.000 n=12) ¹
+Round3RSAPublic/2048/DERParseAndOperation/EncryptOAEP                                                 1.930Ki ± 0%                       1.930Ki ± 0%        ~ (p=1.000 n=12) ¹
+Round3RSAPublic/3072/PerOperationSetup/VerifyPKCS1                                                    42.97Ki ± 0%                       25.72Ki ± 0%  -40.15% (p=0.000 n=12)
+Round3RSAPublic/3072/PerOperationSetup/EncryptOAEP                                                    43.20Ki ± 0%                       25.95Ki ± 0%  -39.93% (p=0.000 n=12)
+Round3RSAPublic/3072/DERParseAndOperation/VerifyPKCS1                                                 43.45Ki ± 0%                       26.20Ki ± 0%  -39.70% (p=0.000 n=12)
+Round3RSAPublic/3072/DERParseAndOperation/EncryptOAEP                                                 43.68Ki ± 0%                       26.43Ki ± 0%  -39.49% (p=0.000 n=12)
+Round3RSAPublic/4096/PerOperationSetup/VerifyPKCS1                                                    61.09Ki ± 0%                       34.09Ki ± 0%  -44.19% (p=0.000 n=12)
+Round3RSAPublic/4096/PerOperationSetup/EncryptOAEP                                                    61.32Ki ± 0%                       34.32Ki ± 0%  -44.03% (p=0.000 n=12)
+Round3RSAPublic/4096/DERParseAndOperation/VerifyPKCS1                                                 61.70Ki ± 0%                       34.70Ki ± 0%  -43.76% (p=0.000 n=12)
+Round3RSAPublic/4096/DERParseAndOperation/EncryptOAEP                                                 61.93Ki ± 0%                       34.93Ki ± 0%  -43.60% (p=0.000 n=12)
+geomean                                                                                               16.29Ki                            11.34Ki       -30.37%
+¹ all samples are equal
+
+                                                      │ /home/exedev/crypto-audit/round3/bench/rsa-rr-wide-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-wide-new.txt │
+                                                      │                         allocs/op                          │            allocs/op              vs base                  │
+Round3RSAPublic/2048/PerOperationSetup/VerifyPKCS1                                                      9.000 ± 0%                         9.000 ± 0%        ~ (p=1.000 n=12) ¹
+Round3RSAPublic/2048/PerOperationSetup/EncryptOAEP                                                      15.00 ± 0%                         15.00 ± 0%        ~ (p=1.000 n=12) ¹
+Round3RSAPublic/2048/DERParseAndOperation/VerifyPKCS1                                                   12.00 ± 0%                         12.00 ± 0%        ~ (p=1.000 n=12) ¹
+Round3RSAPublic/2048/DERParseAndOperation/EncryptOAEP                                                   18.00 ± 0%                         18.00 ± 0%        ~ (p=1.000 n=12) ¹
+Round3RSAPublic/3072/PerOperationSetup/VerifyPKCS1                                                      93.00 ± 0%                         54.00 ± 0%  -41.94% (p=0.000 n=12)
+Round3RSAPublic/3072/PerOperationSetup/EncryptOAEP                                                      99.00 ± 0%                         60.00 ± 0%  -39.39% (p=0.000 n=12)
+Round3RSAPublic/3072/DERParseAndOperation/VerifyPKCS1                                                   96.00 ± 0%                         57.00 ± 0%  -40.62% (p=0.000 n=12)
+Round3RSAPublic/3072/DERParseAndOperation/EncryptOAEP                                                  102.00 ± 0%                         63.00 ± 0%  -38.24% (p=0.000 n=12)
+Round3RSAPublic/4096/PerOperationSetup/VerifyPKCS1                                                     101.00 ± 0%                         54.00 ± 0%  -46.53% (p=0.000 n=12)
+Round3RSAPublic/4096/PerOperationSetup/EncryptOAEP                                                     107.00 ± 0%                         60.00 ± 0%  -43.93% (p=0.000 n=12)
+Round3RSAPublic/4096/DERParseAndOperation/VerifyPKCS1                                                  104.00 ± 0%                         57.00 ± 0%  -45.19% (p=0.000 n=12)
+Round3RSAPublic/4096/DERParseAndOperation/EncryptOAEP                                                  110.00 ± 0%                         63.00 ± 0%  -42.73% (p=0.000 n=12)
+geomean                                                                                                 51.21                              35.46       -30.76%
+¹ all samples are equal

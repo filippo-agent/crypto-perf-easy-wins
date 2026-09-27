@@ -1,0 +1,55 @@
+--- a/src/crypto/internal/fips140/nistec/fiat/p384.go
++++ b/src/crypto/internal/fips140/nistec/fiat/p384.go
+@@ -8,6 +8,7 @@
+ 
+ import (
+ 	"crypto/internal/fips140/subtle"
++	"crypto/internal/fips140deps/cpu"
+ 	"errors"
+ )
+ 
+@@ -111,7 +112,13 @@
+ 
+ // Square sets e = t * t, and returns e.
+ func (e *P384Element) Square(t *P384Element) *P384Element {
+-	p384Square(&e.x, &t.x)
++	// On amd64, Mul generates faster code than the specialized Square.
++	// cpu.AMD64 is a compile-time constant, including in purego builds.
++	if cpu.AMD64 {
++		p384Mul(&e.x, &t.x, &t.x)
++	} else {
++		p384Square(&e.x, &t.x)
++	}
+ 	return e
+ }
+ 
+--- a/src/crypto/internal/fips140/nistec/fiat/generate.go
++++ b/src/crypto/internal/fips140/nistec/fiat/generate.go
+@@ -152,7 +152,8 @@
+ package fiat
+ 
+ import (
+-	"crypto/internal/fips140/subtle"
++	"crypto/internal/fips140/subtle"{{if eq .Prefix "p384"}}
++	"crypto/internal/fips140deps/cpu"{{end}}
+ 	"errors"
+ )
+ 
+@@ -256,8 +257,15 @@
+ 
+ // Square sets e = t * t, and returns e.
+ func (e *{{ .Element }}) Square(t *{{ .Element }}) *{{ .Element }} {
+-	{{ .Prefix }}Square(&e.x, &t.x)
+-	return e
++{{if eq .Prefix "p384"}}	// On amd64, Mul generates faster code than the specialized Square.
++	// cpu.AMD64 is a compile-time constant, including in purego builds.
++	if cpu.AMD64 {
++		p384Mul(&e.x, &t.x, &t.x)
++	} else {
++		p384Square(&e.x, &t.x)
++	}
++{{else}}	{{ .Prefix }}Square(&e.x, &t.x)
++{{end}}	return e
+ }
+ 
+ // Select sets v to a if cond == 1, and to b if cond == 0.

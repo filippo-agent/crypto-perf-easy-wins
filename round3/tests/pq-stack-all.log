@@ -1,0 +1,8 @@
+ok  	crypto/internal/fips140/mlkem	0.248s
+ok  	crypto/internal/fips140/mldsa	0.995s
+?   	crypto/internal/fips140/sha3	[no test files]
+ok  	crypto/mlkem	0.086s
+ok  	crypto/mldsa	0.312s
+ok  	crypto/hpke	1.380s
+ok  	crypto/sha3	2.035s
+ok  	crypto/internal/fips140test	2.655s

@@ -1,0 +1,24 @@
+main-all-short START Sun Sep 27 15:41:07 UTC 2026
+bin/go test -short -p=2 -count=1 crypto/... 
+main-all-short EXIT 0 Sun Sep 27 15:41:48 UTC 2026
+main-purego START Sun Sep 27 15:41:48 UTC 2026
+bin/go test -short -tags=purego -p=2 -count=1 crypto/ecdsa crypto/ecdh crypto/pbkdf2 crypto/hmac crypto/rsa crypto/internal/fips140/bigmod crypto/internal/fips140/nistec 
+main-purego EXIT 0 Sun Sep 27 15:41:57 UTC 2026
+main-fips START Sun Sep 27 15:41:57 UTC 2026
+env GODEBUG=fips140=on bin/go test -short -p=2 -count=1 crypto/ecdsa crypto/ecdh crypto/pbkdf2 crypto/hmac crypto/rsa crypto/internal/fips140test 
+main-fips EXIT 0 Sun Sep 27 15:42:01 UTC 2026
+main-race START Sun Sep 27 15:42:01 UTC 2026
+bin/go test -short -race -p=2 -count=1 crypto/ecdsa crypto/ecdh crypto/pbkdf2 crypto/hmac crypto/rsa 
+main-race EXIT 0 Sun Sep 27 15:42:13 UTC 2026
+pq-stack-all START Sun Sep 27 15:42:13 UTC 2026
+bin/go test -short -p=2 -count=1 crypto/internal/fips140/mlkem crypto/internal/fips140/mldsa crypto/internal/fips140/sha3 crypto/mlkem crypto/mldsa crypto/hpke crypto/sha3 crypto/internal/fips140test 
+pq-stack-all EXIT 0 Sun Sep 27 15:42:20 UTC 2026
+pq-stack-purego START Sun Sep 27 15:42:20 UTC 2026
+bin/go test -short -tags=purego -p=2 -count=1 crypto/internal/fips140/mlkem crypto/internal/fips140/mldsa crypto/mlkem crypto/mldsa crypto/hpke 
+pq-stack-purego EXIT 0 Sun Sep 27 15:42:26 UTC 2026
+pq-stack-fips START Sun Sep 27 15:42:26 UTC 2026
+env GODEBUG=fips140=on bin/go test -short -p=2 -count=1 crypto/mlkem crypto/mldsa crypto/hpke crypto/internal/fips140test 
+pq-stack-fips EXIT 0 Sun Sep 27 15:42:30 UTC 2026
+pq-stack-race START Sun Sep 27 15:42:30 UTC 2026
+bin/go test -short -race -p=2 -count=1 crypto/mlkem crypto/mldsa crypto/hpke 
+pq-stack-race EXIT 0 Sun Sep 27 15:42:43 UTC 2026

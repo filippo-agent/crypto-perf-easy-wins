@@ -1,0 +1,5 @@
+ok  	crypto/ecdsa	1.393s
+ok  	crypto/ecdh	1.325s
+ok  	crypto/pbkdf2	1.704s
+ok  	crypto/hmac	1.294s
+ok  	crypto/rsa	3.270s

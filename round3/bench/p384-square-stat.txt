@@ -1,0 +1,38 @@
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                                      │ /home/exedev/crypto-audit/round3/bench/p384-square-old.txt │ /home/exedev/crypto-audit/round3/bench/p384-square-new.txt │
+                                                      │                           sec/op                           │               sec/op                vs base                │
+Sign/P384                                                                                             244.6µ ±  5%                          220.2µ ± 3%   -9.98% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Warm/Valid                                                                   797.9µ ±  5%                          695.1µ ± 5%  -12.89% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Warm/InvalidHash                                                             797.9µ ± 12%                          687.3µ ± 5%  -13.87% (p=0.000 n=12)
+Round3VerifyEngine/P-384/FreshCoordinates/Valid                                                       808.3µ ±  4%                          686.9µ ± 5%  -15.02% (p=0.000 n=12)
+Round3VerifyEngine/P-384/FreshCoordinates/InvalidHash                                                 775.6µ ±  5%                          687.1µ ± 2%  -11.41% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/Valid                                                                784.2µ ±  5%                          682.0µ ± 4%  -13.04% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/InvalidHash                                                          806.8µ ±  3%                          682.7µ ± 6%  -15.39% (p=0.000 n=12)
+geomean                                                                                               671.9µ                                583.8µ       -13.10%
+
+                                                      │ /home/exedev/crypto-audit/round3/bench/p384-square-old.txt │ /home/exedev/crypto-audit/round3/bench/p384-square-new.txt │
+                                                      │                            B/op                            │               B/op                 vs base                 │
+Sign/P384                                                                                             6.055Ki ± 0%                        6.055Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/Warm/Valid                                                                     808.0 ± 0%                          808.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/Warm/InvalidHash                                                               824.0 ± 0%                          824.0 ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/FreshCoordinates/Valid                                                       1.008Ki ± 0%                        1.008Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/FreshCoordinates/InvalidHash                                                 1.023Ki ± 0%                        1.023Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/Reparse/Valid                                                                1.250Ki ± 0%                        1.250Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/Reparse/InvalidHash                                                          1.266Ki ± 0%                        1.266Ki ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                               1.300Ki                             1.300Ki       +0.00%
+¹ all samples are equal
+
+                                                      │ /home/exedev/crypto-audit/round3/bench/p384-square-old.txt │ /home/exedev/crypto-audit/round3/bench/p384-square-new.txt │
+                                                      │                         allocs/op                          │             allocs/op              vs base                 │
+Sign/P384                                                                                               60.00 ± 0%                          60.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/Warm/Valid                                                                     17.00 ± 0%                          17.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/Warm/InvalidHash                                                               18.00 ± 0%                          18.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/FreshCoordinates/Valid                                                         21.00 ± 0%                          21.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/FreshCoordinates/InvalidHash                                                   22.00 ± 0%                          22.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/Reparse/Valid                                                                  27.00 ± 0%                          27.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round3VerifyEngine/P-384/Reparse/InvalidHash                                                            28.00 ± 0%                          28.00 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                                 25.18                               25.18       +0.00%
+¹ all samples are equal

@@ -1,0 +1,17 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                         │ /home/exedev/crypto-audit/round3/bench/rsa-rr-private-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-private-new.txt │
+                         │                            sec/op                             │                   sec/op                     vs base          │
+Round3PrecomputedRSASign                                                     1.029m ± 6%                                   1.024m ± 7%  ~ (p=0.932 n=12)
+
+                         │ /home/exedev/crypto-audit/round3/bench/rsa-rr-private-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-private-new.txt │
+                         │                             B/op                              │                   B/op                     vs base            │
+Round3PrecomputedRSASign                                                      512.0 ± 0%                                  512.0 ± 0%  ~ (p=1.000 n=12) ¹
+¹ all samples are equal
+
+                         │ /home/exedev/crypto-audit/round3/bench/rsa-rr-private-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-private-new.txt │
+                         │                           allocs/op                           │                 allocs/op                  vs base            │
+Round3PrecomputedRSASign                                                      2.000 ± 0%                                  2.000 ± 0%  ~ (p=1.000 n=12) ¹
+¹ all samples are equal

@@ -1,0 +1,213 @@
+[pq-stack-baseline 0b442e19] crypto/sha3: add internal ReadMulti for batched SHAKE squeezing
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Fri Jul 31 14:12:24 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 8 files changed, 480 insertions(+)
+ create mode 100644 src/crypto/internal/fips140/sha3/readmulti.go
+ create mode 100644 src/crypto/sha3/sha3_fips140v1.0_test.go
+ create mode 100644 src/crypto/sha3/sha3_fips140v1.28_test.go
+[pq-stack-baseline 3f938777] crypto/sha3: add two-lane Keccak-f[1600] for arm64 SHA3 extensions
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Fri Jul 31 14:20:34 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 86 insertions(+), 12 deletions(-)
+[pq-stack-baseline 6caa18e6] crypto/sha3: add four-lane AVX2 Keccak-f[1600] for amd64
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Fri Jul 31 14:28:41 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 6 files changed, 1050 insertions(+), 11 deletions(-)
+ create mode 100644 src/crypto/internal/fips140/sha3/_asm/keccakf1600x4_amd64_asm.go
+[pq-stack-baseline 9df00a82] crypto/mlkem: add TestAllocations
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Fri Jul 31 14:30:56 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 50 insertions(+)
+[pq-stack-baseline da03919b] crypto/mlkem: batch sampling of matrix A
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Fri Jul 31 14:32:24 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 53 insertions(+), 41 deletions(-)
+[pq-stack-baseline d5918bd7] crypto/mlkem: add a branchless parseSampleNTT fast path
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Thu Aug 20 16:00:47 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 49 insertions(+), 33 deletions(-)
+[pq-stack-baseline db6fc81d] crypto/mldsa: drop precomputed verification benchmarks
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Sat Aug 22 18:42:42 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 10 insertions(+), 26 deletions(-)
+[pq-stack-baseline 1ceb28cf] crypto/mldsa: batch sampling of matrix A
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Fri Jul 31 14:41:24 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 47 insertions(+), 22 deletions(-)
+[pq-stack-baseline 779b4dd7] crypto/mldsa: add a branchless parseSampleNTT fast path
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Thu Aug 20 15:39:58 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 28 insertions(+), 8 deletions(-)
+[pq-stack-baseline 5ce7bf81] crypto/mldsa: batch expansion of signing masks
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Fri Jul 31 14:43:53 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 17 insertions(+), 7 deletions(-)
+[pq-stack-baseline 18890064] crypto/mldsa: avoid unnecessary reductions in NTT and inverseNTT
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Sat Aug 22 20:05:52 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 291 insertions(+), 97 deletions(-)
+ create mode 100644 src/crypto/internal/fips140/mldsa/ntt.svg
+[pq-stack-baseline d2014e83] crypto/mldsa: delay cs1/cs2 computation past the potential rejection
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Wed Aug 26 08:47:40 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 5 insertions(+), 11 deletions(-)
+[pq-stack-baseline 62c2afb8] crypto/mldsa: avoid more intermediate reductions in NTT representations
+ Author: Filippo Valsorda <filippo@golang.org>
+ Date: Tue Aug 25 17:52:55 2026 +0200
+ Committer: exe.dev user <exedev@lark-zen.exe.xyz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 354 insertions(+), 39 deletions(-)

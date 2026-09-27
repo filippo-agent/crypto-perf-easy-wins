@@ -1,0 +1,3 @@
+ok  	crypto/mlkem	1.398s
+ok  	crypto/mldsa	3.407s
+ok  	crypto/hpke	7.436s

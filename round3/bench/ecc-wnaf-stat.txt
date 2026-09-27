@@ -1,0 +1,27 @@
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                       │ /home/exedev/crypto-audit/round3/bench/ecc-wnaf-old.txt │ /home/exedev/crypto-audit/round3/bench/ecc-wnaf-new.txt │
+                                       │                         sec/op                          │             sec/op               vs base                │
+Round3VerifyEngine/P-384/Warm/Valid                                                  792.0µ ± 6%                       657.2µ ± 4%  -17.03% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/Valid                                               798.5µ ± 4%                       650.2µ ± 4%  -18.57% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/Valid                                                  2.027m ± 7%                       1.806m ± 6%  -10.87% (p=0.003 n=12)
+Round3VerifyEngine/P-521/Reparse/Valid                                               2.044m ± 6%                       1.828m ± 6%  -10.59% (p=0.001 n=12)
+geomean                                                                              1.272m                            1.090m       -14.34%
+
+                                       │ /home/exedev/crypto-audit/round3/bench/ecc-wnaf-old.txt │ /home/exedev/crypto-audit/round3/bench/ecc-wnaf-new.txt │
+                                       │                          B/op                           │              B/op                vs base                │
+Round3VerifyEngine/P-384/Warm/Valid                                                   808.0 ± 0%                        640.0 ± 0%  -20.79% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/Valid                                              1.250Ki ± 0%                      1.086Ki ± 0%  -13.12% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/Valid                                                  1224.0 ± 0%                        960.0 ± 0%  -21.57% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Reparse/Valid                                              1.812Ki ± 0%                      1.555Ki ± 0%  -14.22% (p=0.000 n=12)
+geomean                                                                             1.209Ki                            1021.2       -17.51%
+
+                                       │ /home/exedev/crypto-audit/round3/bench/ecc-wnaf-old.txt │ /home/exedev/crypto-audit/round3/bench/ecc-wnaf-new.txt │
+                                       │                        allocs/op                        │            allocs/op             vs base                │
+Round3VerifyEngine/P-384/Warm/Valid                                                   17.00 ± 0%                        13.00 ± 0%  -23.53% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/Valid                                                27.00 ± 0%                        23.00 ± 0%  -14.81% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/Valid                                                   17.00 ± 0%                        13.00 ± 0%  -23.53% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Reparse/Valid                                                27.00 ± 0%                        23.00 ± 0%  -14.81% (p=0.000 n=12)
+geomean                                                                               21.42                             17.29       -19.29%

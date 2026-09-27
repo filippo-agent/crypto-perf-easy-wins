@@ -1,5 +1,7 @@
 # Original crypto opportunities — second pass
 
+> Follow-up decision: the user declined the RSA public-key reuse cache. It is excluded from round3 and is not a recommendation. PQ numbers here are historical, pre-pending-stack measurements; round3 uses the complete Filippo stack as the authoritative baseline.
+
 **September 27, 2026.** Follow-up under the relaxed bar: portable Go, ordinary amd64/arm64, localized algorithmic changes and precomputation allowed; no BoringCrypto or unusual-architecture-only claims. These are additional to the first four findings and the separately documented pending CLs.
 
 Baseline **04a082e1**, i.e. upstream **2ff5743d** plus the four first-pass patches. Same Go compiler, AMD EPYC 9554P linux/amd64 VM. Headline numbers are complete public operations, **12 alternating A/B samples**, one pinned guest CPU, GOMAXPROCS=1, 200–250 ms/case. ARM64 compilation was checked, **ARM64 performance was not measured**. “Warm” means reusing an existing key/stream, not a helper-only benchmark; constructor-inclusive controls are explicitly named.

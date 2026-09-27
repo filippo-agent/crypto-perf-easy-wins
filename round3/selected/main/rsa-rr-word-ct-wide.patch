@@ -1,0 +1,90 @@
+--- a/src/crypto/internal/fips140/bigmod/nat.go
++++ b/src/crypto/internal/fips140/bigmod/nat.go
+@@ -487,6 +487,9 @@
+ 
+ // rr returns R*R with R = 2^(_W * n) and n = len(m.nat.limbs).
+ func rr(m *Modulus) *Nat {
++	if len(m.nat.limbs) >= 3072/_W && m.BitLen() == len(m.nat.limbs)*_W {
++		return rrWord(m)
++	}
+ 	rr := NewNat().ExpandFor(m)
+ 	n := uint(len(rr.limbs))
+ 	mLen := uint(m.BitLen())
+@@ -1284,3 +1287,77 @@
+ 	}
+ 	return r
+ }
++
++// divWordNormalized returns min((hi*2^_W+lo)/d, 2^_W-1).
++// d must have its top bit set and hi must be <= d. The iteration count
++// and memory access pattern do not depend on any of the operand values.
++func divWordNormalized(hi, lo, d uint) uint {
++	overflow := ctEq(hi, d)
++	r := hi &^ ctMask(overflow)
++	var q uint
++	for i := _W - 1; i >= 0; i-- {
++		v, c := bits.Add(r, r, (lo>>i)&1)
++		s, b := bits.Sub(v, d, 0)
++		sub := choice(c) | not(choice(b))
++		r = v ^ (ctMask(sub) & (v ^ s))
++		q = q<<1 | uint(sub)
++	}
++	return q | ctMask(overflow)
++}
++
++// shiftInWord calculates x = x*2^_W + y mod m. x must be reduced and
++// m must have its most significant bit at a limb boundary.
++//
++//go:norace
++func (x *Nat) shiftInWord(y uint, m *Modulus) *Nat {
++	n := len(m.nat.limbs)
++	xl, ml := x.limbs[:n], m.nat.limbs[:n]
++	hi, next := xl[n-1], y
++	if n > 1 {
++		next = xl[n-2]
++	}
++	q := divWordNormalized(hi, next, ml[n-1])
++	copy(xl[1:], xl[:n-1])
++	xl[0] = y
++
++	// With a normalized divisor, the leading two-word quotient estimate
++	// is never below the true quotient, and is at most two above it.
++	var carry, borrow uint
++	for j := range xl {
++		ph, pl := bits.Mul(q, ml[j])
++		var c uint
++		pl, c = bits.Add(pl, carry, 0)
++		carry, _ = bits.Add(ph, 0, c)
++		xl[j], borrow = bits.Sub(xl[j], pl, borrow)
++	}
++	hi, borrow = bits.Sub(hi, carry, borrow)
++
++	// Interpret hi:xl as a signed n+1-word value. Two masked additions
++	// suffice to correct the estimate, without data-dependent branches.
++	for k := 0; k < 2; k++ {
++		mask := -borrow
++		var c uint
++		for j := range xl {
++			xl[j], c = bits.Add(xl[j], ml[j]&mask, c)
++		}
++		hi, c = bits.Add(hi, 0, c)
++		borrow &= 1 - c
++	}
++	return x
++}
++
++// rrWord computes R^2 mod m when m has full limb width. Since R/2 <= m < R,
++// R mod m = R-m. Appending n zero limbs then multiplies that value by R.
++//
++//go:norace
++func rrWord(m *Modulus) *Nat {
++	x := NewNat().resetFor(m)
++	var borrow uint
++	for j := range x.limbs {
++		x.limbs[j], borrow = bits.Sub(0, m.nat.limbs[j], borrow)
++	}
++	for range x.limbs {
++		x.shiftInWord(0, m)
++	}
++	return x
++}

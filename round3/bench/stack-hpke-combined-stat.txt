@@ -1,0 +1,35 @@
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+                              │ /home/exedev/crypto-audit/round3/bench/stack-hpke-combined-old.txt │ /home/exedev/crypto-audit/round3/bench/stack-hpke-combined-new.txt │
+                              │                               sec/op                               │                   sec/op                    vs base                │
+Round2HPKE/0041/SealWarm                                                               52.08µ ± 5%                                  39.00µ ± 5%  -25.12% (p=0.000 n=12)
+Round2HPKE/0041/ParseSealCold                                                          65.17µ ± 7%                                  51.60µ ± 5%  -20.81% (p=0.000 n=12)
+Round2HPKE/0041/OpenWarm                                                               72.66µ ± 4%                                  55.11µ ± 4%  -24.16% (p=0.000 n=12)
+Round2HPKE/0042/SealWarm                                                               74.78µ ± 6%                                  52.89µ ± 3%  -29.27% (p=0.000 n=12)
+Round2HPKE/0042/ParseSealCold                                                          91.28µ ± 6%                                  69.88µ ± 4%  -23.45% (p=0.000 n=12)
+Round2HPKE/0042/OpenWarm                                                              109.51µ ± 5%                                  72.77µ ± 7%  -33.55% (p=0.000 n=12)
+geomean                                                                                75.44µ                                       55.69µ       -26.18%
+
+                              │ /home/exedev/crypto-audit/round3/bench/stack-hpke-combined-old.txt │ /home/exedev/crypto-audit/round3/bench/stack-hpke-combined-new.txt │
+                              │                                B/op                                │                   B/op                     vs base                 │
+Round2HPKE/0041/SealWarm                                                              8.984Ki ± 0%                                8.984Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0041/ParseSealCold                                                         15.39Ki ± 0%                                15.39Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0041/OpenWarm                                                              6.094Ki ± 0%                                6.094Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/SealWarm                                                              10.11Ki ± 0%                                10.11Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/ParseSealCold                                                         20.77Ki ± 0%                                20.77Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/OpenWarm                                                              6.094Ki ± 0%                                6.094Ki ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                               10.13Ki                                     10.13Ki       +0.00%
+¹ all samples are equal
+
+                              │ /home/exedev/crypto-audit/round3/bench/stack-hpke-combined-old.txt │ /home/exedev/crypto-audit/round3/bench/stack-hpke-combined-new.txt │
+                              │                             allocs/op                              │                 allocs/op                  vs base                 │
+Round2HPKE/0041/SealWarm                                                                74.00 ± 0%                                  74.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0041/ParseSealCold                                                           77.00 ± 0%                                  77.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0041/OpenWarm                                                                73.00 ± 0%                                  73.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/SealWarm                                                                74.00 ± 0%                                  74.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/ParseSealCold                                                           77.00 ± 0%                                  77.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/OpenWarm                                                                73.00 ± 0%                                  73.00 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                                 74.65                                       74.65       +0.00%
+¹ all samples are equal

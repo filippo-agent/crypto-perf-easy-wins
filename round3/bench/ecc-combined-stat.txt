@@ -1,0 +1,39 @@
+goos: linux
+goarch: amd64
+pkg: crypto/ecdsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                             │ /home/exedev/crypto-audit/round3/bench/ecc-combined-old.txt │ /home/exedev/crypto-audit/round3/bench/ecc-combined-new.txt │
+                                             │                           sec/op                            │               sec/op                 vs base                │
+Round3VerifyEngine/P-384/Warm/Valid                                                           730.3µ ±  6%                           613.3µ ± 5%  -16.02% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Warm/InvalidHash                                                     725.6µ ±  5%                           578.8µ ± 5%  -20.24% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/Valid                                                        721.2µ ±  8%                           552.4µ ± 5%  -23.40% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/InvalidHash                                                  734.6µ ±  8%                           552.4µ ± 4%  -24.81% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/Valid                                                           2.029m ±  5%                           1.718m ± 5%  -15.36% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/InvalidHash                                                     2.015m ±  3%                           1.726m ± 6%  -14.37% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Reparse/Valid                                                        2.043m ± 10%                           1.751m ± 7%  -14.29% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Reparse/InvalidHash                                                  2.057m ±  7%                           1.716m ± 5%  -16.59% (p=0.000 n=12)
+geomean                                                                                       1.217m                                 995.5µ       -18.23%
+
+                                             │ /home/exedev/crypto-audit/round3/bench/ecc-combined-old.txt │ /home/exedev/crypto-audit/round3/bench/ecc-combined-new.txt │
+                                             │                            B/op                             │                B/op                  vs base                │
+Round3VerifyEngine/P-384/Warm/Valid                                                             808.0 ± 0%                            640.0 ± 0%  -20.79% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Warm/InvalidHash                                                       824.0 ± 0%                            656.0 ± 0%  -20.39% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/Valid                                                        1.250Ki ± 0%                          1.086Ki ± 0%  -13.12% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/InvalidHash                                                  1.266Ki ± 0%                          1.102Ki ± 0%  -12.96% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/Valid                                                            1224.0 ± 0%                            960.0 ± 0%  -21.57% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/InvalidHash                                                      1240.0 ± 0%                            976.0 ± 0%  -21.29% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Reparse/Valid                                                        1.812Ki ± 0%                          1.555Ki ± 0%  -14.22% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Reparse/InvalidHash                                                  1.828Ki ± 0%                          1.570Ki ± 0%  -14.10% (p=0.000 n=12)
+geomean                                                                                       1.217Ki                               1.005Ki       -17.39%
+
+                                             │ /home/exedev/crypto-audit/round3/bench/ecc-combined-old.txt │ /home/exedev/crypto-audit/round3/bench/ecc-combined-new.txt │
+                                             │                          allocs/op                          │              allocs/op               vs base                │
+Round3VerifyEngine/P-384/Warm/Valid                                                             17.00 ± 0%                            13.00 ± 0%  -23.53% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Warm/InvalidHash                                                       18.00 ± 0%                            14.00 ± 0%  -22.22% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/Valid                                                          27.00 ± 0%                            23.00 ± 0%  -14.81% (p=0.000 n=12)
+Round3VerifyEngine/P-384/Reparse/InvalidHash                                                    28.00 ± 0%                            24.00 ± 0%  -14.29% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/Valid                                                             17.00 ± 0%                            13.00 ± 0%  -23.53% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Warm/InvalidHash                                                       18.00 ± 0%                            14.00 ± 0%  -22.22% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Reparse/Valid                                                          27.00 ± 0%                            23.00 ± 0%  -14.81% (p=0.000 n=12)
+Round3VerifyEngine/P-521/Reparse/InvalidHash                                                    28.00 ± 0%                            24.00 ± 0%  -14.29% (p=0.000 n=12)
+geomean                                                                                         21.93                                 17.80       -18.82%

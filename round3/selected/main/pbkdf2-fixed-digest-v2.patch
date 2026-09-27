@@ -1,0 +1,98 @@
+diff --git a/src/crypto/internal/fips140/hmac/hmac.go b/src/crypto/internal/fips140/hmac/hmac.go
+index a18b2265..51dbf481 100644
+--- a/src/crypto/internal/fips140/hmac/hmac.go
++++ b/src/crypto/internal/fips140/hmac/hmac.go
+@@ -207,3 +207,24 @@ func New[H hash.Hash](h func() H, key []byte) *HMAC {
+ func MarkAsUsedInKDF(h *HMAC) {
+ 	h.forHKDF = true
+ }
++
++// PBKDF2InnerLoop executes the fixed-size digest recurrence for PBKDF2, if
++// supported. The HMAC's live digest state is not updated; the caller must Reset
++// before its next use. T and U must be separate complete-digest buffers.
++func PBKDF2InnerLoop(h *HMAC, T, U []byte, rounds int) bool {
++	inner, innerOK := h.inner.(*sha256.Digest)
++	outer, outerOK := h.outer.(*sha256.Digest)
++	if !h.forHKDF || !h.marshaled || !innerOK || !outerOK ||
++		inner.Size() != 32 || outer.Size() != 32 {
++		return false
++	}
++	// Decode existing checkpoints once per derived-key block, not each round.
++	i, o := *inner, *outer
++	if err := i.UnmarshalBinary(h.ipad); err != nil {
++		panic(err)
++	}
++	if err := o.UnmarshalBinary(h.opad); err != nil {
++		panic(err)
++	}
++	return sha256.PBKDF2InnerLoop(&i, &o, T, U, rounds)
++}
+diff --git a/src/crypto/internal/fips140/pbkdf2/pbkdf2.go b/src/crypto/internal/fips140/pbkdf2/pbkdf2.go
+index 5392e673..d28d4810 100644
+--- a/src/crypto/internal/fips140/pbkdf2/pbkdf2.go
++++ b/src/crypto/internal/fips140/pbkdf2/pbkdf2.go
+@@ -55,6 +55,11 @@ func Key[Hash hash.Hash](h func() Hash, password string, salt []byte, iter, keyL
+ 		T := dk[len(dk)-hashLen:]
+ 		copy(U, T)
+ 
++		// Only SHA-256 has a fixed-size compressor recurrence fast path.
++		if iter > 1 && hmac.PBKDF2InnerLoop(prf, T, U, iter-1) {
++			continue
++		}
++
+ 		// U_n = PRF(password, U_(n-1))
+ 		for n := 2; n <= iter; n++ {
+ 			prf.Reset()
+--- /dev/null
++++ b/src/crypto/internal/fips140/sha256/pbkdf2.go
+@@ -0,0 +1,50 @@
++// Copyright 2026 The Go Authors. All rights reserved.
++// Use of this source code is governed by a BSD-style
++// license that can be found in the LICENSE file.
++
++package sha256
++
++import (
++	"crypto/internal/fips140"
++	"crypto/internal/fips140deps/byteorder"
++)
++
++// PBKDF2InnerLoop performs rounds iterations U = HMAC(U), accumulating U
++// into T. inner and outer must be SHA-256 checkpoints after one pad block.
++// T and U must be separate 32-byte buffers. This is only for package pbkdf2,
++// through package hmac. It deliberately does not support SHA-224.
++func PBKDF2InnerLoop(inner, outer *Digest, T, U []byte, rounds int) bool {
++	if inner.is224 || outer.is224 || inner.nx != 0 || outer.nx != 0 ||
++		inner.len != blockSize || outer.len != blockSize || len(T) != size || len(U) != size {
++		return false
++	}
++	var input [blockSize]byte
++	copy(input[:size], U)
++	input[size] = 0x80
++	// Each inner and outer hash covers the 64-byte key pad and 32-byte digest.
++	byteorder.BEPutUint64(input[56:], (blockSize+size)*8)
++	var total [8]uint32
++	for i := range total {
++		total[i] = byteorder.BEUint32(T[4*i:])
++	}
++	var d Digest
++	for r := 0; r < rounds; r++ {
++		d.h = inner.h
++		block(&d, input[:])
++		for i, word := range d.h {
++			byteorder.BEPutUint32(input[4*i:], word)
++		}
++		d.h = outer.h
++		block(&d, input[:])
++		for i, word := range d.h {
++			total[i] ^= word
++			byteorder.BEPutUint32(input[4*i:], word)
++		}
++	}
++	copy(U, input[:size])
++	for i, word := range total {
++		byteorder.BEPutUint32(T[4*i:], word)
++	}
++	fips140.RecordApproved()
++	return true
++}

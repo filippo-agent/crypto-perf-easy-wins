@@ -1,0 +1,6 @@
+ok  	crypto/ecdsa	0.092s
+ok  	crypto/ecdh	0.082s
+ok  	crypto/pbkdf2	0.095s
+ok  	crypto/hmac	0.113s
+ok  	crypto/rsa	2.583s
+ok  	crypto/internal/fips140test	3.088s

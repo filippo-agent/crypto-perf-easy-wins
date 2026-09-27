@@ -1,0 +1,5 @@
+ok  	crypto/internal/fips140/mlkem	0.206s
+ok  	crypto/internal/fips140/mldsa	0.986s
+ok  	crypto/mlkem	0.072s
+ok  	crypto/mldsa	0.392s
+ok  	crypto/hpke	1.897s

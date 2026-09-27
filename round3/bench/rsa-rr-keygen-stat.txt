@@ -1,0 +1,24 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                              │ /home/exedev/crypto-audit/round3/bench/rsa-rr-keygen-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-keygen-new.txt │
+                              │                            sec/op                            │                sec/op                  vs base               │
+Round2GenerateKey/2048/Corpus                                                    59.30m ± 6%                             57.86m ± 5%       ~ (p=0.089 n=12)
+Round2GenerateKey/3072/Corpus                                                    242.2m ± 6%                             242.5m ± 5%       ~ (p=0.514 n=12)
+Round2GenerateKey/4096/Corpus                                                    680.2m ± 5%                             680.9m ± 3%       ~ (p=0.977 n=12)
+geomean                                                                          213.8m                                  212.2m       -0.74%
+
+                              │ /home/exedev/crypto-audit/round3/bench/rsa-rr-keygen-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-keygen-new.txt │
+                              │                             B/op                             │                 B/op                   vs base               │
+Round2GenerateKey/2048/Corpus                                                   633.6Ki ± 0%                            633.6Ki ± 0%       ~ (p=0.921 n=12)
+Round2GenerateKey/3072/Corpus                                                   1.107Mi ± 0%                            1.090Mi ± 0%  -1.52% (p=0.000 n=12)
+Round2GenerateKey/4096/Corpus                                                   1.672Mi ± 0%                            1.646Mi ± 0%  -1.58% (p=0.000 n=12)
+geomean                                                                         1.046Mi                                 1.036Mi       -1.04%
+
+                              │ /home/exedev/crypto-audit/round3/bench/rsa-rr-keygen-old.txt │ /home/exedev/crypto-audit/round3/bench/rsa-rr-keygen-new.txt │
+                              │                          allocs/op                           │               allocs/op                vs base               │
+Round2GenerateKey/2048/Corpus                                                    5.883k ± 0%                             5.883k ± 0%       ~ (p=0.670 n=12)
+Round2GenerateKey/3072/Corpus                                                    8.890k ± 0%                             8.852k ± 0%  -0.43% (p=0.000 n=12)
+Round2GenerateKey/4096/Corpus                                                    11.81k ± 0%                             11.77k ± 0%  -0.40% (p=0.000 n=12)
+geomean                                                                          8.518k                                  8.494k       -0.28%

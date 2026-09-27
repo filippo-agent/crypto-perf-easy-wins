@@ -4,6 +4,10 @@
 
 **Acceptance bar:** no BoringCrypto; meaningful improvement to the complete public operation, not just an internal helper. No new assembly, cryptographic algorithms, validation shortcuts, mutable key caches, or removal of required self-tests. Source review and measurement are distinct: plausible candidates without an adequate whole-operation result are not recommendations.
 
+## Profile-guided follow-up (PQ measured over the full pending stack)
+
+See **[round3/README.md](round3/README.md)** and **[round3/PROFILE-NOTES.md](round3/PROFILE-NOTES.md)**. This is the authoritative current PQ baseline/comparison. RSA key-reuse caching has been declined and removed from the new branch.
+
 ## Further original work under the relaxed complexity bar
 
 See **[round2/README.md](round2/README.md)**: portable ML-KEM arithmetic/precomputation, sequential CTR partial-block reuse, direct X.509 Name parsing, and a separately qualified RSA public-precomputation cache. New paired whole-operation results and validation; not the pending work below.
