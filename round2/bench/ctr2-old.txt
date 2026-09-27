@@ -1,0 +1,228 @@
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	10508601	        22.43 ns/op	  44.57 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	11628099	        21.92 ns/op	 319.32 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	15403569	        16.89 ns/op	 947.32 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 7601953	        27.87 ns/op	 609.87 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6783685	        35.13 ns/op	1423.23 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 2081827	       109.8 ns/op	9322.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  298138	       801.0 ns/op	10227.18 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	13174980	        18.15 ns/op	  55.09 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	11020597	        21.73 ns/op	 322.10 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	15381698	        16.14 ns/op	 991.14 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 8297206	        30.27 ns/op	 561.64 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 6383059	        37.52 ns/op	1332.50 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1506348	       164.2 ns/op	6234.42 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  188517	      1230 ns/op	6659.51 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	10665456	        19.63 ns/op	  50.95 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	10483586	        21.40 ns/op	 327.16 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	15302572	        15.94 ns/op	1003.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 9044254	        29.84 ns/op	 569.68 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6715036	        39.35 ns/op	1270.63 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 1805274	       120.4 ns/op	8506.87 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  293497	       948.2 ns/op	8639.22 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	10990052	        21.88 ns/op	  45.70 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	10766541	        22.07 ns/op	 317.20 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	14895405	        15.82 ns/op	1011.63 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 8483164	        31.37 ns/op	 541.91 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 6292160	        41.02 ns/op	1219.00 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1494475	       162.4 ns/op	6305.33 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  204916	      1259 ns/op	6508.89 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	12594147	        18.25 ns/op	  54.79 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	10093008	        21.61 ns/op	 323.91 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	11850714	        17.34 ns/op	 922.74 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 7591760	        29.79 ns/op	 570.61 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6508656	        37.37 ns/op	1338.10 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 2300060	       106.2 ns/op	9639.79 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  275126	       879.6 ns/op	9312.94 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	11265252	        19.29 ns/op	  51.83 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	11051281	        21.79 ns/op	 321.22 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	15298142	        15.91 ns/op	1005.61 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 8504116	        28.26 ns/op	 601.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 6600817	        40.22 ns/op	1243.03 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1287574	       171.4 ns/op	5974.29 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  198033	      1289 ns/op	6357.43 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	12443949	        19.05 ns/op	  52.48 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	10948863	        21.33 ns/op	 328.20 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	15663724	        16.19 ns/op	 988.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 8825521	        27.38 ns/op	 620.84 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6325743	        36.28 ns/op	1378.14 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 2064261	       125.6 ns/op	8155.15 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  261810	      1062 ns/op	7712.56 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	12144310	        21.03 ns/op	  47.56 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	 8389166	        25.45 ns/op	 275.04 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	13545752	        16.98 ns/op	 942.01 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 7609360	        31.25 ns/op	 543.92 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 5857545	        40.51 ns/op	1234.32 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1257458	       189.7 ns/op	5399.00 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  168174	      1394 ns/op	5875.62 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	12555566	        18.21 ns/op	  54.93 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	10734265	        21.83 ns/op	 320.66 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	15121090	        18.74 ns/op	 853.86 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 8217991	        28.30 ns/op	 600.73 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 7067174	        34.08 ns/op	1466.96 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 2120467	       111.3 ns/op	9198.32 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  284002	       827.7 ns/op	9897.31 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	12518952	        19.81 ns/op	  50.48 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	10581362	        22.69 ns/op	 308.52 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	14731209	        17.25 ns/op	 927.60 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 7514290	        35.50 ns/op	 478.87 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 5190444	        40.20 ns/op	1243.86 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1432597	       168.2 ns/op	6089.09 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  155641	      1415 ns/op	5788.66 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	13146126	        20.21 ns/op	  49.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	11171120	        21.99 ns/op	 318.30 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	13969068	        16.27 ns/op	 983.34 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 7653501	        29.93 ns/op	 568.01 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6974520	        38.37 ns/op	1303.18 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 1857098	       150.2 ns/op	6816.35 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  255111	       824.7 ns/op	9932.78 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	11052283	        19.67 ns/op	  50.83 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	10009504	        23.63 ns/op	 296.23 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	14353521	        17.52 ns/op	 913.24 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 8330174	        30.34 ns/op	 560.32 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 6269787	        41.41 ns/op	1207.54 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1587942	       152.1 ns/op	6732.60 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  201451	      1149 ns/op	7132.14 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	13051815	        19.19 ns/op	  52.12 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	 9625048	        23.28 ns/op	 300.62 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	11988320	        17.29 ns/op	 925.35 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 8318065	        31.85 ns/op	 533.74 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6354620	        38.01 ns/op	1315.60 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 1868233	       127.8 ns/op	8010.02 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  265851	       943.4 ns/op	8683.19 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	13158942	        20.19 ns/op	  49.53 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	 9268513	        27.87 ns/op	 251.18 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	11513584	        19.76 ns/op	 809.78 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 6863743	        36.07 ns/op	 471.31 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 5668244	        47.41 ns/op	1054.72 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1000000	       204.4 ns/op	5010.55 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  144950	      1605 ns/op	5103.14 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	13279587	        19.02 ns/op	  52.57 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	10062813	        24.42 ns/op	 286.61 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	15408652	        16.75 ns/op	 955.33 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 8624433	        29.02 ns/op	 585.81 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 7461722	        34.93 ns/op	1431.48 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 1777886	       151.8 ns/op	6747.52 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  202788	      1181 ns/op	6935.36 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	12005311	        19.57 ns/op	  51.11 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	10755547	        23.36 ns/op	 299.70 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	14957156	        17.35 ns/op	 922.37 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 7515933	        30.97 ns/op	 548.96 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 6235515	        40.03 ns/op	1248.96 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1539324	       166.0 ns/op	6168.60 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  158428	      1315 ns/op	6230.78 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	10222833	        20.76 ns/op	  48.18 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	 7998560	        26.99 ns/op	 259.33 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	13441290	        17.62 ns/op	 907.97 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 8006121	        29.40 ns/op	 578.19 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 7424821	        37.69 ns/op	1326.73 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 1899978	       126.8 ns/op	8078.20 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  266050	       957.9 ns/op	8552.03 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	11496218	        21.03 ns/op	  47.54 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	 8839839	        24.68 ns/op	 283.68 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	11676042	        17.59 ns/op	 909.83 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 7843839	        30.80 ns/op	 551.86 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 5976816	        39.23 ns/op	1274.67 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1501086	       164.2 ns/op	6235.01 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  168850	      1316 ns/op	6222.59 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	11387494	        19.27 ns/op	  51.90 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	10684876	        21.33 ns/op	 328.19 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	15293397	        16.57 ns/op	 965.60 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 8341312	        29.88 ns/op	 568.97 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6431754	        33.96 ns/op	1472.46 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 2104374	       108.9 ns/op	9399.63 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  299431	       800.6 ns/op	10231.81 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	13152357	        18.19 ns/op	  54.99 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	11025792	        22.02 ns/op	 317.92 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	15044445	        16.13 ns/op	 992.19 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 8500564	        28.21 ns/op	 602.64 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 6607444	        36.18 ns/op	1382.06 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1662722	       144.4 ns/op	7093.76 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  214189	      1117 ns/op	7331.26 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	12979186	        17.79 ns/op	  56.22 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	11498056	        21.69 ns/op	 322.76 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	15089012	        16.52 ns/op	 968.44 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 8212065	        29.96 ns/op	 567.35 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6498987	        34.92 ns/op	1431.98 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 2023957	       129.9 ns/op	7885.10 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  259052	       936.5 ns/op	8747.28 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	10706880	        22.72 ns/op	  44.02 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	10234677	        24.79 ns/op	 282.38 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	14779534	        16.57 ns/op	 965.34 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 8334466	        32.00 ns/op	 531.24 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 6018152	        38.55 ns/op	1296.92 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1658635	       145.1 ns/op	7058.52 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  214291	      1138 ns/op	7196.27 MB/s	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2CTR/AES128/Bytes1         	12009822	        20.05 ns/op	  49.88 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes7         	11789102	        23.94 ns/op	 292.40 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes16        	15303915	        16.52 ns/op	 968.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes17        	 7849802	        30.34 ns/op	 560.37 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes50        	 6487838	        37.73 ns/op	1325.32 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes1024      	 1974062	       121.8 ns/op	8404.04 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES128/Bytes8192      	  272582	       902.2 ns/op	9079.69 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1         	12493848	        20.68 ns/op	  48.36 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes7         	 9865609	        27.94 ns/op	 250.56 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes16        	12769120	        19.54 ns/op	 818.86 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes17        	 7061343	        32.05 ns/op	 530.41 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes50        	 5311135	        41.94 ns/op	1192.09 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes1024      	 1309554	       182.8 ns/op	5600.71 MB/s	       0 B/op	       0 allocs/op
+BenchmarkRound2CTR/AES256/Bytes8192      	  154544	      1546 ns/op	5299.10 MB/s	       0 B/op	       0 allocs/op
+PASS

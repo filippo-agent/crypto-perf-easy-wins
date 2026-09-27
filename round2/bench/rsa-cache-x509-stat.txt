@@ -1,0 +1,27 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                                    │ /home/exedev/crypto-audit/round2/bench/rsa-cache-x509-old.txt │ /home/exedev/crypto-audit/round2/bench/rsa-cache-x509-new.txt │
+                                                    │                            sec/op                             │                sec/op                  vs base                │
+Round2PublicCacheX509/2048/RetainedIssuer                                                              35.17µ ±  6%                             25.15µ ± 6%  -28.48% (p=0.000 n=12)
+Round2PublicCacheX509/2048/FreshIssuerPoolAndVerify                                                    37.38µ ±  9%                             40.09µ ± 4%   +7.25% (p=0.005 n=12)
+Round2PublicCacheX509/4096/RetainedIssuer                                                              246.6µ ± 11%                             167.7µ ± 7%  -32.00% (p=0.000 n=12)
+Round2PublicCacheX509/4096/FreshIssuerPoolAndVerify                                                    235.9µ ±  6%                             241.1µ ± 8%        ~ (p=0.347 n=12)
+geomean                                                                                                93.51µ                                   79.90µ       -14.55%
+
+                                                    │ /home/exedev/crypto-audit/round2/bench/rsa-cache-x509-old.txt │ /home/exedev/crypto-audit/round2/bench/rsa-cache-x509-new.txt │
+                                                    │                             B/op                              │                 B/op                   vs base                │
+Round2PublicCacheX509/2048/RetainedIssuer                                                              2.477Ki ± 0%                            1.633Ki ± 0%  -34.07% (p=0.000 n=12)
+Round2PublicCacheX509/2048/FreshIssuerPoolAndVerify                                                    4.875Ki ± 0%                            5.352Ki ± 0%   +9.79% (p=0.000 n=12)
+Round2PublicCacheX509/4096/RetainedIssuer                                                              62.23Ki ± 0%                            33.13Ki ± 0%  -46.75% (p=0.000 n=12)
+Round2PublicCacheX509/4096/FreshIssuerPoolAndVerify                                                    64.62Ki ± 0%                            65.38Ki ± 0%   +1.17% (p=0.000 n=12)
+geomean                                                                                                14.84Ki                                 11.73Ki       -20.98%
+
+                                                    │ /home/exedev/crypto-audit/round2/bench/rsa-cache-x509-old.txt │ /home/exedev/crypto-audit/round2/bench/rsa-cache-x509-new.txt │
+                                                    │                           allocs/op                           │               allocs/op                vs base                │
+Round2PublicCacheX509/2048/RetainedIssuer                                                                36.00 ± 0%                              29.00 ± 0%  -19.44% (p=0.000 n=12)
+Round2PublicCacheX509/2048/FreshIssuerPoolAndVerify                                                      48.00 ± 0%                              55.00 ± 0%  +14.58% (p=0.000 n=12)
+Round2PublicCacheX509/4096/RetainedIssuer                                                               128.00 ± 0%                              72.00 ± 0%  -43.75% (p=0.000 n=12)
+Round2PublicCacheX509/4096/FreshIssuerPoolAndVerify                                                      140.0 ± 0%                              147.0 ± 0%   +5.00% (p=0.000 n=12)
+geomean                                                                                                  74.60                                   64.10       -14.07%

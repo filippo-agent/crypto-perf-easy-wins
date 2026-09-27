@@ -1,0 +1,113 @@
+diff --git a/src/crypto/x509/parser.go b/src/crypto/x509/parser.go
+index 5a457987..987dc6a6 100644
+--- a/src/crypto/x509/parser.go
++++ b/src/crypto/x509/parser.go
+@@ -204,41 +204,38 @@ func readASN1Any(der *cryptobyte.String) (any, error) {
+ 	}
+ }
+ 
+-// parseName parses a DER encoded Name as defined in RFC 5280. We may
+-// want to export this function in the future for use in crypto/tls.
+-func parseName(raw cryptobyte.String) (*pkix.RDNSequence, error) {
++// parseName parses a DER encoded Name as defined in RFC 5280 into the empty
++// name, flattening multi-valued RDNs as documented by pkix.Name.
++func parseName(raw cryptobyte.String, name *pkix.Name) error {
+ 	if !raw.ReadASN1(&raw, cryptobyte_asn1.SEQUENCE) {
+-		return nil, errors.New("x509: invalid RDNSequence")
++		return errors.New("x509: invalid RDNSequence")
+ 	}
+ 
+-	var rdnSeq pkix.RDNSequence
+ 	for !raw.Empty() {
+-		var rdnSet pkix.RelativeDistinguishedNameSET
+ 		var set cryptobyte.String
+ 		if !raw.ReadASN1(&set, cryptobyte_asn1.SET) {
+-			return nil, errors.New("x509: invalid RDNSequence")
++			return errors.New("x509: invalid RDNSequence")
+ 		}
+ 		for !set.Empty() {
+ 			var atav cryptobyte.String
+ 			if !set.ReadASN1(&atav, cryptobyte_asn1.SEQUENCE) {
+-				return nil, errors.New("x509: invalid RDNSequence: invalid attribute")
++				return errors.New("x509: invalid RDNSequence: invalid attribute")
+ 			}
+ 			var attr pkix.AttributeTypeAndValue
+ 			if !atav.ReadASN1ObjectIdentifier(&attr.Type) {
+-				return nil, errors.New("x509: invalid RDNSequence: invalid attribute type")
++				return errors.New("x509: invalid RDNSequence: invalid attribute type")
+ 			}
+ 			var err error
+ 			attr.Value, err = readASN1Any(&atav)
+ 			if err != nil {
+-				return nil, fmt.Errorf("x509: invalid RDNSequence: invalid attribute value: %s", err)
++				return fmt.Errorf("x509: invalid RDNSequence: invalid attribute value: %s", err)
+ 			}
+-			rdnSet = append(rdnSet, attr)
++			// FillFromRDNSequence does not retain the temporary RDN grouping.
++			name.FillFromRDNSequence(&pkix.RDNSequence{{attr}})
+ 		}
+-
+-		rdnSeq = append(rdnSeq, rdnSet)
+ 	}
+ 
+-	return &rdnSeq, nil
++	return nil
+ }
+ 
+ func parseAI(der cryptobyte.String) (pkix.AlgorithmIdentifier, error) {
+@@ -1061,11 +1058,9 @@ func parseCertificate(der []byte) (*Certificate, error) {
+ 		return nil, errors.New("x509: malformed issuer")
+ 	}
+ 	cert.RawIssuer = issuerSeq
+-	issuerRDNs, err := parseName(issuerSeq)
+-	if err != nil {
++	if err := parseName(issuerSeq, &cert.Issuer); err != nil {
+ 		return nil, err
+ 	}
+-	cert.Issuer.FillFromRDNSequence(issuerRDNs)
+ 
+ 	var validity cryptobyte.String
+ 	if !tbs.ReadASN1(&validity, cryptobyte_asn1.SEQUENCE) {
+@@ -1081,11 +1076,9 @@ func parseCertificate(der []byte) (*Certificate, error) {
+ 		return nil, errors.New("x509: malformed issuer")
+ 	}
+ 	cert.RawSubject = subjectSeq
+-	subjectRDNs, err := parseName(subjectSeq)
+-	if err != nil {
++	if err := parseName(subjectSeq, &cert.Subject); err != nil {
+ 		return nil, err
+ 	}
+-	cert.Subject.FillFromRDNSequence(subjectRDNs)
+ 
+ 	var spki cryptobyte.String
+ 	if !tbs.ReadASN1Element(&spki, cryptobyte_asn1.SEQUENCE) {
+@@ -1278,11 +1271,9 @@ func ParseRevocationList(der []byte) (*RevocationList, error) {
+ 		return nil, errors.New("x509: malformed issuer")
+ 	}
+ 	rl.RawIssuer = issuerSeq
+-	issuerRDNs, err := parseName(issuerSeq)
+-	if err != nil {
++	if err := parseName(issuerSeq, &rl.Issuer); err != nil {
+ 		return nil, err
+ 	}
+-	rl.Issuer.FillFromRDNSequence(issuerRDNs)
+ 
+ 	rl.ThisUpdate, err = readASN1Time(&tbs)
+ 	if err != nil {
+diff --git a/src/crypto/x509/x509.go b/src/crypto/x509/x509.go
+index a0c42bf2..64184991 100644
+--- a/src/crypto/x509/x509.go
++++ b/src/crypto/x509/x509.go
+@@ -2415,11 +2415,9 @@ func parseCertificateRequest(in *certificateRequest) (*CertificateRequest, error
+ 		}
+ 	}
+ 
+-	subject, err := parseName(in.TBSCSR.Subject.FullBytes)
+-	if err != nil {
++	if err := parseName(in.TBSCSR.Subject.FullBytes, &out.Subject); err != nil {
+ 		return nil, err
+ 	}
+-	out.Subject.FillFromRDNSequence(subject)
+ 
+ 	if out.Extensions, err = parseCSRExtensions(in.TBSCSR.RawAttributes); err != nil {
+ 		return nil, err

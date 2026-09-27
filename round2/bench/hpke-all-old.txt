@@ -1,0 +1,132 @@
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5455	     48669 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4618	     70686 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4219	     74398 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4424	     76647 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2637	    112936 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    2790	    115327 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5089	     58565 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4406	     70618 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4318	     70826 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4263	     69361 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2940	    103563 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    3058	     99785 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    4971	     53723 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4196	     71092 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4412	     81502 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    3060	     82266 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2901	    110642 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    2658	    117097 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5764	     52198 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4603	     66603 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4467	     68087 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4411	     69111 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    3030	    100903 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    3032	     99772 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5613	     56734 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4142	     73880 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4380	     79859 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    2710	    112283 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    1857	    157724 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    2946	    109648 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    4872	     56715 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    3663	     77008 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    3981	     79924 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    3685	     76522 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2925	    110477 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    2896	    107514 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5094	     59094 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4588	     75868 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4149	     75824 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4118	     81767 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2904	    107411 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    2992	    113373 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5270	     53163 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    3711	     78726 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4317	     77898 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4082	     77098 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2403	    116847 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    2971	    111921 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5584	     51930 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4513	     74732 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    3554	     86360 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4422	     77828 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2544	    112995 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    3038	    100314 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    4650	     55956 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    3446	     76678 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4434	     75796 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4264	     79382 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2920	    108405 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    2335	    109461 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5164	     56838 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4263	     74613 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4140	     73549 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4466	     71489 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    2488	    107861 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    2384	    110430 ns/op	    6240 B/op	      73 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2HPKE/0041/SealWarm         	    5594	     55286 ns/op	    9200 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0041/ParseSealCold    	    4508	     77449 ns/op	   15760 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0041/OpenWarm         	    4472	     68244 ns/op	    6240 B/op	      73 allocs/op
+BenchmarkRound2HPKE/0042/SealWarm         	    4405	     69129 ns/op	   10352 B/op	      74 allocs/op
+BenchmarkRound2HPKE/0042/ParseSealCold    	    3045	    101140 ns/op	   21264 B/op	      77 allocs/op
+BenchmarkRound2HPKE/0042/OpenWarm         	    3050	    100189 ns/op	    6240 B/op	      73 allocs/op
+PASS

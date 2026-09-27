@@ -1,0 +1,108 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    8955	     35128 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    9154	     33881 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1335	    220448 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1346	    222804 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    7686	     36942 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    9058	     37517 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1218	    250284 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1152	    245112 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    8997	     33063 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    9188	     33423 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1360	    220563 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1378	    219466 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    7138	     35732 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    7850	     40518 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1225	    235819 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1053	    275272 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    7738	     34305 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    8734	     39162 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1224	    255095 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1366	    244382 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    8212	     32783 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    8756	     34340 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1333	    223588 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1363	    226895 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    8130	     36285 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    8538	     38771 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1131	    250264 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1278	    240212 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    8676	     35204 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    8092	     36707 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1143	    248505 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1227	    231617 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    8914	     34196 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    6835	     37244 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1255	    249174 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1347	    241864 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    8545	     36256 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    7861	     39037 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1186	    254308 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1155	    229528 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    8095	     32467 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    7401	     33813 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1366	    218129 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1360	    221979 ns/op	   66176 B/op	     140 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCacheX509/2048/RetainedIssuer         	    7539	     41001 ns/op	    2536 B/op	      36 allocs/op
+BenchmarkRound2PublicCacheX509/2048/FreshIssuerPoolAndVerify         	    7683	     38723 ns/op	    4992 B/op	      48 allocs/op
+BenchmarkRound2PublicCacheX509/4096/RetainedIssuer                   	    1306	    244640 ns/op	   63720 B/op	     128 allocs/op
+BenchmarkRound2PublicCacheX509/4096/FreshIssuerPoolAndVerify         	    1254	    251971 ns/op	   66176 B/op	     140 allocs/op
+PASS

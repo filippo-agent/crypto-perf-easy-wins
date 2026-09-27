@@ -1,0 +1,79 @@
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC 9554P 64-Core Processor               
+                           │ /home/exedev/crypto-audit/round2/bench/ctr2-old.txt │ /home/exedev/crypto-audit/round2/bench/ctr2-new.txt │
+                           │                       sec/op                        │           sec/op             vs base                │
+Round2CTR/AES128/Bytes1                                             19.23n ±  5%                  11.59n ±  6%  -39.73% (p=0.000 n=12)
+Round2CTR/AES128/Bytes7                                             21.88n ±  9%                  17.40n ±  9%  -20.48% (p=0.000 n=12)
+Round2CTR/AES128/Bytes16                                            16.66n ±  4%                  15.70n ±  6%   -5.79% (p=0.006 n=12)
+Round2CTR/AES128/Bytes17                                            29.81n ±  5%                  23.70n ±  6%  -20.51% (p=0.000 n=12)
+Round2CTR/AES128/Bytes50                                            36.82n ±  5%                  33.04n ± 18%  -10.28% (p=0.045 n=12)
+Round2CTR/AES128/Bytes1024                                          123.7n ± 11%                  116.6n ±  6%        ~ (p=0.311 n=12)
+Round2CTR/AES128/Bytes8192                                          919.4n ± 10%                  897.5n ±  5%        ~ (p=0.755 n=12)
+Round2CTR/AES256/Bytes1                                             20.00n ±  5%                  11.73n ± 10%  -41.35% (p=0.000 n=12)
+Round2CTR/AES256/Bytes7                                             23.49n ±  8%                  18.93n ± 15%  -19.43% (p=0.000 n=12)
+Round2CTR/AES256/Bytes16                                            17.12n ±  6%                  17.14n ±  6%        ~ (p=0.854 n=12)
+Round2CTR/AES256/Bytes17                                            31.11n ±  3%                  26.63n ±  7%  -14.40% (p=0.000 n=12)
+Round2CTR/AES256/Bytes50                                            40.21n ±  4%                  36.40n ±  7%   -9.48% (p=0.017 n=12)
+Round2CTR/AES256/Bytes1024                                          165.1n ± 11%                  163.6n ± 17%        ~ (p=0.966 n=12)
+Round2CTR/AES256/Bytes8192                                          1.302µ ± 12%                  1.285µ ± 17%        ~ (p=0.977 n=12)
+geomean                                                             54.21n                        46.19n        -14.79%
+
+                           │ /home/exedev/crypto-audit/round2/bench/ctr2-old.txt │ /home/exedev/crypto-audit/round2/bench/ctr2-new.txt │
+                           │                         B/s                         │             B/s              vs base                │
+Round2CTR/AES128/Bytes1                                            49.60Mi ±  5%                 82.32Mi ±  7%  +65.97% (p=0.000 n=12)
+Round2CTR/AES128/Bytes7                                            305.2Mi ±  9%                 383.8Mi ±  8%  +25.76% (p=0.000 n=12)
+Round2CTR/AES128/Bytes16                                           916.0Mi ±  4%                 972.7Mi ±  6%   +6.19% (p=0.007 n=12)
+Round2CTR/AES128/Bytes17                                           543.7Mi ±  5%                 684.0Mi ±  6%  +25.80% (p=0.000 n=12)
+Round2CTR/AES128/Bytes50                                           1.265Gi ±  5%                 1.410Gi ± 16%  +11.46% (p=0.045 n=12)
+Round2CTR/AES128/Bytes1024                                         7.711Gi ± 13%                 8.173Gi ±  6%        ~ (p=0.319 n=12)
+Round2CTR/AES128/Bytes8192                                         8.301Gi ± 11%                 8.501Gi ±  5%        ~ (p=0.755 n=12)
+Round2CTR/AES256/Bytes1                                            47.69Mi ±  5%                 81.31Mi ± 11%  +70.49% (p=0.000 n=12)
+Round2CTR/AES256/Bytes7                                            284.2Mi ±  8%                 352.7Mi ± 13%  +24.14% (p=0.000 n=12)
+Round2CTR/AES256/Bytes16                                           891.5Mi ±  6%                 890.2Mi ±  6%        ~ (p=0.887 n=12)
+Round2CTR/AES256/Bytes17                                           521.1Mi ±  3%                 608.8Mi ±  7%  +16.83% (p=0.000 n=12)
+Round2CTR/AES256/Bytes50                                           1.158Gi ±  4%                 1.279Gi ±  7%  +10.48% (p=0.017 n=12)
+Round2CTR/AES256/Bytes1024                                         5.776Gi ± 10%                 5.829Gi ± 14%        ~ (p=0.977 n=12)
+Round2CTR/AES256/Bytes8192                                         5.862Gi ± 13%                 5.939Gi ± 15%        ~ (p=0.977 n=12)
+geomean                                                            882.5Mi                       1.011Gi        +17.37%
+
+                           │ /home/exedev/crypto-audit/round2/bench/ctr2-old.txt │ /home/exedev/crypto-audit/round2/bench/ctr2-new.txt │
+                           │                        B/op                         │            B/op             vs base                 │
+Round2CTR/AES128/Bytes1                                             0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes7                                             0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes16                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes17                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes50                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes1024                                          0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes8192                                          0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes1                                             0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes7                                             0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes16                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes17                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes50                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes1024                                          0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes8192                                          0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                        ²                               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                           │ /home/exedev/crypto-audit/round2/bench/ctr2-old.txt │ /home/exedev/crypto-audit/round2/bench/ctr2-new.txt │
+                           │                      allocs/op                      │         allocs/op           vs base                 │
+Round2CTR/AES128/Bytes1                                             0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes7                                             0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes16                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes17                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes50                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes1024                                          0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES128/Bytes8192                                          0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes1                                             0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes7                                             0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes16                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes17                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes50                                            0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes1024                                          0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+Round2CTR/AES256/Bytes8192                                          0.000 ± 0%                     0.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                        ²                               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

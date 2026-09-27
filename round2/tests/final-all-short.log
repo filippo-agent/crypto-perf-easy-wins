@@ -1,0 +1,82 @@
+ok  	crypto	0.481s
+ok  	crypto/aes	0.005s
+ok  	crypto/cipher	4.336s
+ok  	crypto/des	0.005s
+ok  	crypto/dsa	0.003s
+ok  	crypto/ecdh	0.062s
+ok  	crypto/ecdsa	0.083s
+ok  	crypto/ed25519	0.141s
+ok  	crypto/elliptic	0.004s
+ok  	crypto/fips140	0.004s
+ok  	crypto/hkdf	0.001s
+ok  	crypto/hmac	0.133s
+ok  	crypto/hpke	1.409s
+ok  	crypto/internal/boring	0.006s
+?   	crypto/internal/boring/bbig	[no test files]
+ok  	crypto/internal/boring/bcache	0.096s
+?   	crypto/internal/boring/sig	[no test files]
+?   	crypto/internal/constanttime	[no test files]
+ok  	crypto/internal/cryptotest	0.004s
+?   	crypto/internal/cryptotest/wycheproof	[no test files]
+?   	crypto/internal/cryptotest/x509limbo	[no test files]
+?   	crypto/internal/entropy	[no test files]
+?   	crypto/internal/entropy/v1.0.0	[no test files]
+ok  	crypto/internal/fips140	0.002s
+ok  	crypto/internal/fips140/aes	0.015s
+ok  	crypto/internal/fips140/aes/gcm	0.001s [no tests to run]
+?   	crypto/internal/fips140/alias	[no test files]
+ok  	crypto/internal/fips140/bigmod	0.051s
+?   	crypto/internal/fips140/check	[no test files]
+?   	crypto/internal/fips140/check/checktest	[no test files]
+ok  	crypto/internal/fips140/drbg	0.002s [no tests to run]
+ok  	crypto/internal/fips140/ecdh	0.001s
+ok  	crypto/internal/fips140/ecdsa	0.594s
+?   	crypto/internal/fips140/ed25519	[no test files]
+ok  	crypto/internal/fips140/edwards25519	0.062s
+ok  	crypto/internal/fips140/edwards25519/field	0.008s
+ok  	crypto/internal/fips140/hkdf	0.005s
+ok  	crypto/internal/fips140/hmac	0.003s
+ok  	crypto/internal/fips140/mldsa	0.734s
+ok  	crypto/internal/fips140/mlkem	0.322s
+ok  	crypto/internal/fips140/nistec	0.004s
+ok  	crypto/internal/fips140/nistec/fiat	0.034s
+ok  	crypto/internal/fips140/pbkdf2	0.155s
+ok  	crypto/internal/fips140/rsa	0.070s
+ok  	crypto/internal/fips140/sha256	0.010s
+ok  	crypto/internal/fips140/sha3	0.003s
+ok  	crypto/internal/fips140/sha512	0.089s
+?   	crypto/internal/fips140/ssh	[no test files]
+ok  	crypto/internal/fips140/subtle	0.002s
+ok  	crypto/internal/fips140/tls12	0.003s
+?   	crypto/internal/fips140/tls13	[no test files]
+ok  	crypto/internal/fips140cache	0.272s
+ok  	crypto/internal/fips140deps	0.031s
+?   	crypto/internal/fips140deps/byteorder	[no test files]
+?   	crypto/internal/fips140deps/cpu	[no test files]
+?   	crypto/internal/fips140deps/godebug	[no test files]
+?   	crypto/internal/fips140deps/time	[no test files]
+?   	crypto/internal/fips140hash	[no test files]
+ok  	crypto/internal/fips140only	0.420s
+ok  	crypto/internal/fips140test	3.358s
+ok  	crypto/internal/impl	0.002s
+?   	crypto/internal/rand	[no test files]
+?   	crypto/internal/randutil	[no test files]
+ok  	crypto/internal/sysrand	0.091s
+?   	crypto/internal/sysrand/internal/seccomp	[no test files]
+ok  	crypto/md5	0.011s
+ok  	crypto/mldsa	0.617s
+ok  	crypto/mlkem	0.068s
+?   	crypto/mlkem/mlkemtest	[no test files]
+ok  	crypto/pbkdf2	0.008s
+ok  	crypto/rand	0.215s
+ok  	crypto/rc4	0.025s
+ok  	crypto/rsa	2.117s
+ok  	crypto/sha1	0.040s
+ok  	crypto/sha256	0.046s
+ok  	crypto/sha3	0.840s
+ok  	crypto/sha512	0.039s
+ok  	crypto/subtle	0.070s
+ok  	crypto/tls	12.622s
+?   	crypto/tls/internal/fips140tls	[no test files]
+ok  	crypto/x509	2.759s
+?   	crypto/x509/pkix	[no test files]

@@ -4,6 +4,10 @@
 
 **Acceptance bar:** no BoringCrypto; meaningful improvement to the complete public operation, not just an internal helper. No new assembly, cryptographic algorithms, validation shortcuts, mutable key caches, or removal of required self-tests. Source review and measurement are distinct: plausible candidates without an adequate whole-operation result are not recommendations.
 
+## Further original work under the relaxed complexity bar
+
+See **[round2/README.md](round2/README.md)**: portable ML-KEM arithmetic/precomputation, sequential CTR partial-block reuse, direct X.509 Name parsing, and a separately qualified RSA public-precomputation cache. New paired whole-operation results and validation; not the pending work below.
+
 ## Pending work already in Gerrit
 
 See **[PENDING.md](PENDING.md)** for a separately verified queue of existing work: human authors, current status, actual whole-operation evidence, blockers, dependencies, and old-open changes already superseded by current code. It distinguishes pending work from the four new audit findings below.

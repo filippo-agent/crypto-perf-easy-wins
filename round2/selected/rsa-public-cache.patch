@@ -1,0 +1,51 @@
+diff --git a/src/crypto/rsa/rsa.go b/src/crypto/rsa/rsa.go
+index 93e08ed6..4a8deff2 100644
+--- a/src/crypto/rsa/rsa.go
++++ b/src/crypto/rsa/rsa.go
+@@ -47,6 +47,7 @@ import (
+ 	"crypto/internal/boring/bbig"
+ 	"crypto/internal/fips140/bigmod"
+ 	"crypto/internal/fips140/rsa"
++	"crypto/internal/fips140cache"
+ 	"crypto/internal/fips140only"
+ 	"crypto/internal/rand"
+ 	cryptorand "crypto/rand"
+@@ -681,12 +682,36 @@ func (priv *PrivateKey) precomputeLegacy() (PrecomputedValues, error) {
+ 	return precomputed, nil
+ }
+ 
++// cachedPublicKey holds a conversion and an independent snapshot of the public
++// values, since callers can modify PublicKey fields between operations.
++// It must not retain a pointer to the PublicKey used as the cache key.
++type cachedPublicKey struct {
++	key *rsa.PublicKey
++	N   big.Int
++	E   int
++}
++
++var publicKeyCache fips140cache.Cache[PublicKey, cachedPublicKey]
++
+ func fipsPublicKey(pub *PublicKey) (*rsa.PublicKey, error) {
+-	N, err := bigmod.NewModulus(pub.N.Bytes())
++	k, err := publicKeyCache.Get(pub, func() (*cachedPublicKey, error) {
++		N, err := bigmod.NewModulus(pub.N.Bytes())
++		if err != nil {
++			return nil, err
++		}
++		k := &cachedPublicKey{
++			key: &rsa.PublicKey{N: N, E: pub.E},
++			E:   pub.E,
++		}
++		k.N.Set(pub.N)
++		return k, nil
++	}, func(k *cachedPublicKey) bool {
++		return pub.E == k.E && pub.N.Cmp(&k.N) == 0
++	})
+ 	if err != nil {
+ 		return nil, err
+ 	}
+-	return &rsa.PublicKey{N: N, E: pub.E}, nil
++	return k.key, nil
+ }
+ 
+ // fipsPrivateKey returns the *rsa.PrivateKey corresponding to priv, using the

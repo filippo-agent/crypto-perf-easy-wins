@@ -1,0 +1,1 @@
+PASS: all 6 semantic source-line change hunks match generate1024 output delta exactly. Checked relative to generated baseline because upstream checked-in file has pre-existing generator drift.

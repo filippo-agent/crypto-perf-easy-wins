@@ -1,0 +1,35 @@
+goos: linux
+goarch: amd64
+pkg: crypto/hpke
+cpu: AMD EPYC 9554P 64-Core Processor               
+                              │ /home/exedev/crypto-audit/round2/bench/hpke-all-old.txt │ /home/exedev/crypto-audit/round2/bench/hpke-all-new.txt │
+                              │                         sec/op                          │             sec/op               vs base                │
+Round2HPKE/0041/SealWarm                                                   55.62µ ±  6%                       46.35µ ± 4%  -16.67% (p=0.000 n=12)
+Round2HPKE/0041/ParseSealCold                                              74.67µ ±  5%                       67.88µ ± 6%   -9.10% (p=0.001 n=12)
+Round2HPKE/0041/OpenWarm                                                   75.81µ ±  7%                       68.61µ ± 4%   -9.50% (p=0.004 n=12)
+Round2HPKE/0042/SealWarm                                                   76.87µ ± 10%                       65.62µ ± 1%  -14.64% (p=0.000 n=12)
+Round2HPKE/0042/ParseSealCold                                              109.4µ ±  5%                       101.1µ ± 3%   -7.65% (p=0.001 n=12)
+Round2HPKE/0042/OpenWarm                                                  109.55µ ±  9%                       99.93µ ± 6%   -8.78% (p=0.002 n=12)
+geomean                                                                    81.37µ                             72.32µ       -11.12%
+
+                              │ /home/exedev/crypto-audit/round2/bench/hpke-all-old.txt │ /home/exedev/crypto-audit/round2/bench/hpke-all-new.txt │
+                              │                          B/op                           │              B/op               vs base                 │
+Round2HPKE/0041/SealWarm                                                   8.984Ki ± 0%                     8.984Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0041/ParseSealCold                                              15.39Ki ± 0%                     15.39Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0041/OpenWarm                                                   6.094Ki ± 0%                     6.094Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/SealWarm                                                   10.11Ki ± 0%                     10.11Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/ParseSealCold                                              20.77Ki ± 0%                     20.77Ki ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/OpenWarm                                                   6.094Ki ± 0%                     6.094Ki ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                    10.13Ki                          10.13Ki       +0.00%
+¹ all samples are equal
+
+                              │ /home/exedev/crypto-audit/round2/bench/hpke-all-old.txt │ /home/exedev/crypto-audit/round2/bench/hpke-all-new.txt │
+                              │                        allocs/op                        │           allocs/op             vs base                 │
+Round2HPKE/0041/SealWarm                                                     74.00 ± 0%                       74.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0041/ParseSealCold                                                77.00 ± 0%                       77.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0041/OpenWarm                                                     73.00 ± 0%                       73.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/SealWarm                                                     74.00 ± 0%                       74.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/ParseSealCold                                                77.00 ± 0%                       77.00 ± 0%       ~ (p=1.000 n=12) ¹
+Round2HPKE/0042/OpenWarm                                                     73.00 ± 0%                       73.00 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                                                                      74.65                            74.65       +0.00%
+¹ all samples are equal

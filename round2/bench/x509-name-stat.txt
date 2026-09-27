@@ -1,0 +1,45 @@
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                             │ /home/exedev/crypto-audit/round2/bench/x509-name-old.txt │ /home/exedev/crypto-audit/round2/bench/x509-name-new.txt │
+                                             │                          sec/op                          │              sec/op               vs base                │
+Round2NamePublicParse/Certificate/rich=false                                               4.233µ ±  7%                       4.263µ ± 11%        ~ (p=0.932 n=12)
+Round2NamePublicParse/CSR/rich=false                                                       6.647µ ±  8%                       7.211µ ±  9%        ~ (p=0.124 n=12)
+Round2NamePublicParse/CRL/rich=false                                                       1.898µ ± 12%                       1.824µ ±  7%        ~ (p=0.114 n=12)
+Round2NamePublicParse/Certificate/rich=true                                               10.200µ ± 12%                       8.729µ ± 10%  -14.43% (p=0.006 n=12)
+Round2NamePublicParse/CSR/rich=true                                                        9.433µ ±  6%                       8.566µ ± 10%   -9.19% (p=0.014 n=12)
+Round2NamePublicParse/CRL/rich=true                                                        4.125µ ±  4%                       3.584µ ± 10%  -13.13% (p=0.000 n=12)
+AuditParseCertificate/PSS                                                                  6.883µ ±  9%                       6.106µ ± 12%  -11.29% (p=0.007 n=12)
+AuditParseCertificate/PSSOpenSSL                                                           9.972µ ±  8%                       8.323µ ±  8%  -16.53% (p=0.000 n=12)
+AuditParseCertificate/Google                                                               9.344µ ±  9%                       9.009µ ±  8%        ~ (p=0.579 n=12)
+AuditParseCertificate/Root                                                                 5.751µ ±  7%                       4.932µ ± 12%  -14.25% (p=0.004 n=12)
+geomean                                                                                    6.156µ                             5.663µ         -8.01%
+
+                                             │ /home/exedev/crypto-audit/round2/bench/x509-name-old.txt │ /home/exedev/crypto-audit/round2/bench/x509-name-new.txt │
+                                             │                           B/op                           │               B/op                vs base                │
+Round2NamePublicParse/Certificate/rich=false                                               3.227Ki ± 0%                       3.039Ki ± 0%   -5.81% (p=0.000 n=12)
+Round2NamePublicParse/CSR/rich=false                                                       2.492Ki ± 0%                       2.398Ki ± 0%   -3.76% (p=0.000 n=12)
+Round2NamePublicParse/CRL/rich=false                                                       1.148Ki ± 0%                       1.055Ki ± 0%   -8.16% (p=0.000 n=12)
+Round2NamePublicParse/Certificate/rich=true                                                6.703Ki ± 0%                       5.141Ki ± 0%  -23.31% (p=0.000 n=12)
+Round2NamePublicParse/CSR/rich=true                                                        4.234Ki ± 0%                       3.453Ki ± 0%  -18.45% (p=0.000 n=12)
+Round2NamePublicParse/CRL/rich=true                                                        2.891Ki ± 0%                       2.109Ki ± 0%  -27.03% (p=0.000 n=12)
+AuditParseCertificate/PSS                                                                  5.062Ki ± 0%                       4.312Ki ± 0%  -14.81% (p=0.000 n=12)
+AuditParseCertificate/PSSOpenSSL                                                           6.039Ki ± 0%                       4.820Ki ± 0%  -20.18% (p=0.000 n=12)
+AuditParseCertificate/Google                                                               6.758Ki ± 0%                       6.336Ki ± 0%   -6.24% (p=0.000 n=12)
+AuditParseCertificate/Root                                                                 4.609Ki ± 0%                       3.953Ki ± 0%  -14.24% (p=0.000 n=12)
+geomean                                                                                    3.853Ki                            3.293Ki       -14.54%
+
+                                             │ /home/exedev/crypto-audit/round2/bench/x509-name-old.txt │ /home/exedev/crypto-audit/round2/bench/x509-name-new.txt │
+                                             │                        allocs/op                         │            allocs/op              vs base                │
+Round2NamePublicParse/Certificate/rich=false                                                 42.00 ± 0%                         36.00 ± 0%  -14.29% (p=0.000 n=12)
+Round2NamePublicParse/CSR/rich=false                                                         50.00 ± 0%                         47.00 ± 0%   -6.00% (p=0.000 n=12)
+Round2NamePublicParse/CRL/rich=false                                                         17.00 ± 0%                         14.00 ± 0%  -17.65% (p=0.000 n=12)
+Round2NamePublicParse/Certificate/rich=true                                                 122.00 ± 0%                         96.00 ± 0%  -21.31% (p=0.000 n=12)
+Round2NamePublicParse/CSR/rich=true                                                          90.00 ± 0%                         77.00 ± 0%  -14.44% (p=0.000 n=12)
+Round2NamePublicParse/CRL/rich=true                                                          57.00 ± 0%                         44.00 ± 0%  -22.81% (p=0.000 n=12)
+AuditParseCertificate/PSS                                                                    77.00 ± 0%                         61.00 ± 0%  -20.78% (p=0.000 n=12)
+AuditParseCertificate/PSSOpenSSL                                                             97.00 ± 0%                         77.00 ± 0%  -20.62% (p=0.000 n=12)
+AuditParseCertificate/Google                                                                 84.00 ± 0%                         74.00 ± 0%  -11.90% (p=0.000 n=12)
+AuditParseCertificate/Root                                                                   61.00 ± 0%                         47.00 ± 0%  -22.95% (p=0.000 n=12)
+geomean                                                                                      62.12                              51.28       -17.44%

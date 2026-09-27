@@ -1,0 +1,69 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                                                  │ /home/exedev/crypto-audit/round2/bench/rsa-cache-old.txt │ /home/exedev/crypto-audit/round2/bench/rsa-cache-new.txt │
+                                                  │                          sec/op                          │              sec/op               vs base                │
+Round2PublicCache/2048/VerifyPKCS1v15/Warm                                                      31.73µ ±  7%                       22.03µ ±  2%  -30.59% (p=0.000 n=12)
+Round2PublicCache/2048/VerifyPKCS1v15/FreshStruct                                               31.28µ ±  5%                       34.49µ ±  5%  +10.23% (p=0.001 n=12)
+Round2PublicCache/2048/VerifyPSS/Warm                                                           31.75µ ±  4%                       22.36µ ±  8%  -29.58% (p=0.000 n=12)
+Round2PublicCache/2048/VerifyPSS/FreshStruct                                                    31.70µ ± 10%                       35.62µ ±  5%  +12.37% (p=0.001 n=12)
+Round2PublicCache/2048/EncryptOAEP/Warm                                                         32.23µ ±  9%                       23.69µ ±  6%  -26.51% (p=0.000 n=12)
+Round2PublicCache/2048/EncryptOAEP/FreshStruct                                                  33.26µ ±  8%                       35.90µ ±  4%   +7.96% (p=0.002 n=12)
+Round2PublicCache/3072/VerifyPKCS1v15/Warm                                                     139.90µ ± 10%                       93.33µ ± 11%  -33.29% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPKCS1v15/FreshStruct                                               135.6µ ±  9%                       132.5µ ±  6%        ~ (p=0.713 n=12)
+Round2PublicCache/3072/VerifyPSS/Warm                                                          139.58µ ±  9%                       94.93µ ±  7%  -31.99% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPSS/FreshStruct                                                    133.6µ ±  6%                       135.2µ ±  6%        ~ (p=0.478 n=12)
+Round2PublicCache/3072/EncryptOAEP/Warm                                                        136.25µ ±  7%                       91.91µ ±  7%  -32.54% (p=0.000 n=12)
+Round2PublicCache/3072/EncryptOAEP/FreshStruct                                                  132.7µ ±  9%                       138.3µ ±  7%        ~ (p=0.160 n=12)
+Round2PublicCache/4096/VerifyPKCS1v15/Warm                                                      244.2µ ± 11%                       158.1µ ± 10%  -35.27% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPKCS1v15/FreshStruct                                               227.2µ ±  8%                       231.8µ ± 11%        ~ (p=0.443 n=12)
+Round2PublicCache/4096/VerifyPSS/Warm                                                           222.5µ ± 12%                       156.8µ ± 13%  -29.56% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPSS/FreshStruct                                                    220.2µ ± 18%                       233.9µ ±  6%        ~ (p=0.478 n=12)
+Round2PublicCache/4096/EncryptOAEP/Warm                                                         220.6µ ± 11%                       165.6µ ±  7%  -24.94% (p=0.000 n=12)
+Round2PublicCache/4096/EncryptOAEP/FreshStruct                                                  233.6µ ±  6%                       236.8µ ±  6%        ~ (p=0.590 n=12)
+geomean                                                                                         99.77µ                             85.09µ        -14.71%
+
+                                                  │ /home/exedev/crypto-audit/round2/bench/rsa-cache-old.txt │ /home/exedev/crypto-audit/round2/bench/rsa-cache-new.txt │
+                                                  │                           B/op                           │               B/op                vs base                │
+Round2PublicCache/2048/VerifyPKCS1v15/Warm                                                       1376.0 ± 0%                         512.0 ± 0%  -62.79% (p=0.000 n=12)
+Round2PublicCache/2048/VerifyPKCS1v15/FreshStruct                                               1.359Ki ± 0%                       1.835Ki ± 0%  +34.99% (p=0.000 n=12)
+Round2PublicCache/2048/VerifyPSS/Warm                                                            1328.0 ± 0%                         464.0 ± 0%  -65.06% (p=0.000 n=12)
+Round2PublicCache/2048/VerifyPSS/FreshStruct                                                    1.312Ki ± 0%                       1.787Ki ± 0%  +36.16% (p=0.000 n=12)
+Round2PublicCache/2048/EncryptOAEP/Warm                                                          1608.0 ± 0%                         744.0 ± 0%  -53.73% (p=0.000 n=12)
+Round2PublicCache/2048/EncryptOAEP/FreshStruct                                                  1.586Ki ± 0%                       2.060Ki ± 0%  +29.86% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPKCS1v15/Warm                                                      42.97Ki ± 0%                       24.00Ki ± 0%  -44.15% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPKCS1v15/FreshStruct                                               42.98Ki ± 0%                       43.59Ki ± 0%   +1.40% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPSS/Warm                                                           42.80Ki ± 0%                       23.83Ki ± 0%  -44.32% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPSS/FreshStruct                                                    42.81Ki ± 0%                       43.42Ki ± 0%   +1.41% (p=0.000 n=12)
+Round2PublicCache/3072/EncryptOAEP/Warm                                                         43.20Ki ± 0%                       24.23Ki ± 0%  -43.91% (p=0.000 n=12)
+Round2PublicCache/3072/EncryptOAEP/FreshStruct                                                  43.21Ki ± 0%                       43.81Ki ± 0%   +1.39% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPKCS1v15/Warm                                                      61.09Ki ± 0%                       32.00Ki ± 0%  -47.62% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPKCS1v15/FreshStruct                                               61.11Ki ± 0%                       61.86Ki ± 0%   +1.23% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPSS/Warm                                                           60.80Ki ± 0%                       31.70Ki ± 0%  -47.85% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPSS/FreshStruct                                                    60.81Ki ± 0%                       61.57Ki ± 0%   +1.24% (p=0.000 n=12)
+Round2PublicCache/4096/EncryptOAEP/Warm                                                         61.32Ki ± 0%                       32.23Ki ± 0%  -47.45% (p=0.000 n=12)
+Round2PublicCache/4096/EncryptOAEP/FreshStruct                                                  61.34Ki ± 0%                       62.09Ki ± 0%   +1.23% (p=0.000 n=12)
+geomean                                                                                         15.46Ki                            11.36Ki       -26.53%
+
+                                                  │ /home/exedev/crypto-audit/round2/bench/rsa-cache-old.txt │ /home/exedev/crypto-audit/round2/bench/rsa-cache-new.txt │
+                                                  │                        allocs/op                         │            allocs/op              vs base                │
+Round2PublicCache/2048/VerifyPKCS1v15/Warm                                                        9.000 ± 0%                         2.000 ± 0%  -77.78% (p=0.000 n=12)
+Round2PublicCache/2048/VerifyPKCS1v15/FreshStruct                                                 10.00 ± 0%                         17.00 ± 0%  +70.00% (p=0.000 n=12)
+Round2PublicCache/2048/VerifyPSS/Warm                                                            13.000 ± 0%                         6.000 ± 0%  -53.85% (p=0.000 n=12)
+Round2PublicCache/2048/VerifyPSS/FreshStruct                                                      14.00 ± 0%                         21.00 ± 0%  +50.00% (p=0.000 n=12)
+Round2PublicCache/2048/EncryptOAEP/Warm                                                          15.000 ± 0%                         8.000 ± 0%  -46.67% (p=0.000 n=12)
+Round2PublicCache/2048/EncryptOAEP/FreshStruct                                                    16.00 ± 0%                         23.00 ± 0%  +43.75% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPKCS1v15/Warm                                                        93.00 ± 0%                         45.00 ± 0%  -51.61% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPKCS1v15/FreshStruct                                                 94.00 ± 0%                        101.00 ± 0%   +7.45% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPSS/Warm                                                             97.00 ± 0%                         49.00 ± 0%  -49.48% (p=0.000 n=12)
+Round2PublicCache/3072/VerifyPSS/FreshStruct                                                      98.00 ± 0%                        105.00 ± 0%   +7.14% (p=0.000 n=12)
+Round2PublicCache/3072/EncryptOAEP/Warm                                                           99.00 ± 0%                         51.00 ± 0%  -48.48% (p=0.000 n=12)
+Round2PublicCache/3072/EncryptOAEP/FreshStruct                                                    100.0 ± 0%                         107.0 ± 0%   +7.00% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPKCS1v15/Warm                                                       101.00 ± 0%                         45.00 ± 0%  -55.45% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPKCS1v15/FreshStruct                                                 102.0 ± 0%                         109.0 ± 0%   +6.86% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPSS/Warm                                                            105.00 ± 0%                         49.00 ± 0%  -53.33% (p=0.000 n=12)
+Round2PublicCache/4096/VerifyPSS/FreshStruct                                                      106.0 ± 0%                         113.0 ± 0%   +6.60% (p=0.000 n=12)
+Round2PublicCache/4096/EncryptOAEP/Warm                                                          107.00 ± 0%                         51.00 ± 0%  -52.34% (p=0.000 n=12)
+Round2PublicCache/4096/EncryptOAEP/FreshStruct                                                    108.0 ± 0%                         115.0 ± 0%   +6.48% (p=0.000 n=12)
+geomean                                                                                           50.32                              36.89       -26.69%

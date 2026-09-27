@@ -1,0 +1,15 @@
+final-all-short START Sun Sep 27 13:40:35 UTC 2026
+bin/go test -short -p=2 -count=1 crypto/... 
+final-all-short EXIT 0 Sun Sep 27 13:41:12 UTC 2026
+final-purego START Sun Sep 27 13:41:12 UTC 2026
+env GODEBUG=fips140=off RSA_ROUND2_REQUIRE_CACHE=1 bin/go test -short -tags=purego -p=2 -count=1 crypto/cipher crypto/internal/fips140/aes crypto/internal/fips140/mlkem crypto/mlkem crypto/hpke crypto/rsa crypto/x509 crypto/internal/fips140test 
+final-purego EXIT 0 Sun Sep 27 13:41:24 UTC 2026
+final-fips-on START Sun Sep 27 13:41:24 UTC 2026
+env GODEBUG=fips140=on RSA_ROUND2_REQUIRE_CACHE=1 bin/go test -short -p=2 -count=1 crypto/cipher crypto/internal/fips140/aes crypto/internal/fips140/mlkem crypto/mlkem crypto/hpke crypto/rsa crypto/x509 crypto/internal/fips140test 
+final-fips-on EXIT 0 Sun Sep 27 13:41:33 UTC 2026
+final-race START Sun Sep 27 13:41:33 UTC 2026
+env RSA_ROUND2_REQUIRE_CACHE=1 bin/go test -race -short -p=2 -count=1 crypto/cipher crypto/mlkem crypto/hpke crypto/rsa crypto/x509 
+final-race EXIT 0 Sun Sep 27 13:42:01 UTC 2026
+old-module-v126 START Sun Sep 27 13:42:01 UTC 2026
+env GOFIPS140=v1.26.0 bin/go test -short -p=2 -count=1 -run TestRound2Name\|TestRound2PublicCache\|TestRound2PublicConversion\|TestRound2CTRFragments crypto/cipher crypto/rsa crypto/x509 
+old-module-v126 EXIT 0 Sun Sep 27 13:42:13 UTC 2026

@@ -1,0 +1,9 @@
+# Sequential AES-CTR partial-block reuse
+
+Portable Go change at internal/fips140/aes/ctr.go; all existing hardware block implementations remain unchanged. Existing XORKeyStream delegates to stateless XORKeyStreamAt on every call, so fragmented calls regenerate unused bytes of the same AES counter block. Add a 16-byte cached keystream to CTR and a shared private worker; sequential calls use it, random-access calls remain stateless. Preserve overlap checks, IV/counter arithmetic, RoundToBlock semantics, and overflow panic/write order. The transient final partial block is computed directly into that cache with zero input. No new assembly, public API, global state or key lifecycle.
+
+Baseline 04a082e1. Proposed patch patches/ctr-partial-cache.patch. Public benchmark BenchmarkRound2CTR uses cipher.NewCTR(aes.NewCipher(...)) then full XORKeyStream calls on 1/7/16/17/50/1024/8192-byte chunks, 128/256-bit keys, reused buffers/in-place. Aligned/bulk controls mandatory. Report chunk sensitivity, not a blanket AES speedup. Existing standard AESCTR benchmarks also use non-block-aligned lengths (50 / almost1K / almost8K).
+
+Tests: new public chunked-vs-generic CTR with every key size, IV=0/ff and in-place/disjoint chunks; internal seek-between-sequential calls, RoundToBlock interleaving and offset overflow. Full short crypto/cipher, internal/aes and drbg tests passed prior to timings. Need final FIPS/CTR_DRBG validation, purego and race if adopted.
+
+Fresh Gerrit searches `status:open project:go CTR cache`, `CTR partial`, and `keystream` found no pending equivalent. Old CL413594 introduces random-access CTR, not this sequential partial-keystream cache, and its broad optimizations are already reflected in current code. Prior audit rejected this based on a stricter no-state-change bar; current request expressly allows localized precomputations. This is a materially different implementation experiment, not one of the already measured tiny allocation changes.

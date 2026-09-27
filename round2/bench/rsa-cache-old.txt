@@ -1,0 +1,276 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9440	     36052 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	    9788	     30145 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	   10000	     31183 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	    9297	     31272 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9932	     30477 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9969	     30518 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2209	    125604 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2462	    123641 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2314	    125334 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2434	    125870 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2235	    126835 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2374	    126566 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1328	    216946 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1417	    214864 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1380	    218739 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1396	    219586 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1357	    221326 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1389	    224068 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9043	     32308 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	   10000	     34062 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	    9160	     32861 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	   10000	     32611 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    8354	     39359 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9890	     34780 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2046	    143515 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2179	    140064 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2289	    144403 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    1888	    140835 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2054	    145493 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2235	    145224 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1134	    244771 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1288	    245396 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1254	    241966 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1016	    259263 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	     986	    274266 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1351	    262768 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9393	     29802 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	   10000	     31493 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	    9198	     31593 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	    9577	     32121 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9336	     33484 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    8592	     35970 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    1900	    141594 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    1959	    149218 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2148	    138989 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    1762	    150373 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2158	    133275 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2427	    125242 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1327	    214215 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1422	    217098 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1356	    218996 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1372	    218877 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1310	    219678 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1381	    219415 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9536	     32706 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	    9572	     30951 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	   10000	     30588 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	   10000	     30929 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	   10000	     32514 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9936	     33968 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2013	    143481 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2403	    130307 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2122	    142243 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2242	    132110 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2128	    133767 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2293	    135260 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1230	    259070 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1208	    222478 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1304	    230133 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1092	    278452 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1210	    244519 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1219	    242826 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9028	     32851 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	   10000	     30789 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	    9374	     31917 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	    8888	     35518 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9972	     35502 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    8647	     33685 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2090	    140592 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2274	    148292 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2110	    142372 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2331	    139469 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2047	    151186 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    1927	    137890 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1230	    248272 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1117	    241109 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1330	    224422 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1390	    213655 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1358	    214759 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1417	    227072 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9356	     31160 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	    9489	     32878 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	    9908	     31002 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	    8454	     30726 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9961	     31639 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9873	     32127 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    1999	    138991 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2410	    136513 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    1884	    142712 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2193	    137561 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2130	    149406 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2290	    130114 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1315	    216225 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1418	    212704 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1299	    219341 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1412	    214162 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1334	    216699 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1394	    214987 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9656	     33912 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	   10000	     31076 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	   10000	     33341 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	   10000	     32923 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9919	     31950 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9607	     32827 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2179	    139714 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2362	    147988 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    1896	    145410 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2190	    134428 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2101	    141422 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    1948	    162027 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1105	    247986 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1263	    250323 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	     896	    293956 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1364	    221647 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1348	    219817 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1320	    256396 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	   10000	     31110 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	    8380	     36300 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	    6714	     38259 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	    8252	     35390 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9135	     35064 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9348	     35271 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2085	    138968 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2058	    139519 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    1936	    140176 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2404	    142649 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2325	    140439 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    1995	    146460 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1227	    250686 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1291	    232193 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1093	    263153 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1131	    257995 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1159	    245302 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1234	    242882 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	   10078	     29244 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	   10000	     28827 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	   10000	     29852 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	   10000	     29808 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9805	     30538 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9880	     30609 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2251	    122655 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2461	    121875 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2269	    124612 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2450	    123971 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2328	    125320 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2376	    125699 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1336	    215350 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1408	    214593 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1381	    214990 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1411	    213599 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1346	    214157 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1417	    213096 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    8826	     31075 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	    9960	     31869 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	    9505	     31293 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	   10000	     30254 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9744	     31333 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9973	     34293 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2128	    140082 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2442	    134618 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2190	    131477 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2432	    132724 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2199	    138743 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2388	    128379 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1341	    243665 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1267	    231870 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1369	    220659 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1363	    220806 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1333	    222521 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1360	    245776 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9621	     37399 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	    9519	     31571 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	    9855	     32685 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	   10000	     30715 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    9892	     30544 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9939	     30555 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2214	    125723 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2482	    124179 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2341	    126495 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2356	    125651 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2235	    126683 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2396	    126255 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1332	    219317 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1405	    217382 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1282	    219786 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1406	    217646 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1317	    218287 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1347	    218882 ns/op	   62808 B/op	     108 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/Warm    	    9165	     29039 ns/op	    1376 B/op	       9 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPKCS1v15/FreshStruct         	   10000	     30597 ns/op	    1392 B/op	      10 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/Warm                     	    9681	     33124 ns/op	    1328 B/op	      13 allocs/op
+BenchmarkRound2PublicCache/2048/VerifyPSS/FreshStruct              	   10000	     34914 ns/op	    1344 B/op	      14 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/Warm                   	    8954	     33061 ns/op	    1608 B/op	      15 allocs/op
+BenchmarkRound2PublicCache/2048/EncryptOAEP/FreshStruct            	    9606	     32522 ns/op	    1624 B/op	      16 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/Warm                	    2140	    142101 ns/op	   44000 B/op	      93 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPKCS1v15/FreshStruct         	    2228	    132119 ns/op	   44016 B/op	      94 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/Warm                     	    2229	    129565 ns/op	   43824 B/op	      97 allocs/op
+BenchmarkRound2PublicCache/3072/VerifyPSS/FreshStruct              	    2067	    128089 ns/op	   43840 B/op	      98 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/Warm                   	    2350	    125326 ns/op	   44232 B/op	      99 allocs/op
+BenchmarkRound2PublicCache/3072/EncryptOAEP/FreshStruct            	    2328	    137392 ns/op	   44248 B/op	     100 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/Warm                	    1299	    252949 ns/op	   62560 B/op	     101 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPKCS1v15/FreshStruct         	    1134	    253954 ns/op	   62576 B/op	     102 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/Warm                     	    1238	    250226 ns/op	   62256 B/op	     105 allocs/op
+BenchmarkRound2PublicCache/4096/VerifyPSS/FreshStruct              	    1040	    266494 ns/op	   62272 B/op	     106 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/Warm                   	    1310	    260517 ns/op	   62792 B/op	     107 allocs/op
+BenchmarkRound2PublicCache/4096/EncryptOAEP/FreshStruct            	    1390	    240188 ns/op	   62808 B/op	     108 allocs/op
+PASS

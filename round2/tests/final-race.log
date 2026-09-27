@@ -1,0 +1,5 @@
+ok  	crypto/cipher	14.227s
+ok  	crypto/mlkem	1.400s
+ok  	crypto/hpke	8.164s
+ok  	crypto/rsa	3.485s
+ok  	crypto/x509	8.013s

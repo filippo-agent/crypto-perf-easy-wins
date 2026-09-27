@@ -1,0 +1,8 @@
+ok  	crypto/cipher	3.922s
+ok  	crypto/internal/fips140/aes	0.010s
+ok  	crypto/internal/fips140/mlkem	0.224s
+ok  	crypto/mlkem	0.088s
+ok  	crypto/hpke	1.289s
+ok  	crypto/rsa	2.670s
+ok  	crypto/x509	2.215s
+ok  	crypto/internal/fips140test	2.988s

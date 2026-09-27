@@ -1,0 +1,180 @@
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   47383	      4718 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   34821	      7045 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  123994	      1873 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   21796	     10806 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   22742	     10243 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   54432	      4309 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   35643	      7474 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   22120	     10776 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   23880	     10520 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   39634	      5732 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   53694	      4515 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   31297	      7341 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  120096	      2194 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   21730	     10546 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   25916	      9506 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   56352	      4436 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   30332	      8169 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   23506	      9990 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   24403	      9790 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   41754	      5965 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   58724	      4106 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   38192	      6385 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  146832	      1817 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   27056	      9000 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   26702	      9022 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   61206	      3918 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   37347	      7008 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   26445	      9131 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   27856	      8720 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   45324	      5254 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   54212	      4244 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   34879	      6986 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  128775	      1923 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   22688	     10321 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   24766	      9359 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   63897	      4115 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   37447	      6799 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   23758	     10562 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   27043	      8591 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   46532	      5224 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   55094	      4175 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   37213	      6508 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  137253	      1816 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   26469	      9085 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   26718	      9031 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   61226	      4176 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   34676	      6763 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   23936	      9953 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   24855	      9705 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   41172	      5770 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   56670	      4173 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   37426	      6508 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  143959	      1779 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   26210	      9154 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   26758	      8954 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   61196	      4033 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   36843	      6530 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   25899	      9161 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   27075	      8998 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   44839	      5437 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   59266	      4031 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   37578	      6425 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  140138	      1759 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   27951	      8723 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   28168	      8528 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   63336	      3986 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   36843	      6390 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   26322	      9232 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   28255	      8720 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   45252	      5423 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   46236	      5462 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   32452	      7660 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  113346	      2121 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   22478	     10843 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   23412	      9954 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   57480	      5017 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   32965	      7470 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   24496	     10158 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   19695	     11414 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   39477	      6373 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   58760	      3999 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   38125	      6359 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  138990	      1768 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   27394	      8665 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   27708	      8731 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   62830	      3820 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   37882	      6351 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   27644	      8900 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   28134	      8686 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   45628	      5377 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   55374	      4368 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   38142	      6603 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  129096	      1998 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   24134	     10080 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   20281	     10468 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   61442	      4135 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   36660	      6650 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   26114	      9085 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   26271	      8821 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   41367	      5802 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   56541	      4258 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   35154	      7199 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  112566	      2089 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   23214	     12506 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   22786	      9995 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   59858	      3968 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   36658	      7226 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   25196	     10802 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   26174	      9689 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   36897	      6979 ns/op	    4720 B/op	      61 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/x509
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkRound2NamePublicParse/Certificate/rich=false         	   57487	      4222 ns/op	    3304 B/op	      42 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=false                 	   37040	      6690 ns/op	    2552 B/op	      50 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=false                 	  133773	      2147 ns/op	    1176 B/op	      17 allocs/op
+BenchmarkRound2NamePublicParse/Certificate/rich=true          	   24640	     10637 ns/op	    6864 B/op	     122 allocs/op
+BenchmarkRound2NamePublicParse/CSR/rich=true                  	   24416	      9824 ns/op	    4336 B/op	      90 allocs/op
+BenchmarkRound2NamePublicParse/CRL/rich=true                  	   58680	      4154 ns/op	    2960 B/op	      57 allocs/op
+BenchmarkAuditParseCertificate/PSS                            	   33202	      6967 ns/op	    5184 B/op	      77 allocs/op
+BenchmarkAuditParseCertificate/PSSOpenSSL                     	   19880	     12352 ns/op	    6184 B/op	      97 allocs/op
+BenchmarkAuditParseCertificate/Google                         	   23642	     10139 ns/op	    6920 B/op	      84 allocs/op
+BenchmarkAuditParseCertificate/Root                           	   40408	      6132 ns/op	    4720 B/op	      61 allocs/op
+PASS
