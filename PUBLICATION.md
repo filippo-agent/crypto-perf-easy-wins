@@ -8,6 +8,11 @@ Published September 27, 2026:
 * Research supplement:
   https://github.com/filippo-agent/crypto-perf-easy-wins/releases/tag/research-snapshot-2026-09-27
 
+Release downloads:
+
+* [research-sources.tar.gz](https://github.com/filippo-agent/crypto-perf-easy-wins/releases/download/research-snapshot-2026-09-27/research-sources.tar.gz)
+* [research-sources.tar.gz.sha256](https://github.com/filippo-agent/crypto-perf-easy-wins/releases/download/research-snapshot-2026-09-27/research-sources.tar.gz.sha256)
+
 The Go source branches were separately fetched to the research owner's
 machine. This repository contains the audit reports, selected patch files,
 measurements, and compiler reproductions, not a complete Go checkout.
@@ -70,6 +75,8 @@ to become upstream regression tests unchanged.
   contents, compressed profiles, and PDF text. No live operational
   credentials or non-test private keys were identified.
 * Archive content hashes and the exported gist content were verified.
+  Both CLI and anonymous downloads of the release assets matched the
+  original archive and checksum file.
 
 This is a heuristic and contextual review, not a guarantee against every
 possible secret format. Public test keys remain as test/reference data.
