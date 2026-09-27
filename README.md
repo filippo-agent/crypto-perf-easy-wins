@@ -111,6 +111,43 @@ Started by fetching both supplied CLs and current Go master. CL814601 was alread
 
 ## Reproduction / artifacts
 
+### Fetching the source commits from this VM
+
+From your local Go checkout, using the SSH key registered with exe.dev:
+
+```sh
+git remote add crypto-audit lark-zen.exe.xyz:/home/exedev/go-crypto
+git fetch crypto-audit
+```
+
+The source branches are:
+
+* `crypto-audit/crypto-codegen-round4`: main audit series, ending at
+  `7a8ab8f78ea8cca13a5d835c69aa500927878ce4` (SHA-256 checksum output storage).
+  Earlier commits include measured prototypes; this is not a blanket merge
+  recommendation for the entire branch.
+* `crypto-audit/pq-codegen-round4`: the pending PQ stack plus selected local
+  improvements, ending at `db19b48d27dde1bb6c7c2c144ba3099536382374`.
+* `crypto-audit/pq-stack-baseline`: the untouched pending-stack baseline,
+  `62c2afb8`, for comparing just the local PQ changes.
+* `crypto-audit/crypto-perf-audit`: the original four-patch shortlist.
+
+To apply only the SHA-256 change to your current branch:
+
+```sh
+git cherry-pick 7a8ab8f78ea8cca13a5d835c69aa500927878ce4
+```
+
+The reports, patch files, and compiler reproducers live in a separate repository:
+
+```sh
+git clone lark-zen.exe.xyz:/home/exedev/crypto-audit
+```
+
+If the hostname-style SSH connection fails, replace `lark-zen.exe.xyz` in these
+commands with `vm+lark-zen@vm.exe.xyz`, the documented alternative SSH destination.
+None of this requires publishing the repositories or submitting a Gerrit CL.
+
 - `/home/exedev/go-crypto`: branch `crypto-perf-audit`, four local production commits atop the pinned baseline; audit benchmark/test files remain separate from those minimal commits.
   - `d465a03d`: ML-DSA dead precomputation
   - `494fe60f`: PBKDF2 XOR
