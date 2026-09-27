@@ -1,0 +1,25 @@
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                 │ bench/mldsa-old.txt │         bench/mldsa-new.txt         │
+                 │       sec/op        │   sec/op     vs base                │
+Keygen/ML-DSA-44           172.9µ ± 5%   151.0µ ± 3%  -12.66% (p=0.000 n=12)
+Keygen/ML-DSA-65           271.6µ ± 8%   252.6µ ± 5%        ~ (p=0.078 n=12)
+Keygen/ML-DSA-87           404.8µ ± 4%   378.2µ ± 5%   -6.57% (p=0.008 n=12)
+geomean                    266.8µ        243.4µ        -8.78%
+
+                 │ bench/mldsa-old.txt │         bench/mldsa-new.txt         │
+                 │        B/op         │     B/op      vs base               │
+Keygen/ML-DSA-44          192.0Ki ± 0%   176.0Ki ± 0%  -8.33% (p=0.000 n=12)
+Keygen/ML-DSA-65          192.0Ki ± 0%   176.0Ki ± 0%  -8.33% (p=0.000 n=12)
+Keygen/ML-DSA-87          192.0Ki ± 0%   176.0Ki ± 0%  -8.33% (p=0.000 n=12)
+geomean                   192.0Ki        176.0Ki       -8.33%
+
+                 │ bench/mldsa-old.txt │         bench/mldsa-new.txt         │
+                 │      allocs/op      │ allocs/op   vs base                 │
+Keygen/ML-DSA-44            2.000 ± 0%   2.000 ± 0%       ~ (p=1.000 n=12) ¹
+Keygen/ML-DSA-65            2.000 ± 0%   2.000 ± 0%       ~ (p=1.000 n=12) ¹
+Keygen/ML-DSA-87            2.000 ± 0%   2.000 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                     2.000        2.000       +0.00%
+¹ all samples are equal

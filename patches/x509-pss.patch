@@ -1,0 +1,19 @@
+diff --git a/src/crypto/x509/x509.go b/src/crypto/x509/x509.go
+index fa219b53..a0c42bf2 100644
+--- a/src/crypto/x509/x509.go
++++ b/src/crypto/x509/x509.go
+@@ -464,6 +464,14 @@ func getSignatureAlgorithmFromAI(ai pkix.AlgorithmIdentifier) SignatureAlgorithm
+ 
+ 	// RSA PSS is special because it encodes important parameters
+ 	// in the Parameters.
++	switch {
++	case bytes.Equal(ai.Parameters.FullBytes, pssParametersSHA256.FullBytes):
++		return SHA256WithRSAPSS
++	case bytes.Equal(ai.Parameters.FullBytes, pssParametersSHA384.FullBytes):
++		return SHA384WithRSAPSS
++	case bytes.Equal(ai.Parameters.FullBytes, pssParametersSHA512.FullBytes):
++		return SHA512WithRSAPSS
++	}
+ 
+ 	var params pssParameters
+ 	if _, err := asn1.Unmarshal(ai.Parameters.FullBytes, &params); err != nil {

@@ -1,0 +1,96 @@
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1574	    198867 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1233	    274967 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     696	    406412 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1654	    181910 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1168	    278301 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     718	    414896 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1596	    163177 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1240	    239183 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     826	    360632 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1855	    165780 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1240	    248854 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     829	    387200 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1764	    156840 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1087	    254591 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     792	    403156 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1459	    174075 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1071	    288865 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     716	    426998 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1611	    173900 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1095	    273679 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     708	    422636 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1731	    171814 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1188	    259717 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     814	    407950 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1634	    165085 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1050	    287388 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     775	    395824 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1502	    181980 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1249	    241527 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     834	    360561 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1623	    168427 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1018	    269950 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     691	    397448 ns/op	  196608 B/op	       2 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/mldsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkKeygen/ML-DSA-44         	    1636	    173988 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-65         	    1180	    273162 ns/op	  196608 B/op	       2 allocs/op
+BenchmarkKeygen/ML-DSA-87         	     627	    412784 ns/op	  196608 B/op	       2 allocs/op
+PASS

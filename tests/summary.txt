@@ -1,0 +1,16 @@
+all-short START Sun Sep 27 11:34:59 UTC 2026
+bin/go test -short -p=2 -count=1 crypto/... 
+all-short EXIT 0 Sun Sep 27 11:35:32 UTC 2026
+purego START Sun Sep 27 11:35:32 UTC 2026
+env GODEBUG=fips140=off bin/go test -short -tags=purego -p=2 -count=1 crypto/rsa crypto/x509 crypto/pbkdf2 crypto/mldsa crypto/internal/fips140/bigmod crypto/internal/fips140/rsa crypto/internal/fips140/mldsa 
+purego EXIT 0 Sun Sep 27 11:35:51 UTC 2026
+fips-on START Sun Sep 27 11:35:51 UTC 2026
+env GODEBUG=fips140=on bin/go test -short -p=2 -count=1 crypto/rsa crypto/x509 crypto/pbkdf2 crypto/mldsa crypto/internal/fips140/bigmod crypto/internal/fips140/rsa crypto/internal/fips140/mldsa 
+fips-on EXIT 0 Sun Sep 27 11:35:58 UTC 2026
+focused-386 START Sun Sep 27 11:35:58 UTC 2026
+env GOARCH=386 CGO_ENABLED=0 bin/go test -short -p=2 -count=1 -run TestAudit\|TestGolden\|TestPSS\|TestOAEP\|TestNotPrecomputed\|TestAccumulated crypto/rsa crypto/x509 crypto/pbkdf2 crypto/mldsa crypto/internal/fips140/bigmod crypto/internal/fips140/rsa crypto/internal/fips140/mldsa 
+focused-386 EXIT 1 Sun Sep 27 11:36:17 UTC 2026
+focused-386 NOTE: all seven packages compiled, but this VM cannot execute 386 binaries (exec format error). This is NOT a 386 test pass.
+mulshort-production EXIT 0: property test explicitly dispatches to production MulShort when present.
+x509-baseline-oracle EXIT 0: baseline binary compared the canonical PSS fast-path model against the original ASN.1 parser.
+race EXIT 0: full short race tests of crypto/rsa crypto/x509 crypto/pbkdf2 crypto/mldsa crypto/internal/fips140/bigmod.

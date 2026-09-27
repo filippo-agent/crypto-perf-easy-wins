@@ -1,0 +1,3 @@
+=== RUN   TestAuditPSSFastPath
+--- PASS: TestAuditPSSFastPath (0.01s)
+PASS

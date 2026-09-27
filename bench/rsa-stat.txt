@@ -1,0 +1,26 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+                               │ bench/rsa-old.txt │          bench/rsa-new.txt          │
+                               │      sec/op       │   sec/op     vs base                │
+AuditParsePKCS8PrivateKey/2048        145.73µ ± 6%   93.25µ ± 4%  -36.01% (p=0.000 n=12)
+AuditParsePKCS8PrivateKey/3072         314.7µ ± 3%   209.2µ ± 4%  -33.53% (p=0.000 n=12)
+AuditParsePKCS8PrivateKey/4096         561.3µ ± 3%   353.9µ ± 6%  -36.95% (p=0.000 n=12)
+geomean                                295.3µ        190.4µ       -35.51%
+
+                               │ bench/rsa-old.txt │           bench/rsa-new.txt           │
+                               │       B/op        │     B/op      vs base                 │
+AuditParsePKCS8PrivateKey/2048        10.24Ki ± 0%   10.24Ki ± 0%       ~ (p=1.000 n=12) ¹
+AuditParsePKCS8PrivateKey/3072        35.88Ki ± 0%   35.88Ki ± 0%       ~ (p=1.000 n=12) ¹
+AuditParsePKCS8PrivateKey/4096        50.91Ki ± 0%   51.48Ki ± 0%  +1.10% (p=0.000 n=12)
+geomean                               26.55Ki        26.65Ki       +0.37%
+¹ all samples are equal
+
+                               │ bench/rsa-old.txt │          bench/rsa-new.txt          │
+                               │     allocs/op     │ allocs/op   vs base                 │
+AuditParsePKCS8PrivateKey/2048          72.00 ± 0%   72.00 ± 0%       ~ (p=1.000 n=12) ¹
+AuditParsePKCS8PrivateKey/3072          123.0 ± 0%   123.0 ± 0%       ~ (p=1.000 n=12) ¹
+AuditParsePKCS8PrivateKey/4096          131.0 ± 0%   133.0 ± 0%  +1.53% (p=0.000 n=12)
+geomean                                 105.1        105.6       +0.51%
+¹ all samples are equal

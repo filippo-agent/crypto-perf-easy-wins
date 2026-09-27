@@ -1,0 +1,15 @@
+fork/exec /tmp/go-build1680800196/b102/rsa.test: exec format error
+FAIL	crypto/rsa	0.008s
+fork/exec /tmp/go-build1680800196/b192/x509.test: exec format error
+FAIL	crypto/x509	0.002s
+fork/exec /tmp/go-build1680800196/b213/pbkdf2.test: exec format error
+FAIL	crypto/pbkdf2	0.001s
+fork/exec /tmp/go-build1680800196/b217/mldsa.test: exec format error
+FAIL	crypto/mldsa	0.001s
+fork/exec /tmp/go-build1680800196/b220/bigmod.test: exec format error
+FAIL	crypto/internal/fips140/bigmod	0.001s
+fork/exec /tmp/go-build1680800196/b222/rsa.test: exec format error
+FAIL	crypto/internal/fips140/rsa	0.004s
+fork/exec /tmp/go-build1680800196/b224/mldsa.test: exec format error
+FAIL	crypto/internal/fips140/mldsa	0.001s
+FAIL

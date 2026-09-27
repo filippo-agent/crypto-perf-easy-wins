@@ -1,0 +1,44 @@
+--- a/src/crypto/internal/fips140/bigmod/nat.go
++++ b/src/crypto/internal/fips140/bigmod/nat.go
+@@ -982,6 +982,19 @@
+ 		}
+ 		return x.Mod(&Nat{limbs: T}, m)
+ 	}
++}
++
++// MulShort calculates x = x * y mod m, using a single-word multiplier.
++//
++// The length of x must be the same as the modulus, and x must already be
++// reduced modulo m. MulShort is intended for use with even moduli.
++//
++//go:norace
++func (x *Nat) MulShort(y uint, m *Modulus) *Nat {
++	n := len(m.nat.limbs)
++	t := NewNat().reset(n + 1)
++	t.limbs[n] = addMulVVW(t.limbs[:n], x.limbs[:n], y)
++	return x.Mod(t, m)
+ }
+ 
+ // Exp calculates out = x^e mod m.
+--- a/src/crypto/internal/fips140/rsa/rsa.go
++++ b/src/crypto/internal/fips140/rsa/rsa.go
+@@ -243,8 +243,7 @@
+ 		return errors.New("crypto/rsa: invalid CRT exponent")
+ 	}
+ 	de := bigmod.NewNat()
+-	de.SetUint(uint(priv.pub.E)).ExpandFor(pMinus1)
+-	de.Mul(dP, pMinus1)
++	de.SetBits(dP.Bits()).MulShort(uint(priv.pub.E), pMinus1)
+ 	if de.IsOne() != 1 {
+ 		return errors.New("crypto/rsa: invalid CRT exponent")
+ 	}
+@@ -257,8 +256,7 @@
+ 	if err != nil {
+ 		return errors.New("crypto/rsa: invalid CRT exponent")
+ 	}
+-	de.SetUint(uint(priv.pub.E)).ExpandFor(qMinus1)
+-	de.Mul(dQ, qMinus1)
++	de.SetBits(dQ.Bits()).MulShort(uint(priv.pub.E), qMinus1)
+ 	if de.IsOne() != 1 {
+ 		return errors.New("crypto/rsa: invalid CRT exponent")
+ 	}

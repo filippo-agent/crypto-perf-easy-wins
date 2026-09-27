@@ -1,0 +1,84 @@
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     374	    747991 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     457	    646740 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     374	    770457 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     442	    671624 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     361	    792767 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     470	    660040 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     382	    794217 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     477	    630400 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     416	    706138 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     487	    674841 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     390	    763518 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     441	    620303 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     405	    793763 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     483	    622385 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     340	    789366 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     444	    708076 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     402	    790666 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     428	    620155 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     428	    749206 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     459	    641862 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     424	    718104 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     469	    671812 ns/op	     804 B/op	      11 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkHMACSHA1   	     376	    719559 ns/op	     716 B/op	      11 allocs/op
+BenchmarkHMACSHA256 	     493	    679018 ns/op	     804 B/op	      11 allocs/op
+PASS

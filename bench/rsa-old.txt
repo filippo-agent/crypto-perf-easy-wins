@@ -1,0 +1,96 @@
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2184	    135145 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	     921	    315916 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     498	    569903 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    1996	    143694 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	    1006	    314219 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     591	    560255 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    1910	    145570 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	    1004	    321378 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     496	    600273 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2125	    137221 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	    1017	    293336 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     594	    501687 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2006	    148457 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	     856	    311916 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     589	    570406 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2078	    146178 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	     931	    315269 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     567	    544269 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2112	    154463 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	     897	    326877 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     537	    580673 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    1869	    146890 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	     882	    324369 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     561	    562424 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2143	    133899 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	     997	    306752 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     561	    554441 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2139	    148374 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	     968	    310989 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     568	    534725 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2222	    138709 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	     879	    321645 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     543	    572035 ns/op	   52136 B/op	     131 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: crypto/rsa
+cpu: AMD EPYC 9554P 64-Core Processor               
+BenchmarkAuditParsePKCS8PrivateKey/2048         	    2152	    145881 ns/op	   10488 B/op	      72 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/3072         	    1015	    304735 ns/op	   36744 B/op	     123 allocs/op
+BenchmarkAuditParsePKCS8PrivateKey/4096         	     554	    558477 ns/op	   52136 B/op	     131 allocs/op
+PASS

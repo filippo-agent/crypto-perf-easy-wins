@@ -1,0 +1,7 @@
+ok  	crypto/rsa	3.341s
+ok  	crypto/x509	10.898s
+ok  	crypto/pbkdf2	0.016s
+ok  	crypto/mldsa	0.647s
+ok  	crypto/internal/fips140/bigmod	0.043s
+ok  	crypto/internal/fips140/rsa	0.050s
+ok  	crypto/internal/fips140/mldsa	0.888s

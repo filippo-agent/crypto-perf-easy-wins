@@ -1,0 +1,23 @@
+goos: linux
+goarch: amd64
+pkg: crypto/pbkdf2
+cpu: AMD EPYC 9554P 64-Core Processor               
+           │ bench/pbkdf2-old.txt │        bench/pbkdf2-new.txt         │
+           │        sec/op        │   sec/op     vs base                │
+HMACSHA1              743.1µ ± 9%   767.0µ ± 6%        ~ (p=0.843 n=12)
+HMACSHA256            740.3µ ± 4%   653.4µ ± 5%  -11.74% (p=0.000 n=12)
+geomean               741.7µ        707.9µ        -4.55%
+
+           │ bench/pbkdf2-old.txt │        bench/pbkdf2-new.txt         │
+           │         B/op         │    B/op     vs base                 │
+HMACSHA1               716.0 ± 0%   716.0 ± 0%       ~ (p=1.000 n=12) ¹
+HMACSHA256             804.0 ± 0%   804.0 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                758.7        758.7       +0.00%
+¹ all samples are equal
+
+           │ bench/pbkdf2-old.txt │        bench/pbkdf2-new.txt         │
+           │      allocs/op       │ allocs/op   vs base                 │
+HMACSHA1               11.00 ± 0%   11.00 ± 0%       ~ (p=1.000 n=12) ¹
+HMACSHA256             11.00 ± 0%   11.00 ± 0%       ~ (p=1.000 n=12) ¹
+geomean                11.00        11.00       +0.00%
+¹ all samples are equal

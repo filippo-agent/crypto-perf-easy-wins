@@ -1,0 +1,32 @@
+diff --git a/src/crypto/internal/fips140/mldsa/mldsa.go b/src/crypto/internal/fips140/mldsa/mldsa.go
+index c7e4710f..74d86c89 100644
+--- a/src/crypto/internal/fips140/mldsa/mldsa.go
++++ b/src/crypto/internal/fips140/mldsa/mldsa.go
+@@ -59,7 +59,6 @@ type PrivateKey struct {
+ 	seed [32]byte
+ 	pub  PublicKey
+ 	a    [maxK * maxL]nttElement
+-	t1   [maxK]nttElement // NTT(t₁ ⋅ 2ᵈ)
+ 	s1   [maxL]nttElement
+ 	s2   [maxK]nttElement
+ 	t0   [maxK]nttElement
+@@ -221,7 +220,6 @@ func newPrivateKey(seed *[32]byte, p parameters) *PrivateKey {
+ 
+ 	pk := pkEncode(priv.pub.raw[:0], ρ, t1, p)
+ 	priv.pub.tr = computePublicKeyHash(pk)
+-	computeT1Hat(priv.t1[:k], t1) // NTT(t₁ ⋅ 2ᵈ)
+ 
+ 	return priv
+ }
+diff --git a/src/crypto/internal/fips140/mldsa/semiexpanded.go b/src/crypto/internal/fips140/mldsa/semiexpanded.go
+index 5be0181a..112e9f3c 100644
+--- a/src/crypto/internal/fips140/mldsa/semiexpanded.go
++++ b/src/crypto/internal/fips140/mldsa/semiexpanded.go
+@@ -110,7 +110,6 @@ func TestingOnlyNewPrivateKeyFromSemiExpanded(sk []byte) (*PrivateKey, error) {
+ 	if computePublicKeyHash(pk) != tr {
+ 		return nil, errors.New("mldsa: semi-expanded private key inconsistent with public key hash")
+ 	}
+-	computeT1Hat(priv.t1[:k], t1) // NTT(t₁ ⋅ 2ᵈ)
+ 
+ 	return priv, nil
+ }
