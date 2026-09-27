@@ -1,0 +1,64 @@
+CL,title,human_submitter,commit_author,status,WIP,updated_UTC,patchset,insertions,deletions,direct_parent_in_inventory,URL
+839786,crypto/mlkem: limit the capacity of encapsulated shared keys,Cristian Girlea,Cristian Girlea,NEW,False,2026-09-27 11:47:11.000000000,1,49,2,,https://go-review.googlesource.com/c/go/+/839786
+839765,crypto/ed25519: encode R only once when signing,Ville Vesilehto,Ville Vesilehto,NEW,False,2026-09-27 11:14:40.000000000,1,3,2,,https://go-review.googlesource.com/c/go/+/839765
+835565,crypto/internal/fips140/aes: avoid stack round-trip when building counter blocks on loong64,sophie zhao,XiaolinZhao,NEW,False,2026-09-21 02:54:35.000000000,2,35,50,,https://go-review.googlesource.com/c/go/+/835565
+824126,crypto/rsa: reduce size of FIPS 140-3 CAST,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-08-31 17:38:03.000000000,1,26,107,,https://go-review.googlesource.com/c/go/+/824126
+822040,crypto/mldsa: avoid more intermediate reductions in NTT representations,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:39:10.000000000,3,355,40,822002,https://go-review.googlesource.com/c/go/+/822040
+822002,crypto/mldsa: delay cs1/cs2 computation past the potential rejection,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:38:30.000000000,4,5,11,822001,https://go-review.googlesource.com/c/go/+/822002
+822001,crypto/mldsa: avoid unnecessary reductions in NTT and inverseNTT,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:44:35.000000000,4,291,97,818922,https://go-review.googlesource.com/c/go/+/822001
+822000,crypto/mldsa: drop precomputed verification benchmarks,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:44:53.000000000,3,10,26,818725,https://go-review.googlesource.com/c/go/+/822000
+818922,crypto/mldsa: batch expansion of signing masks,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:42:34.000000000,6,17,7,818921,https://go-review.googlesource.com/c/go/+/818922
+818921,crypto/mldsa: add a branchless parseSampleNTT fast path,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:41:24.000000000,6,28,8,818920,https://go-review.googlesource.com/c/go/+/818921
+818920,crypto/mldsa: batch sampling of matrix A,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:44:35.000000000,6,47,22,822000,https://go-review.googlesource.com/c/go/+/818920
+818725,crypto/mlkem: add a branchless parseSampleNTT fast path,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:44:49.000000000,6,49,33,818724,https://go-review.googlesource.com/c/go/+/818725
+818724,crypto/mlkem: batch sampling of matrix A,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:48:36.000000000,6,52,40,,https://go-review.googlesource.com/c/go/+/818724
+818722,crypto/sha3: add four-lane AVX2 Keccak-f[1600] for amd64,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:54:40.000000000,5,1050,11,818721,https://go-review.googlesource.com/c/go/+/818722
+818721,crypto/sha3: add two-lane Keccak-f[1600] for arm64 SHA3 extensions,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:48:04.000000000,4,86,12,818720,https://go-review.googlesource.com/c/go/+/818721
+818720,crypto/sha3: add internal ReadMulti for batched SHAKE squeezing,Filippo Valsorda,Filippo Valsorda,NEW,False,2026-09-21 16:42:22.000000000,4,480,0,,https://go-review.googlesource.com/c/go/+/818720
+810621,crypto/md5: disable riscv/s390x assembly,Josh Bleecher Snyder,Josh Bleecher Snyder,NEW,False,2026-08-19 04:50:20.000000000,2,6,65,,https://go-review.googlesource.com/c/go/+/810621
+806280,crypto/internal/fips140/aes/gcm: add loong64 assembly for ghashMul,sophie zhao,XiaolinZhao,NEW,False,2026-08-06 18:55:10.000000000,3,122,2,,https://go-review.googlesource.com/c/go/+/806280
+799801,crypto/x509: defer directory scan when cert bundle provides roots,Naman Trivedi,Naman Trivedi,NEW,False,2026-08-13 21:21:08.000000000,18,462,21,,https://go-review.googlesource.com/c/go/+/799801
+787380,crypto/tls: improve BenchmarkHandshakeServer,Dimitri John Ledkov,Dimitri John Ledkov,NEW,False,2026-06-05 14:24:18.000000000,1,37,17,,https://go-review.googlesource.com/c/go/+/787380
+785780,crypto/internal/impl: Remove dependency on strings package,Michael Podtserkovskii,Michael Podtserkovskii,NEW,True,2026-06-01 20:35:16.000000000,2,4,4,,https://go-review.googlesource.com/c/go/+/785780
+778420,crypto/internal/fips140/mlkem: add accelerated simd/archsimd implementation,Neal Patel,Neal Patel,NEW,True,2026-05-16 00:49:48.000000000,2,407,11,,https://go-review.googlesource.com/c/go/+/778420
+778260,crypto/internal/fips140/aes: rewrite AES-NI using simd/archsimd,Neal Patel,Neal Patel,NEW,True,2026-05-15 16:22:32.000000000,2,1390,4,,https://go-review.googlesource.com/c/go/+/778260
+778120,crypto/internal/fips140/sha256: rewrite SHA256 AVX2 using simd/archsimd,Neal Patel,Neal Patel,NEW,True,2026-05-15 01:55:07.000000000,2,271,1,,https://go-review.googlesource.com/c/go/+/778120
+778102,crypto/sha1: rewrite SHA1 SHA-NI using simd/archsimd,Neal Patel,Neal Patel,NEW,True,2026-05-15 02:50:53.000000000,3,269,6,,https://go-review.googlesource.com/c/go/+/778102
+778100,crypto/internal/fips140/sha256: rewrite SHA256 SHA-NI using simd/archsimd,Neal Patel,Neal Patel,NEW,True,2026-05-15 02:44:20.000000000,3,338,6,,https://go-review.googlesource.com/c/go/+/778100
+771900,crypto/internal/fips140/aes/gcm: AESGCM enable zvkg for riscv64,Meng Zhuo,Meng Zhuo,NEW,False,2026-09-12 12:47:07.000000000,7,299,3,767700,https://go-review.googlesource.com/c/go/+/771900
+767700,crypto/internal/fips140/aes: CTR mode enable zvkned for riscv64,Meng Zhuo,Meng Zhuo,NEW,False,2026-09-08 10:44:49.000000000,14,215,2,765200,https://go-review.googlesource.com/c/go/+/767700
+765200,crypto/internal/fips140/aes: blockAsm enable zvkned for riscv64,Meng Zhuo,Meng Zhuo,NEW,False,2026-09-08 15:43:17.000000000,16,356,1,755840,https://go-review.googlesource.com/c/go/+/765200
+760101,crypto: static alloc and size for hashes registry,Olivier Mengué,Olivier Mengué,NEW,False,2026-05-13 19:33:12.000000000,1,2,2,,https://go-review.googlesource.com/c/go/+/760101
+756360,crypto/x509: cache certificate stores on Windows,Quim Muntal,qmuntal,NEW,True,2026-03-18 12:13:45.000000000,1,115,2,,https://go-review.googlesource.com/c/go/+/756360
+755840,crypto/internal/fips140/sha512: enable zvknhb for riscv64,Meng Zhuo,Meng Zhuo,NEW,False,2026-09-18 14:50:34.000000000,14,188,3,752981,https://go-review.googlesource.com/c/go/+/755840
+755040,crypto/hkdf: add ExpandBytes and KeyBytes,Zeid Asseh,onyz,NEW,False,2026-04-06 23:37:36.000000000,3,25,5,,https://go-review.googlesource.com/c/go/+/755040
+752981,crypto/internal/fips140/sha256: enable zvknha for riscv64,Meng Zhuo,Meng Zhuo,NEW,False,2026-09-14 11:24:04.000000000,23,178,4,,https://go-review.googlesource.com/c/go/+/752981
+743760,crypto/sha1: provide optimised assembly for mips64x,Julian Zhu,Julian Zhu,NEW,False,2026-03-19 14:24:38.000000000,1,230,2,,https://go-review.googlesource.com/c/go/+/743760
+738363,crypto/sha256: provide optimised assembly for mips64x,Julian Zhu,Julian Zhu,NEW,False,2026-03-11 08:27:06.000000000,1,268,2,,https://go-review.googlesource.com/c/go/+/738363
+738362,crypto/sha512: provide optimised assembly for mips64x,Julian Zhu,Julian Zhu,NEW,False,2026-03-11 08:26:55.000000000,1,292,2,,https://go-review.googlesource.com/c/go/+/738362
+733960,crypto/internal/fips140/nistec/fiat: optimize P256mul on riscv64,Weihong Qiu,Qiuweihong,NEW,False,2026-01-08 01:56:36.000000000,1,608,1,,https://go-review.googlesource.com/c/go/+/733960
+733845,crypto/internal/fips140/subtle: use pseudo-SIMD uint wide loops for []byte ops,Jorropo,Jorropo,NEW,True,2026-01-23 20:09:03.000000000,7,88,21,733844,https://go-review.googlesource.com/c/go/+/733845
+733844,"internal/byteorder,crypto/internal/fips140deps/byteorder: add native endian operations",Jorropo,Jorropo,NEW,False,2026-01-23 20:25:02.000000000,5,117,0,733843,https://go-review.googlesource.com/c/go/+/733844
+733843,"internal/byteorder,crypto/internal/fips140deps/byteorder: add uint sized operations",Jorropo,Jorropo,NEW,False,2026-01-23 20:24:18.000000000,5,89,24,,https://go-review.googlesource.com/c/go/+/733843
+716900,crypto/x509: implement trie based constraint checking,Roland Shoemaker,Roland Shoemaker,NEW,True,2025-11-06 18:15:16.000000000,3,817,245,,https://go-review.googlesource.com/c/go/+/716900
+676055,crypto/tls: use sync.Pool for Conn.rawInput,qiu laidongfeng,qiulaidongfeng,NEW,False,2025-07-25 13:57:31.000000000,1,25,7,,https://go-review.googlesource.com/c/go/+/676055
+671275,crypto/sha512: improve performance of riscv64 assembly when Zbb extension available,Julian Zhu,Julian Zhu,NEW,False,2026-02-20 13:35:24.000000000,7,154,84,,https://go-review.googlesource.com/c/go/+/671275
+669535,crypto/internal/fips140/nistec: compile P-256 formulas to assembly,Filippo Valsorda,Filippo Valsorda,NEW,True,2025-08-07 15:48:12.000000000,3,5102,161,,https://go-review.googlesource.com/c/go/+/669535
+627943,crypto/internal/fips140/nistec: dismantle P-256 assembly,Filippo Valsorda,Filippo Valsorda,NEW,True,2025-08-07 15:56:10.000000000,9,2457,5720,627936,https://go-review.googlesource.com/c/go/+/627943
+627936,"Reapply ""crypto/internal/nistec: refactor scalar multiplication""",Filippo Valsorda,Filippo Valsorda,NEW,True,2025-08-07 16:01:36.000000000,3,85,57,,https://go-review.googlesource.com/c/go/+/627936
+614085,crypto/ecdh: remove 8 byte pointer overhead for non-boringcrypto builds,Mateusz Poliwczak,Mateusz Poliwczak,NEW,False,2024-10-08 23:14:36.000000000,1,69,56,,https://go-review.googlesource.com/c/go/+/614085
+520269,crypto/hmac: allocate hmac struct on the stack,Mateusz Poliwczak,Mateusz Poliwczak,NEW,False,2024-02-19 19:15:38.000000000,2,6,2,,https://go-review.googlesource.com/c/go/+/520269
+519615,crypto/aes: optimize amd64 assembly by using inline memory loads,Jorropo,Jorropo,NEW,False,2024-02-25 20:56:44.000000000,2,30,60,,https://go-review.googlesource.com/c/go/+/519615
+511375,crypto: remove unnecessary math/big deps,Filippo Valsorda,Filippo Valsorda,NEW,True,2024-05-22 12:49:42.000000000,4,131,82,,https://go-review.googlesource.com/c/go/+/511375
+508235,crypto/tls: drop ClientForConfig mutex when session tickets disabled,Damien Neil,Damien Neil,NEW,False,2023-07-06 18:20:25.000000000,2,97,83,,https://go-review.googlesource.com/c/go/+/508235
+482875,crypto/x509: use generics instead of reflect for checkNameConstraints,Mateusz Poliwczak,Mateusz Poliwczak,NEW,False,2023-10-30 19:23:37.000000000,4,18,33,,https://go-review.googlesource.com/c/go/+/482875
+481618,crypto/rsa: use avx-512 Integer Fused Multiply Add (IFMA) instructions to optimize RSA,Ted Painter,ted,NEW,False,2023-06-23 07:54:53.000000000,1,2056,1,,https://go-review.googlesource.com/c/go/+/481618
+480535,crypto/tls: offer only TLS 1.3 cipher suites if minimum version is TLS 1.3,Marten Seemann,Marten Seemann,NEW,False,2023-03-30 16:33:39.000000000,3,39,0,,https://go-review.googlesource.com/c/go/+/480535
+480095,crypto/tls: preallocate the HKDF label in cipherSuiteTLS13.expandLabel,Marten Seemann,Marten Seemann,NEW,False,2023-03-31 23:35:24.000000000,3,1,1,,https://go-review.googlesource.com/c/go/+/480095
+464835,crypto/tls: store value atLeastReader in tls.Conn,Jorropo,Jorropo,NEW,False,2024-02-25 21:04:50.000000000,2,10,7,,https://go-review.googlesource.com/c/go/+/464835
+413594,crypto/aes: speedup CTR mode on AMD64 and ARM64,Boris Nagaev,Boris Nagaev,NEW,False,2024-10-26 20:45:58.000000000,9,2170,0,,https://go-review.googlesource.com/c/go/+/413594
+334610,crypto/aes: Implement new and improved AES-GCM ciphers optimized with AVX-512 VAES and VPCLMULQDQ,Ted Painter,ted,NEW,False,2023-04-28 07:03:12.000000000,1,3653,21,,https://go-review.googlesource.com/c/go/+/334610
+301189,"crypto/*, hash: add WriteString method to hash.Hash and all the algorithms",Emmanuel Odeke,Emmanuel T Odeke,NEW,False,2021-11-09 22:07:23.000000000,1,558,51,,https://go-review.googlesource.com/c/go/+/301189
+274252,crypto/x509: directly map subjects to certs in CertPool,Roland Shoemaker,Roland Shoemaker,NEW,True,2020-11-30 22:56:08.000000000,1,69,53,,https://go-review.googlesource.com/c/go/+/274252
+272746,crypto/x509: add a fast subject parser (wip),Roland Shoemaker,Roland Shoemaker,NEW,True,2020-11-24 03:54:33.000000000,1,111,24,,https://go-review.googlesource.com/c/go/+/272746
+272726,crypto/x509: only extract subject in CertPool.AppendCertsFromPEM,Roland Shoemaker,Roland Shoemaker,NEW,True,2020-11-24 03:53:41.000000000,1,70,6,,https://go-review.googlesource.com/c/go/+/272726

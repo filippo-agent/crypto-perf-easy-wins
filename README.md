@@ -4,6 +4,10 @@
 
 **Acceptance bar:** no BoringCrypto; meaningful improvement to the complete public operation, not just an internal helper. No new assembly, cryptographic algorithms, validation shortcuts, mutable key caches, or removal of required self-tests. Source review and measurement are distinct: plausible candidates without an adequate whole-operation result are not recommendations.
 
+## Pending work already in Gerrit
+
+See **[PENDING.md](PENDING.md)** for a separately verified queue of existing work: human authors, current status, actual whole-operation evidence, blockers, dependencies, and old-open changes already superseded by current code. It distinguishes pending work from the four new audit findings below.
+
 ## Shortlist — independently measured changes
 
 All figures are **time/op reductions**, not throughput percentages. Linux/amd64, AMD EPYC 9554P VM; 12 alternating before/after samples, 250 ms per case, GOMAXPROCS=1, pinned to one guest CPU. Results are not ARM64 performance claims. Comparisons below use separate saved binaries; each row's measured path is changed only by its named candidate.
