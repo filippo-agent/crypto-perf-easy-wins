@@ -1,5 +1,10 @@
 # Before deleting the VM
 
+**Published alternative:** [PUBLICATION.md](PUBLICATION.md) links the repository,
+filtered research conversation, and a checked public research supplement.
+The public supplement omits unnecessary page/search caches and has a different
+checksum from the original local archive described below.
+
 **Git preserves the production changes, but not all research artifacts.**
 At the September 27, 2026 inventory,
 this audit had 1,114 untracked files and 406 ignored files. The Go source

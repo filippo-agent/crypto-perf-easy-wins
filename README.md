@@ -4,6 +4,9 @@
 
 **Acceptance bar:** no BoringCrypto; meaningful improvement to the complete public operation, not just an internal helper. No new assembly, cryptographic algorithms, validation shortcuts, mutable key caches, or removal of required self-tests. Source review and measurement are distinct: plausible candidates without an adequate whole-operation result are not recommendations.
 
+**Published artifacts:** see [PUBLICATION.md](PUBLICATION.md) for the filtered
+research conversation, compact source/data supplement, and publication checks.
+
 ## Hot-helper/compiler-codegen follow-up
 
 See **[round4/README.md](round4/README.md)**: small carry-chain replay localized to flag allocation, redundant byte extensions, bounded multiply/divide folding, fixed-copy and aggregate-return issues, with tested reproducers and amd64/arm64 machine code. Source candidates are checked against complete public operations, including an independent confirmation run; PQ remains measured on top of the full pending stack. No external issues or CLs have been filed.
@@ -115,6 +118,10 @@ Before deleting the VM, see [BACKUP.md](BACKUP.md): Git fetch/clone omits
 untracked measurements, test fixtures, and saved benchmark binaries.
 
 ### Fetching the source commits from this VM
+
+These SSH instructions require the original VM to remain available. The Go
+branches have also been saved separately by the research owner; the published
+audit repository and supplement are described in [PUBLICATION.md](PUBLICATION.md).
 
 From your local Go checkout, using the SSH key registered with exe.dev:
 
