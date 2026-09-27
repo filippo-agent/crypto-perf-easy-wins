@@ -111,6 +111,9 @@ Started by fetching both supplied CLs and current Go master. CL814601 was alread
 
 ## Reproduction / artifacts
 
+Before deleting the VM, see [BACKUP.md](BACKUP.md): Git fetch/clone omits
+untracked measurements, test fixtures, and saved benchmark binaries.
+
 ### Fetching the source commits from this VM
 
 From your local Go checkout, using the SSH key registered with exe.dev:
